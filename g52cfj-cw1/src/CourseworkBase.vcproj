@@ -174,7 +174,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\MyProjectMain.h"
+				RelativePath=".\Main.h"
 				>
 			</File>
 			<Filter
@@ -209,62 +209,6 @@
 					>
 				</File>
 			</Filter>
-			<Filter
-				Name="Demo"
-				>
-				<File
-					RelativePath=".\BouncingBall.h"
-					>
-				</File>
-				<File
-					RelativePath=".\BouncingBallMain.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo2aMain.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo2Main.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo2Object.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo2TileManager.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo3Main.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo3Object.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo3ObjectFinished.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo3TileManager.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo4Main.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo4Object.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo4TileManager.h"
-					>
-				</File>
-			</Filter>
 		</Filter>
 		<Filter
 			Name="Resource Files"
@@ -278,11 +222,11 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\mainfunction.cpp"
+				RelativePath=".\Main.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\MyProjectMain.cpp"
+				RelativePath=".\mainfunction.cpp"
 				>
 			</File>
 			<Filter
@@ -306,62 +250,6 @@
 				</File>
 				<File
 					RelativePath=".\TileManager.cpp"
-					>
-				</File>
-			</Filter>
-			<Filter
-				Name="Demo"
-				>
-				<File
-					RelativePath=".\BouncingBall.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\BouncingBallMain.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo2aMain.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo2Main.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo2Object.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo2TileManager.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo3Main.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo3Object.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo3ObjectFinished.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo3TileManager.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo4Main.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo4Object.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\Demo4TileManager.cpp"
 					>
 				</File>
 			</Filter>
