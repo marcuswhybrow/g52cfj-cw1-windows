@@ -1,6 +1,8 @@
 #include "header.h"
-
 #include "Actor.h"
+#include <math.h>
+
+#define PI 3.14159265
 
 Actor::Actor(Main *pEngine)
 : DisplayableObject(pEngine)
@@ -8,14 +10,22 @@ Actor::Actor(Main *pEngine)
 	_radius = 10;
 	_colour = 0xff0000;
 
-	_speedX = 0.1;
-	_speedY = 0.1;
+	_redrawTop = _redrawBottom = _redrawLeft = _redrawRight = _radius;
 
-	m_iStartDrawPosX = m_iStartDrawPosY = - _radius;
-	m_iDrawWidth = m_iDrawHeight = _radius * 2;
+	_speed = 0;
+	_angle = 0;
+	UpdateSpeedComponents();
 
-	_realX = m_iPreviousScreenX = m_iCurrentScreenX = - _radius;
-	_realY = m_iPreviousScreenY = m_iCurrentScreenY = - _radius;
+	_x = _radius + 10;
+	_y = _radius + 10;
+
+	m_iStartDrawPosX = - _redrawLeft - 1;
+	m_iStartDrawPosY = - _redrawTop - 1;
+	m_iDrawWidth = _redrawLeft + _redrawRight + 3;
+	m_iDrawHeight = _redrawTop + _redrawBottom + 3;
+
+	m_iPreviousScreenX = m_iCurrentScreenX = _x;
+	m_iPreviousScreenY = m_iCurrentScreenY = _y;
 
 	SetVisible(true);
 }
@@ -29,11 +39,19 @@ void Actor::Draw()
 	
 	// Draw a circle
 	GetEngine()->DrawScreenOval(
-		m_iCurrentScreenX - _radius,
-		m_iCurrentScreenY - _radius,
-		m_iCurrentScreenX + _radius - 2,
-		m_iCurrentScreenY + _radius - 2,
+		m_iCurrentScreenX - _radius - 1,
+		m_iCurrentScreenY - _radius - 1,
+		m_iCurrentScreenX + _radius + 1,
+		m_iCurrentScreenY + _radius + 1,
 		_colour
+	);
+
+	GetEngine()->DrawScreenLine(
+		m_iCurrentScreenX,
+		m_iCurrentScreenY,
+		m_iCurrentScreenX + _speedX * 50,
+		m_iCurrentScreenY + _speedY * 50,
+		0x0000ff
 	);
 	
 	// This call must be made apparently
@@ -42,43 +60,90 @@ void Actor::Draw()
 
 void Actor::DoUpdate(int iCurrentTime)
 {
-	_realX += _speedX;
-	_realY += _speedY;
+	_x += _speedX;
+	_y += _speedY;
 
 	CheckForBounce();
-
-	// Convert the precise x an y values into integers
-	m_iCurrentScreenX = (int)(_realX + 0.5);
-	m_iCurrentScreenY = (int)(_realY + 0.5);
-
+	UpdatePixelPositionFromRealPosition();
 	RedrawObjects();
+}
+
+void Actor::SetPosition(double x, double y)
+{
+	_x = x;
+	_y = y;
+	UpdatePixelPositionFromRealPosition();
+}
+
+void Actor::SetSpeed(double speed)
+{
+	_speed = speed;
+	UpdateSpeedComponents();
+}
+
+void Actor::SetDirection(int angle)
+{
+	_angle = angle % 360;
+	UpdateSpeedComponents();
+}
+
+double Actor::GetX()
+{
+	return _x;
+}
+
+double Actor::GetY()
+{
+	return _y;
+}
+
+
+
+void Actor::UpdatePixelPositionFromRealPosition()
+{
+	// Convert the precise x an y values into integers
+	m_iCurrentScreenX = (int)(_x + 0.5);
+	m_iCurrentScreenY = (int)(_y + 0.5);
 }
 
 void Actor::CheckForBounce()
 {
-	// Check for bounce
-	if ((_realX + m_iStartDrawPosX) < 0)
+	// Left Side
+	if ((_x + m_iStartDrawPosX) < 0)
 	{
-		_realX = - m_iStartDrawPosX;
+		_x = - m_iStartDrawPosX;
 		if (_speedX < 0)
-			_speedX = - _speedX;
+			SetDirection(360 - _angle);
 	}
-	if ((_realX + m_iStartDrawPosX + m_iDrawWidth) > (GetEngine()->GetScreenWidth()-1))
+
+	// Right Side
+	if ((_x + m_iStartDrawPosX + m_iDrawWidth) > (GetEngine()->GetScreenWidth()-1))
 	{
-		_realX = GetEngine()->GetScreenWidth() -1 - m_iStartDrawPosX - m_iDrawWidth;
+		_x = GetEngine()->GetScreenWidth() -1 - m_iStartDrawPosX - m_iDrawWidth;
 		if ( _speedX > 0 )
-			_speedX = -_speedX;
+			SetDirection(360 - _angle);
 	}
-	if ((_realY + m_iStartDrawPosY) < 0)
+
+	// Top
+	if ((_y + m_iStartDrawPosY) < 0)
 	{
-		_realY = -m_iStartDrawPosY;
+		_y = -m_iStartDrawPosY;
 		if (_speedY < 0)
-			_speedY = -_speedY;
+			SetDirection(360 - _angle);
 	}
-	if ((_realY + m_iStartDrawPosY + m_iDrawHeight) > (GetEngine()->GetScreenHeight()-1))
+
+	// Bottom
+	if ((_y + m_iStartDrawPosY + m_iDrawHeight) > (GetEngine()->GetScreenHeight()-1))
 	{
-		_realY = GetEngine()->GetScreenHeight() -1 - m_iStartDrawPosY - m_iDrawHeight;
+		_y = GetEngine()->GetScreenHeight() -1 - m_iStartDrawPosY - m_iDrawHeight;
 		if (_speedY > 0)
-			_speedY = -_speedY;
+			SetDirection(360 - _angle);
 	}
+}
+
+void Actor::UpdateSpeedComponents()
+{
+	double radians = ((_angle % 360) - 90) * PI / 180;
+	_speedX =  _speed * cos(radians);
+	_speedY = _speed * sin(radians);
 }

@@ -4,7 +4,8 @@
 
 Player::Player(Main *pEngine) : Actor(pEngine)
 {
-	_colour = 0x00ff00;
+	_colour = 0xff0000;
+	SetSpeed(0);
 }
 
 Player::~Player() {}

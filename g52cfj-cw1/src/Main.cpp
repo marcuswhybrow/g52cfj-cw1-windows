@@ -5,8 +5,9 @@
 #include "TileManager.h"
 #include "DisplayableObject.h"
 
-#include "Actor.h"
 #include "Player.h"
+#include "Infected.h"
+#include <time.h>
 
 /*
 Do any setup of back buffer prior to locking the screen buffer
@@ -42,15 +43,26 @@ int Main::InitialiseObjects()
 	// Destroy any existing objects
 	DestroyOldObjects();
 
+	int numInfected = 1;
+	int numDisplayableObjects = numInfected + 1;
+
 	// Create an array one element larger than the number of objects that you want.
-	m_ppDisplayableObjects = new DisplayableObject*[3];
+	m_ppDisplayableObjects = new DisplayableObject*[numDisplayableObjects + 1];
+
+	Player *pPlayer = new Player(this);
+
+	// Seed the random numbers generated for placing infected randomly
+	srand(time(NULL));
 
 	// You MUST set the array entry after the last one that you create to NULL, so that the system knows when to stop.
 	// i.e. The LAST entry has to be NULL. The fact that it is NULL is used in order to work out where the end of the array is.
-	//m_ppDisplayableObjects[0] = new SimpleShape(this);
-	m_ppDisplayableObjects[0] = new Player(this);
-	m_ppDisplayableObjects[1] = new Actor(this);
-	m_ppDisplayableObjects[2] = NULL;
+	int i = 0;
+	for (; i < numInfected; i++)
+	{
+		m_ppDisplayableObjects[i] = new Infected(this, pPlayer);
+	}
+	m_ppDisplayableObjects[i++] = pPlayer;
+	m_ppDisplayableObjects[i++] = NULL;
 
 	return 0;
 }

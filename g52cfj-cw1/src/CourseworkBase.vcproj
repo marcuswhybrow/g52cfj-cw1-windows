@@ -178,6 +178,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Infected.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Main.h"
 				>
 			</File>
@@ -231,6 +235,10 @@
 			>
 			<File
 				RelativePath=".\Actor.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Infected.cpp"
 				>
 			</File>
 			<File
