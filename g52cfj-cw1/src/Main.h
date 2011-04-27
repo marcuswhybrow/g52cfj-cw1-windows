@@ -1,5 +1,5 @@
-#ifndef MYPROJECTMAIN_H
-#define MYPROJECTMAIN_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include "BaseEngine.h"
 
@@ -15,9 +15,7 @@ public:
 	/**
 	Constructor
 	*/
-	Main()
-	: BaseEngine( 6 )
-	{}
+	Main() : BaseEngine(6) {}
 
 	// Do any setup of back buffer prior to locking the screen buffer
 	// Basically do the drawing of the background in here and it'll be copied to the screen for you as needed
@@ -36,7 +34,7 @@ public:
 	virtual void GameAction();
 
 	// Handle pressing of a mouse button
-	void MouseDown( int iButton, int iX, int iY );
+	void MouseDown(int iButton, int iX, int iY);
 
 	// Handle pressing of a key
 	virtual void KeyDown(int iKeyCode);

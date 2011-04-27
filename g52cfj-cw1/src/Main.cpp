@@ -6,6 +6,7 @@
 #include "DisplayableObject.h"
 
 #include "Actor.h"
+#include "Player.h"
 
 /*
 Do any setup of back buffer prior to locking the screen buffer
@@ -42,13 +43,14 @@ int Main::InitialiseObjects()
 	DestroyOldObjects();
 
 	// Create an array one element larger than the number of objects that you want.
-	m_ppDisplayableObjects = new DisplayableObject*[2];
+	m_ppDisplayableObjects = new DisplayableObject*[3];
 
 	// You MUST set the array entry after the last one that you create to NULL, so that the system knows when to stop.
 	// i.e. The LAST entry has to be NULL. The fact that it is NULL is used in order to work out where the end of the array is.
 	//m_ppDisplayableObjects[0] = new SimpleShape(this);
-	m_ppDisplayableObjects[0] = new Actor(this);
-	m_ppDisplayableObjects[1] = NULL;
+	m_ppDisplayableObjects[0] = new Player(this);
+	m_ppDisplayableObjects[1] = new Actor(this);
+	m_ppDisplayableObjects[2] = NULL;
 
 	return 0;
 }

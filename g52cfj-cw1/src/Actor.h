@@ -1,3 +1,6 @@
+#ifndef ACTOR_H
+#define ACTOR_H
+
 #include "DisplayableObject.h"
 #include "Main.h"
 
@@ -10,7 +13,7 @@ public:
 	void Draw();
 	void DoUpdate(int iCurrentTime);
 
-private:
+protected:
 	// A pointer to the main engine object
 	Main *_pEngine;
 
@@ -28,5 +31,6 @@ private:
 	double _realY;
 
 	void CheckForBounce();
-	void CheckKeys();
 };
+
+#endif

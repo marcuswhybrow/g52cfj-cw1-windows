@@ -3,7 +3,7 @@
 #include "Actor.h"
 
 Actor::Actor(Main *pEngine)
-	: DisplayableObject(pEngine)
+: DisplayableObject(pEngine)
 {
 	_radius = 10;
 	_colour = 0xff0000;
@@ -42,8 +42,6 @@ void Actor::Draw()
 
 void Actor::DoUpdate(int iCurrentTime)
 {
-	CheckKeys();
-
 	_realX += _speedX;
 	_realY += _speedY;
 
@@ -83,19 +81,4 @@ void Actor::CheckForBounce()
 		if (_speedY > 0)
 			_speedY = -_speedY;
 	}
-}
-
-void Actor::CheckKeys()
-{
-	// Change speed if player presses a key
-	if (GetEngine()->IsKeyPressed(SDLK_UP))
-		_speedY -= 0.001;
-	if (GetEngine()->IsKeyPressed(SDLK_DOWN))
-		_speedY += 0.001;
-	if (GetEngine()->IsKeyPressed(SDLK_LEFT))
-		_speedX -= 0.001;
-	if (GetEngine()->IsKeyPressed(SDLK_RIGHT))
-		_speedX += 0.001;
-	if (GetEngine()->IsKeyPressed(SDLK_SPACE))
-		_speedX = _speedY = 0;
 }

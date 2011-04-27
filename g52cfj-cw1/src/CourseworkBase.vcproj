@@ -181,6 +181,10 @@
 				RelativePath=".\Main.h"
 				>
 			</File>
+			<File
+				RelativePath=".\Player.h"
+				>
+			</File>
 			<Filter
 				Name="Shared"
 				>
@@ -235,6 +239,10 @@
 			</File>
 			<File
 				RelativePath=".\mainfunction.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Player.cpp"
 				>
 			</File>
 			<Filter
