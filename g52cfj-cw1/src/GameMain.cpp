@@ -1,6 +1,6 @@
 #include "header.h"
 #include "BaseEngine.h"
-#include "Main.h"
+#include "GameMain.h"
 #include "JPGImage.h"
 #include "TileManager.h"
 #include "DisplayableObject.h"
@@ -43,7 +43,7 @@ int GameMain::InitialiseObjects()
 	// Destroy any existing objects
 	DestroyOldObjects();
 
-	int numInfected = 1;
+	int numInfected = 0;
 	int numDisplayableObjects = numInfected + 1;
 
 	Player *pPlayer = new Player(this, numInfected);
@@ -54,19 +54,17 @@ int GameMain::InitialiseObjects()
 	// You MUST set the array entry after the last one that you create to NULL, so that the system knows when to stop.
 	// i.e. The LAST entry has to be NULL. The fact that it is NULL is used in order to work out where the end of the array is.
 	for (int i = 0; i < numInfected; i++)
-		actors.push_back(new Infected(this, i, pPlayer));
-	actors.push_back(pPlayer);
+		_actors.push_back(new Infected(this, i, pPlayer));
+	_actors.push_back(pPlayer);
 
 	// Create an array one element larger than the number of objects that you want.
-	m_ppDisplayableObjects = new DisplayableObject*[actors.size() + 1];
+	m_ppDisplayableObjects = new DisplayableObject*[_actors.size() + 1];
 	
 	int i = 0;
-	for (vector<Actor*>::iterator it = actors.begin(); it != actors.end(); it++)
+	for (vector<Actor*>::iterator it = _actors.begin(); it != _actors.end(); it++)
 		m_ppDisplayableObjects[i++] = *it;
 	
-	m_ppDisplayableObjects[actors.size()] = NULL;
-
-	value = 21;
+	m_ppDisplayableObjects[_actors.size()] = NULL;
 
 	return 0;
 }
@@ -122,20 +120,15 @@ void GameMain::KeyDown(int iKeyCode)
 
 void GameMain::RemoveActor(Actor *pActor)
 {
-	pActor->SetVisible(false);
+	//pActor->SetVisible(false);
+}
 
-	int *loc = &value;
-	printf("%p\n", loc);
-	printf("%d\n", value);
+vector<Actor*>* GameMain::GetActors()
+{
+	return &_actors;
+}
 
-	//for (int i = actors.size(); i >= 0; i++)
-	//	printf("%d", actors.at(i)->GetX());
-
-	//for (vector<Actor*>::iterator it = actors.begin(); it != actors.end(); it++)
-	//{
-	//	if((*it)->IsIntersecting(*it))
-	//	{
-	//		break;
-	//	}
-	//}
+double GameMain::GetFrictionCoefficient()
+{
+	return _frictionCoefficient;
 }

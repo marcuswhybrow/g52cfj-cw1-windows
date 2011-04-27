@@ -3,7 +3,7 @@
 #include "templates.h"
 
 // Needs one of the following #includes, to include the class definition
-#include "Main.h"
+#include "GameMain.h"
 
 #define BASE_SCREEN_WIDTH 800
 #define BASE_SCREEN_HEIGHT 600
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
 	{
 		// Needs just one of the two following lines:
-		Main oMain;
+		GameMain oMain;
 
 		char buf[1024];
 		sprintf( buf, "My Demonstration Program : Size %d x %d", BASE_SCREEN_WIDTH, BASE_SCREEN_HEIGHT );

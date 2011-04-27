@@ -2,12 +2,12 @@
 #define ACTOR_H
 
 #include "DisplayableObject.h"
-#include "Main.h"
+#include "GameMain.h"
 
 class Actor : public DisplayableObject
 {
 public:
-	Actor(Main *pEngine, int id);
+	Actor(GameMain *pGameMain, int id);
 
 	virtual ~Actor(void);
 	void Draw();
@@ -19,22 +19,29 @@ public:
 	double GetY();
 	int GetRadius();
 	int GetId();
+	bool IsIntersecting(Actor *pActor);
+	void SetAngle(int angle);
 
 protected:
 	// A pointer to the main engine object
-	Main *_pEngine;
+	GameMain *_pGameMain;
 
 	// The radius of this actor
 	int _radius;
 	// The colour of this actor
 	int _colour;
+	
+	double _mass;
+	double _acceleration;
 
-	double _speed;
+	double _maxVelocity;
+
 	int _angle;
+	double _speed;
 
 	// The velocity of this actor
-	double _speedX;
-	double _speedY;
+	double _velocityX;
+	double _velocityY;
 
 	// The center of the actor (not the top left of the re-draw box)
 	double _x;
@@ -52,8 +59,8 @@ protected:
 	void CheckForBounce();
 	void UpdatePixelPositionFromRealPosition();
 
-private:
-	void UpdateSpeedComponents();
+	bool IsIntersecting();
+	void UpdateVelocityComponents();
 };
 
 #endif

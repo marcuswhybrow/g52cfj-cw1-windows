@@ -4,18 +4,20 @@
 
 #define PI 3.14159265
 
-Actor::Actor(Main *pEngine, int id)
-: DisplayableObject(pEngine),
-_id(id)
+Actor::Actor(GameMain *pGameMain, int id)
+: DisplayableObject(pGameMain),
+_id(id),
+_pGameMain(pGameMain),
+_mass(200),
+_velocityX(0),
+_velocityY(0),
+_acceleration(10),
+_maxVelocity(2)
 {
 	_radius = 10;
 	_colour = 0xff0000;
 
 	_redrawTop = _redrawBottom = _redrawLeft = _redrawRight = _radius;
-
-	_speed = 0;
-	_angle = 0;
-	UpdateSpeedComponents();
 
 	_x = _radius + 10;
 	_y = _radius + 10;
@@ -55,9 +57,29 @@ void Actor::Draw()
 
 void Actor::DoUpdate(int iCurrentTime)
 {
-	double delta = iCurrentTime - _previousTime;
-	_x += _speedX * delta;
-	_y += _speedY * delta;
+	if (! IsIntersecting())
+	{
+		double delta = iCurrentTime - _previousTime;
+		
+		_x += _velocityX * delta;
+		_y += _velocityY * delta;
+
+		if (_velocityX != 0 || _velocityY != 0)
+		{
+			double vSquared = pow(_velocityX, 2) + pow(_velocityY, 2);
+			double vLength = sqrt(vSquared);
+			double drag = _pGameMain->GetFrictionCoefficient() * vSquared;
+
+			if (vLength != 0)
+			{
+				double dragX = drag * _velocityX / vLength;
+				double dragY = drag * _velocityY / vLength;
+
+				_x -= dragX * delta / _mass;
+				_y -= dragY * delta / _mass;
+			}
+		}
+	}
 
 	CheckForBounce();
 	UpdatePixelPositionFromRealPosition();
@@ -71,18 +93,6 @@ void Actor::SetPosition(double x, double y)
 	_x = x;
 	_y = y;
 	UpdatePixelPositionFromRealPosition();
-}
-
-void Actor::SetSpeed(double speed)
-{
-	_speed = speed;
-	UpdateSpeedComponents();
-}
-
-void Actor::SetDirection(int angle)
-{
-	_angle = angle % 360;
-	UpdateSpeedComponents();
 }
 
 double Actor::GetX()
@@ -105,6 +115,12 @@ int Actor::GetId()
 	return _id;
 }
 
+bool Actor::IsIntersecting(Actor *pActor)
+{
+	double distanceToActor = sqrt(pow(pActor->GetX() - _x, 2) + pow(pActor->GetYCentre() - _y, 2));
+	return distanceToActor < (_radius + pActor->GetRadius());
+}
+
 
 
 void Actor::UpdatePixelPositionFromRealPosition()
@@ -120,38 +136,70 @@ void Actor::CheckForBounce()
 	if ((_x + m_iStartDrawPosX) < 0)
 	{
 		_x = - m_iStartDrawPosX;
-		if (_speedX < 0)
-			SetDirection(360 - _angle);
+		if (_velocityX < 0)
+			_velocityX = - _velocityX;
 	}
 
 	// Right Side
 	if ((_x + m_iStartDrawPosX + m_iDrawWidth) > (GetEngine()->GetScreenWidth()-1))
 	{
 		_x = GetEngine()->GetScreenWidth() -1 - m_iStartDrawPosX - m_iDrawWidth;
-		if ( _speedX > 0 )
-			SetDirection(360 - _angle);
+		if ( _velocityX > 0 )
+			_velocityX = - _velocityX;
 	}
 
 	// Top
 	if ((_y + m_iStartDrawPosY) < 0)
 	{
 		_y = -m_iStartDrawPosY;
-		if (_speedY < 0)
-			SetDirection(360 - _angle);
+		if (_velocityY < 0)
+			_velocityY = - _velocityY;
 	}
 
 	// Bottom
 	if ((_y + m_iStartDrawPosY + m_iDrawHeight) > (GetEngine()->GetScreenHeight()-1))
 	{
 		_y = GetEngine()->GetScreenHeight() -1 - m_iStartDrawPosY - m_iDrawHeight;
-		if (_speedY > 0)
-			SetDirection(360 - _angle);
+		if (_velocityY > 0)
+			_velocityY = - _velocityY;
 	}
 }
 
-void Actor::UpdateSpeedComponents()
+bool Actor::IsIntersecting()
+{
+	bool intersecting = false;
+
+	vector<Actor*> actors = *_pGameMain->GetActors();
+
+	for (vector<Actor*>::iterator it = actors.begin(); it != actors.end(); it++)
+	{
+		Actor* pActor = *it;
+		if(pActor != this && pActor->IsIntersecting(this))
+		{
+			intersecting = true;
+			break;
+		}
+	}
+
+	return intersecting;
+}
+
+void Actor::UpdateVelocityComponents()
 {
 	double radians = ((_angle % 360) - 90) * PI / 180;
-	_speedX =  _speed * cos(radians);
-	_speedY = _speed * sin(radians);
+	_velocityX = _speed * cos(radians);
+	_velocityY = _speed * sin(radians);
 }
+
+void Actor::SetAngle(int angle)
+{
+	_angle = angle % 360;
+	UpdateVelocityComponents();
+}
+
+void Actor::SetSpeed(double speed)
+{
+	_speed = speed;
+	UpdateVelocityComponents();
+}
+

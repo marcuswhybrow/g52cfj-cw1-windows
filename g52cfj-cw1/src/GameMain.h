@@ -3,18 +3,18 @@
 
 #include "BaseEngine.h"
 #include "TileManager.h"
-#include <list>
+#include <vector>
 using namespace std;
 
 class Actor;
 
-class Main : public BaseEngine
+class GameMain : public BaseEngine
 {
 public:
 	/**
 	Constructor
 	*/
-	Main() : BaseEngine(6) {}
+	GameMain() : BaseEngine(6), _frictionCoefficient(1) {}
 
 	// Do any setup of back buffer prior to locking the screen buffer
 	// Basically do the drawing of the background in here and it'll be copied to the screen for you as needed
@@ -40,9 +40,15 @@ public:
 
 	void RemoveActor(Actor *pActor);
 
+	vector<Actor*>* GetActors();
+
+	double GetFrictionCoefficient();
+
 protected:
 	TileManager m_oTileManager;
-	list<Actor*> _actors;
+
+	vector<Actor*> _actors;
+	double _frictionCoefficient;
 };
 
 #endif

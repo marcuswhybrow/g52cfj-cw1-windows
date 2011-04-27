@@ -6,7 +6,7 @@
 class Player : public Actor
 {
 public:
-	Player(Main *pEngine, int id);
+	Player(GameMain *pGameMain, int id);
 	virtual ~Player(void);
 
 	void Draw();

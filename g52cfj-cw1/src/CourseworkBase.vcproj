@@ -174,15 +174,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\GameMain.h"
+				>
+			</File>
+			<File
 				RelativePath=".\header.h"
 				>
 			</File>
 			<File
 				RelativePath=".\Infected.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Main.h"
 				>
 			</File>
 			<File
@@ -238,11 +238,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Infected.cpp"
+				RelativePath=".\GameMain.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Main.cpp"
+				RelativePath=".\Infected.cpp"
 				>
 			</File>
 			<File

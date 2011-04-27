@@ -2,11 +2,12 @@
 
 #include "Player.h"
 
-Player::Player(Main *pEngine, int id)
-: Actor(pEngine, id)
+Player::Player(GameMain *pGameMain, int id)
+: Actor(pGameMain, id)
 {
 	_colour = 0xff0000;
-	SetSpeed(0);
+
+	SetPosition(100,100);
 }
 
 Player::~Player() {}
@@ -28,13 +29,13 @@ void Player::CheckKeys(int iCurrentTime)
 
 	// Change speed if player presses a key
 	if (GetEngine()->IsKeyPressed(SDLK_UP))
-		_speedY -= 0.001 * delta;
+		_velocityY -= 0.001 * delta;
 	if (GetEngine()->IsKeyPressed(SDLK_DOWN))
-		_speedY += 0.001 * delta;
+		_velocityY += 0.001 * delta;
 	if (GetEngine()->IsKeyPressed(SDLK_LEFT))
-		_speedX -= 0.001 * delta;
+		_velocityX -= 0.001 * delta;
 	if (GetEngine()->IsKeyPressed(SDLK_RIGHT))
-		_speedX += 0.001 * delta;
+		_velocityX += 0.001 * delta;
 	if (GetEngine()->IsKeyPressed(SDLK_SPACE))
-		_speedX = _speedY = 0;
+		_velocityX = _velocityY = 0.0;
 }
