@@ -3,16 +3,14 @@
 
 #include "BaseEngine.h"
 #include "TileManager.h"
+#include <list>
+using namespace std;
 
 class Actor;
 
 class Main : public BaseEngine
 {
-protected:
-	TileManager m_oTileManager;
-
 public:
-
 	/**
 	Constructor
 	*/
@@ -41,6 +39,10 @@ public:
 	virtual void KeyDown(int iKeyCode);
 
 	void RemoveActor(Actor *pActor);
+
+protected:
+	TileManager m_oTileManager;
+	list<Actor*> _actors;
 };
 
 #endif

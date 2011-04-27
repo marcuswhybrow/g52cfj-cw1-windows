@@ -43,11 +43,8 @@ int Main::InitialiseObjects()
 	// Destroy any existing objects
 	DestroyOldObjects();
 
-	int numInfected = 3000;
+	int numInfected = 1000;
 	int numDisplayableObjects = numInfected + 1;
-
-	// Create an array one element larger than the number of objects that you want.
-	m_ppDisplayableObjects = new DisplayableObject*[numDisplayableObjects + 1];
 
 	Player *pPlayer = new Player(this, numInfected);
 
@@ -56,13 +53,18 @@ int Main::InitialiseObjects()
 
 	// You MUST set the array entry after the last one that you create to NULL, so that the system knows when to stop.
 	// i.e. The LAST entry has to be NULL. The fact that it is NULL is used in order to work out where the end of the array is.
+	for (int i = 0; i < numInfected; i++)
+		_actors.push_back(new Infected(this, i, pPlayer));
+	_actors.push_back(pPlayer);
+
+	// Create an array one element larger than the number of objects that you want.
+	m_ppDisplayableObjects = new DisplayableObject*[_actors.size() + 1];
+	
 	int i = 0;
-	for (; i < numInfected; i++)
-	{
-		m_ppDisplayableObjects[i] = new Infected(this, i, pPlayer);
-	}
-	m_ppDisplayableObjects[i++] = pPlayer;
-	m_ppDisplayableObjects[i++] = NULL;
+	for (list<Actor*>::iterator it = _actors.begin(); it != _actors.end(); it++)
+		m_ppDisplayableObjects[i++] = *it;
+	
+	m_ppDisplayableObjects[_actors.size()] = NULL;
 
 	return 0;
 }
@@ -118,5 +120,6 @@ void Main::KeyDown(int iKeyCode)
 
 void Main::RemoveActor(Actor *pActor)
 {
+	//_actors.remove(pActor);
 	pActor->SetVisible(false);
 }
