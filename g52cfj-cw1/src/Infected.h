@@ -7,7 +7,7 @@
 class Infected : public Actor
 {
 public:
-	Infected(Main *pEngine, Player *pPlayer);
+	Infected(Main *pEngine, int id, Player *pPlayer);
 	virtual ~Infected(void);
 
 	void Draw();

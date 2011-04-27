@@ -4,8 +4,9 @@
 
 #define PI 3.14159265
 
-Actor::Actor(Main *pEngine)
-: DisplayableObject(pEngine)
+Actor::Actor(Main *pEngine, int id)
+: DisplayableObject(pEngine),
+_id(id)
 {
 	_radius = 10;
 	_colour = 0xff0000;
@@ -27,6 +28,8 @@ Actor::Actor(Main *pEngine)
 	m_iPreviousScreenX = m_iCurrentScreenX = _x;
 	m_iPreviousScreenY = m_iCurrentScreenY = _y;
 
+	_previousTime = 0;
+
 	SetVisible(true);
 }
 
@@ -45,14 +48,6 @@ void Actor::Draw()
 		m_iCurrentScreenY + _radius + 1,
 		_colour
 	);
-
-	GetEngine()->DrawScreenLine(
-		m_iCurrentScreenX,
-		m_iCurrentScreenY,
-		m_iCurrentScreenX + _speedX * 50,
-		m_iCurrentScreenY + _speedY * 50,
-		0x0000ff
-	);
 	
 	// This call must be made apparently
 	StoreLastScreenPositionAndUpdateRect();
@@ -60,12 +55,15 @@ void Actor::Draw()
 
 void Actor::DoUpdate(int iCurrentTime)
 {
-	_x += _speedX;
-	_y += _speedY;
+	double delta = iCurrentTime - _previousTime;
+	_x += _speedX * delta;
+	_y += _speedY * delta;
 
 	CheckForBounce();
 	UpdatePixelPositionFromRealPosition();
 	RedrawObjects();
+
+	_previousTime = iCurrentTime;
 }
 
 void Actor::SetPosition(double x, double y)
@@ -95,6 +93,16 @@ double Actor::GetX()
 double Actor::GetY()
 {
 	return _y;
+}
+
+int Actor::GetRadius()
+{
+	return _radius;
+}
+
+int Actor::GetId()
+{
+	return _id;
 }
 
 

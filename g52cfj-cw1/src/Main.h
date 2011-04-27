@@ -2,8 +2,9 @@
 #define MAIN_H
 
 #include "BaseEngine.h"
-
 #include "TileManager.h"
+
+class Actor;
 
 class Main : public BaseEngine
 {
@@ -38,6 +39,8 @@ public:
 
 	// Handle pressing of a key
 	virtual void KeyDown(int iKeyCode);
+
+	void RemoveActor(Actor *pActor);
 };
 
 #endif

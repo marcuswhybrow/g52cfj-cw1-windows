@@ -43,13 +43,13 @@ int Main::InitialiseObjects()
 	// Destroy any existing objects
 	DestroyOldObjects();
 
-	int numInfected = 1;
+	int numInfected = 3000;
 	int numDisplayableObjects = numInfected + 1;
 
 	// Create an array one element larger than the number of objects that you want.
 	m_ppDisplayableObjects = new DisplayableObject*[numDisplayableObjects + 1];
 
-	Player *pPlayer = new Player(this);
+	Player *pPlayer = new Player(this, numInfected);
 
 	// Seed the random numbers generated for placing infected randomly
 	srand(time(NULL));
@@ -59,7 +59,7 @@ int Main::InitialiseObjects()
 	int i = 0;
 	for (; i < numInfected; i++)
 	{
-		m_ppDisplayableObjects[i] = new Infected(this, pPlayer);
+		m_ppDisplayableObjects[i] = new Infected(this, i, pPlayer);
 	}
 	m_ppDisplayableObjects[i++] = pPlayer;
 	m_ppDisplayableObjects[i++] = NULL;
@@ -114,4 +114,9 @@ void Main::KeyDown(int iKeyCode)
 	case SDLK_SPACE: // SPACE Pauses
 		break;
 	}
+}
+
+void Main::RemoveActor(Actor *pActor)
+{
+	pActor->SetVisible(false);
 }

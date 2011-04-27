@@ -7,7 +7,7 @@
 class Actor : public DisplayableObject
 {
 public:
-	Actor(Main *pEngine);
+	Actor(Main *pEngine, int id);
 
 	virtual ~Actor(void);
 	void Draw();
@@ -17,6 +17,8 @@ public:
 	void SetDirection(int angle);
 	double GetX();
 	double GetY();
+	int GetRadius();
+	int GetId();
 
 protected:
 	// A pointer to the main engine object
@@ -42,6 +44,10 @@ protected:
 	int _redrawRight;
 	int _redrawBottom;
 	int _redrawLeft;
+
+	int _id;
+
+	int _previousTime;
 
 	void CheckForBounce();
 	void UpdatePixelPositionFromRealPosition();
