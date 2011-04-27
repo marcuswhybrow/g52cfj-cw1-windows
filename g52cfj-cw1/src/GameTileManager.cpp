@@ -1,6 +1,7 @@
 #include "header.h"
 
 #include "GameTileManager.h"
+#include "JPGImage.h"
 
 int GameTileManager::GetTileWidth()
 {
@@ -28,34 +29,36 @@ void GameTileManager::DrawTileAt(
 	//	pEngine->GetColour( 0xffffff ),
 	//	pSurface );
 
+	ImageData *pWall = new ImageData();
+
 	switch( GetValue(iMapX,iMapY) )
 	{
 	case 0: // '|'
-		pEngine->DrawRectangle( 
-			iStartPositionScreenX,
-			iStartPositionScreenY, 
-			iStartPositionScreenX + GetTileWidth() - 1,
-			iStartPositionScreenY + GetTileHeight() - 1,
-			0x888888,
-			pSurface );
+		pWall->LoadImage("wall-vertical.png");
+		pWall->RenderImage(
+			pEngine->GetBackground(),
+			0, 0,
+			iStartPositionScreenX, iStartPositionScreenY,
+			pWall->GetWidth(), pWall->GetHeight()
+		);
 		break;
 	case 1: // '-'
-		pEngine->DrawRectangle( 
-			iStartPositionScreenX,
-			iStartPositionScreenY, 
-			iStartPositionScreenX + GetTileWidth() - 1,
-			iStartPositionScreenY + GetTileHeight() - 1,
-			0x888888,
-			pSurface );
+		pWall->LoadImage("wall-horizontal.png");
+		pWall->RenderImage(
+			pEngine->GetBackground(),
+			0, 0,
+			iStartPositionScreenX, iStartPositionScreenY,
+			pWall->GetWidth(), pWall->GetHeight()
+		);
 		break;
 	case 2: // '+'
-		pEngine->DrawRectangle( 
-			iStartPositionScreenX,
-			iStartPositionScreenY, 
-			iStartPositionScreenX + GetTileWidth() - 1,
-			iStartPositionScreenY + GetTileHeight() - 1,
-			0x888888,
-			pSurface );
+		pWall->LoadImage("wall-corner.png");
+		pWall->RenderImage(
+			pEngine->GetBackground(),
+			0, 0,
+			iStartPositionScreenX, iStartPositionScreenY,
+			pWall->GetWidth(), pWall->GetHeight()
+		);
 		break;
 	case 3: // ' '
 		pEngine->DrawRectangle( 
@@ -63,17 +66,17 @@ void GameTileManager::DrawTileAt(
 			iStartPositionScreenY, 
 			iStartPositionScreenX + GetTileWidth() - 1,
 			iStartPositionScreenY + GetTileHeight() - 1,
-			0x666666,
+			0x999999,
 			pSurface );
 		break;
 	case 4: // 'x'
-		pEngine->DrawRectangle( 
-			iStartPositionScreenX,
-			iStartPositionScreenY, 
-			iStartPositionScreenX + GetTileWidth() - 1,
-			iStartPositionScreenY + GetTileHeight() - 1,
-			0x000000,
-			pSurface );
+		pWall->LoadImage("hole-dark.png");
+		pWall->RenderImage(
+			pEngine->GetBackground(),
+			0, 0,
+			iStartPositionScreenX, iStartPositionScreenY,
+			pWall->GetWidth(), pWall->GetHeight()
+		);
 		break;
 	}
 }

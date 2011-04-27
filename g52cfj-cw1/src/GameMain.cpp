@@ -85,7 +85,7 @@ int GameMain::InitialiseObjects()
 	// Destroy any existing objects
 	DestroyOldObjects();
 
-	int numInfected = 0;
+	int numInfected = 300;
 	int numDisplayableObjects = numInfected + 1;
 
 	Player *pPlayer = new Player(this, numInfected);
