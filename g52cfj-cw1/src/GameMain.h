@@ -2,7 +2,7 @@
 #define MAIN_H
 
 #include "BaseEngine.h"
-#include "TileManager.h"
+#include "GameTileManager.h"
 #include <vector>
 using namespace std;
 
@@ -14,8 +14,8 @@ public:
 	/**
 	Constructor
 	*/
-	GameMain() : BaseEngine(6), _frictionCoefficient(1) {}
-
+	GameMain(void);
+	
 	// Do any setup of back buffer prior to locking the screen buffer
 	// Basically do the drawing of the background in here and it'll be copied to the screen for you as needed
 	virtual void SetupBackgroundBuffer();
@@ -45,10 +45,12 @@ public:
 	double GetFrictionCoefficient();
 
 protected:
-	TileManager m_oTileManager;
+	GameTileManager* _pGameTileManager;
 
 	vector<Actor*> _actors;
 	double _frictionCoefficient;
+private:
+	int GetNumber(char c);
 };
 
 #endif

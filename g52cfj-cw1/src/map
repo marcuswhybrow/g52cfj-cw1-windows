@@ -1,13 +1,13 @@
  CourseworkBase
 
- Timestamp is 4db84d97 (Wed Apr 27 18:08:39 2011)
+ Timestamp is 4db85e15 (Wed Apr 27 19:19:01 2011)
 
  Preferred load address is 00400000
 
  Start         Length     Name                   Class
  0001:00000000 00010000H .textbss                DATA
- 0002:00000000 0000c09aH .text                   CODE
- 0002:0000c0a0 00001410H .text$x                 CODE
+ 0002:00000000 0000c8a7H .text                   CODE
+ 0002:0000c8b0 00001410H .text$x                 CODE
  0003:00000000 00000104H .CRT$XCA                DATA
  0003:00000104 00000104H .CRT$XCAA               DATA
  0003:00000208 00000104H .CRT$XCZ                DATA
@@ -16,17 +16,17 @@
  0003:00000514 00000104H .CRT$XIC                DATA
  0003:00000618 00000104H .CRT$XIY                DATA
  0003:0000071c 00000104H .CRT$XIZ                DATA
- 0003:00000820 00000617H .rdata                  DATA
- 0003:00000e38 00000172H .rdata$debug            DATA
- 0003:00000fac 00000548H .rdata$r                DATA
- 0003:000014f4 00000104H .rtc$IAA                DATA
- 0003:000015f8 00000104H .rtc$IZZ                DATA
- 0003:000016fc 00000104H .rtc$TAA                DATA
- 0003:00001800 00000104H .rtc$TZZ                DATA
- 0003:00001908 000007a0H .xdata$x                DATA
- 0003:000020a8 00000000H .edata                  DATA
- 0004:00000000 000002d2H .data                   DATA
- 0004:000002d8 00000458H .bss                    DATA
+ 0003:00000820 000006e0H .rdata                  DATA
+ 0003:00000f00 00000172H .rdata$debug            DATA
+ 0003:00001074 000005a7H .rdata$r                DATA
+ 0003:0000161c 00000104H .rtc$IAA                DATA
+ 0003:00001720 00000104H .rtc$IZZ                DATA
+ 0003:00001824 00000104H .rtc$TAA                DATA
+ 0003:00001928 00000104H .rtc$TZZ                DATA
+ 0003:00001a30 000007a0H .xdata$x                DATA
+ 0003:000021d0 00000000H .edata                  DATA
+ 0004:00000000 000002f2H .data                   DATA
+ 0004:000002f8 00000458H .bss                    DATA
  0005:00000000 0000008cH .idata$2                DATA
  0005:0000008c 00000014H .idata$3                DATA
  0005:000000a0 0000031cH .idata$4                DATA
@@ -35,411 +35,418 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
- 0000:00000000       __except_list              00000000     <absolute>
  0000:00000000       ___safe_se_handler_count   00000000     <absolute>
- 0000:00009876       __ldused                   00009876     <absolute>
+ 0000:00000000       __except_list              00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
  0000:00009876       __fltused                  00009876     <absolute>
+ 0000:00009876       __ldused                   00009876     <absolute>
  0000:00000000       ___ImageBase               00400000     <linker-defined>
  0001:00000000       __enc$textbss$begin        00401000     <linker-defined>
  0001:00010000       __enc$textbss$end          00411000     <linker-defined>
- 0002:00000f80       ??0Actor@@QAE@PAVGameMain@@H@Z 00411f80 f   Actor.obj
- 0002:000011f0       ?SetVisible@DisplayableObject@@QAEX_N@Z 004121f0 f i Actor.obj
- 0002:00001220       ??_EActor@@UAEPAXI@Z       00412220 f i Actor.obj
- 0002:00001220       ??_GActor@@UAEPAXI@Z       00412220 f i Actor.obj
- 0002:00001270       ??1Actor@@UAE@XZ           00412270 f   Actor.obj
- 0002:000012a0       ?Draw@Actor@@UAEXXZ        004122a0 f   Actor.obj
- 0002:00001350       ?DrawScreenOval@BaseEngine@@QAEXHHHHI@Z 00412350 f i Actor.obj
- 0002:000013a0       ?GetEngine@DisplayableObject@@QAEPAVBaseEngine@@XZ 004123a0 f i Actor.obj
- 0002:000013c0       ?IsVisible@DisplayableObject@@QAE_NXZ 004123c0 f i Actor.obj
- 0002:000013e0       ?DoUpdate@Actor@@UAEXH@Z   004123e0 f   Actor.obj
- 0002:000015c0       ?RedrawObjects@DisplayableObject@@QAEXXZ 004125c0 f i Actor.obj
- 0002:000015f0       ?Redraw@BaseEngine@@QAEX_N@Z 004125f0 f i Actor.obj
- 0002:00001630       ?pow@@YANNH@Z              00412630 f i Actor.obj
- 0002:00001660       ?SetPosition@Actor@@QAEXNN@Z 00412660 f   Actor.obj
- 0002:000016b0       ?GetX@Actor@@QAENXZ        004126b0 f   Actor.obj
- 0002:000016e0       ?GetY@Actor@@QAENXZ        004126e0 f   Actor.obj
- 0002:00001710       ?GetRadius@Actor@@QAEHXZ   00412710 f   Actor.obj
- 0002:00001730       ?GetId@Actor@@QAEHXZ       00412730 f   Actor.obj
- 0002:00001760       ?IsIntersecting@Actor@@QAE_NPAV1@@Z 00412760 f   Actor.obj
- 0002:00001830       ?GetYCentre@DisplayableObject@@QAEHXZ 00412830 f i Actor.obj
- 0002:00001870       ?UpdatePixelPositionFromRealPosition@Actor@@IAEXXZ 00412870 f   Actor.obj
- 0002:000018d0       ?CheckForBounce@Actor@@IAEXXZ 004128d0 f   Actor.obj
- 0002:00001b00       ?GetScreenWidth@BaseEngine@@QAEHXZ 00412b00 f i Actor.obj
- 0002:00001b20       ?GetScreenHeight@BaseEngine@@QAEHXZ 00412b20 f i Actor.obj
- 0002:00001b40       ?IsIntersecting@Actor@@IAE_NXZ 00412b40 f   Actor.obj
- 0002:00001c60       ?UpdateVelocityComponents@Actor@@IAEXXZ 00412c60 f   Actor.obj
- 0002:00001cf0       ?SetAngle@Actor@@QAEXH@Z   00412cf0 f   Actor.obj
- 0002:00001d30       ?SetSpeed@Actor@@QAEXN@Z   00412d30 f   Actor.obj
- 0002:00001d60       ??0?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@ABV01@@Z 00412d60 f i Actor.obj
- 0002:00001ea0       ??1?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ 00412ea0 f i Actor.obj
- 0002:00001f20       ?begin@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@XZ 00412f20 f i Actor.obj
- 0002:00001f60       ?end@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@XZ 00412f60 f i Actor.obj
- 0002:00001fa0       ??D?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ 00412fa0 f i Actor.obj
- 0002:00001fd0       ??E?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV01@H@Z 00412fd0 f i Actor.obj
- 0002:00002020       ??9?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE_NABV01@@Z 00413020 f i Actor.obj
- 0002:00002060       ??1?$_Vector_val@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ 00413060 f i Actor.obj
- 0002:00002090       ?begin@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE?AV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@XZ 00413090 f i Actor.obj
- 0002:000020d0       ?end@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE?AV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@XZ 004130d0 f i Actor.obj
- 0002:00002110       ?size@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEIXZ 00413110 f i Actor.obj
- 0002:00002140       ?_Buy@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAE_NI@Z 00413140 f i Actor.obj
- 0002:000021f0       ?_Tidy@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEXXZ 004131f0 f i Actor.obj
- 0002:00002280       ??0?$_Vector_val@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAE@V?$allocator@PAVActor@@@1@@Z 00413280 f i Actor.obj
- 0002:000022d0       ??1?$_Container_base_aux_alloc_real@V?$allocator@PAVActor@@@std@@@std@@IAE@XZ 004132d0 f i Actor.obj
- 0002:00002350       ??1_Container_base_aux@std@@QAE@XZ 00413350 f i Actor.obj
- 0002:00002370       ??0?$allocator@PAVActor@@@std@@QAE@ABV01@@Z 00413370 f i Actor.obj
- 0002:00002390       ??0?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@PAPAVActor@@PBV_Container_base_aux@1@@Z 00413390 f i Actor.obj
- 0002:000023d0       ??E?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEAAV01@XZ 004133d0 f i Actor.obj
- 0002:00002400       ??D?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEABQAVActor@@XZ 00413400 f i Actor.obj
- 0002:00002460       ?_Getmycont@_Iterator_base_aux@std@@QBEPBV_Container_base_aux@2@XZ 00413460 f i Actor.obj
- 0002:000024b0       ?_Getcont@_Aux_cont@std@@QBEPBV_Container_base_aux@2@XZ 004134b0 f i Actor.obj
- 0002:000024d0       ?_Has_container@_Iterator_base_aux@std@@QBE_NXZ 004134d0 f i Actor.obj
- 0002:00002500       ??8?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE_NABV01@@Z 00413500 f i Actor.obj
- 0002:00002570       ?_Same_container@_Iterator_base_aux@std@@QBE_NABV12@@Z 00413570 f i Actor.obj
- 0002:000025a0       ?max_size@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEIXZ 004135a0 f i Actor.obj
- 0002:000025d0       ?_Destroy@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEXPAPAVActor@@0@Z 004135d0 f i Actor.obj
- 0002:00002610       ?_Xlen@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@KAXXZ 00413610 f i Actor.obj
- 0002:000026c0       ??0length_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 004136c0 f i Actor.obj
- 0002:00002700       ??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 00413700 f i Actor.obj
- 0002:00002790       ?what@logic_error@std@@UBEPBDXZ 00413790 f i Actor.obj
- 0002:000027c0       ??_Elogic_error@std@@UAEPAXI@Z 004137c0 f i Actor.obj
- 0002:000027c0       ??_Glogic_error@std@@UAEPAXI@Z 004137c0 f i Actor.obj
- 0002:00002810       ??1logic_error@std@@UAE@XZ 00413810 f i Actor.obj
- 0002:00002850       ??1length_error@std@@UAE@XZ 00413850 f i Actor.obj
- 0002:00002880       ??_Elength_error@std@@UAEPAXI@Z 00413880 f i Actor.obj
- 0002:00002880       ??_Glength_error@std@@UAEPAXI@Z 00413880 f i Actor.obj
- 0002:000028d0       ??0?$_Container_base_aux_alloc_real@V?$allocator@PAVActor@@@std@@@std@@IAE@V?$allocator@PAVActor@@@1@@Z 004138d0 f i Actor.obj
- 0002:000029c0       ??0_Aux_cont@std@@QAE@QBV_Container_base_aux@1@@Z 004139c0 f i Actor.obj
- 0002:000029f0       ??0_Container_base_aux@std@@QAE@XZ 004139f0 f i Actor.obj
- 0002:00002a10       ??2@YAPAXIPAX@Z            00413a10 f i Actor.obj
- 0002:00002a30       ??3@YAXPAX0@Z              00413a30 f i Actor.obj
- 0002:00002a50       ?deallocate@?$allocator@PAVActor@@@std@@QAEXPAPAVActor@@I@Z 00413a50 f i Actor.obj
- 0002:00002a80       ?allocate@?$allocator@PAVActor@@@std@@QAEPAPAVActor@@I@Z 00413a80 f i Actor.obj
- 0002:00002ab0       ?deallocate@?$allocator@V_Aux_cont@std@@@std@@QAEXPAV_Aux_cont@2@I@Z 00413ab0 f i Actor.obj
- 0002:00002ae0       ??0?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@PAPAVActor@@PBV_Container_base_aux@1@@Z 00413ae0 f i Actor.obj
- 0002:00002b50       ?_Set_container@_Iterator_base_aux@std@@QAEXQBV_Container_base_aux@2@@Z 00413b50 f i Actor.obj
- 0002:00002b80       ??E?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEAAV01@XZ 00413b80 f i Actor.obj
- 0002:00002bf0       ??0length_error@std@@QAE@ABV01@@Z 00413bf0 f i Actor.obj
- 0002:00002c30       ??0logic_error@std@@QAE@ABV01@@Z 00413c30 f i Actor.obj
- 0002:00002cd0       ??0?$_Ranit@PAVActor@@HPBQAV1@ABQAV1@@std@@QAE@XZ 00413cd0 f i Actor.obj
- 0002:00002d00       ??0?$_Iterator_with_base@Urandom_access_iterator_tag@std@@PAVActor@@HPBQAV3@ABQAV3@V_Iterator_base_aux@2@@std@@QAE@XZ 00413d00 f i Actor.obj
- 0002:00002d30       ??0_Iterator_base_aux@std@@QAE@XZ 00413d30 f i Actor.obj
- 0002:00002d60       ?max_size@?$allocator@PAVActor@@@std@@QBEIXZ 00413d60 f i Actor.obj
- 0002:00002da0       ?allocate@?$allocator@V_Aux_cont@std@@@std@@QAEPAV_Aux_cont@2@I@Z 00413da0 f i Actor.obj
- 0002:00002dd0       ??$_Pow_int@N@@YANNH@Z     00413dd0 f i Actor.obj
- 0002:00002e60       ??$_Ucopy@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEPAPAVActor@@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@1@0PAPAV2@@Z 00413e60 f i Actor.obj
- 0002:00002eb0       ??$_Destroy_range@V?$allocator@PAVActor@@@std@@@std@@YAXPAPAVActor@@0AAV?$allocator@PAVActor@@@0@@Z 00413eb0 f i Actor.obj
- 0002:00002f00       ??$?0PAVActor@@@?$allocator@V_Aux_cont@std@@@std@@QAE@ABV?$allocator@PAVActor@@@1@@Z 00413f00 f i Actor.obj
- 0002:00002f20       ??$_Allocate@PAVActor@@@std@@YAPAPAVActor@@IPAPAV1@@Z 00413f20 f i Actor.obj
- 0002:00002f90       ??0bad_alloc@std@@QAE@PBD@Z 00413f90 f i Actor.obj
- 0002:00002fd0       ??1bad_alloc@std@@UAE@XZ   00413fd0 f i Actor.obj
- 0002:00003000       ??_Ebad_alloc@std@@UAEPAXI@Z 00414000 f i Actor.obj
- 0002:00003000       ??_Gbad_alloc@std@@UAEPAXI@Z 00414000 f i Actor.obj
- 0002:00003050       ??$_Allocate@V_Aux_cont@std@@@std@@YAPAV_Aux_cont@0@IPAV10@@Z 00414050 f i Actor.obj
- 0002:000030c0       ??0bad_alloc@std@@QAE@ABV01@@Z 004140c0 f i Actor.obj
- 0002:00003100       ??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@PAPAVActor@@V?$allocator@PAVActor@@@2@@stdext@@YAPAPAVActor@@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@0PAPAV1@AAV?$allocator@PAVActor@@@3@@Z 00414100 f i Actor.obj
- 0002:00003180       ??$_Ptr_cat@PAPAVActor@@PAPAV1@@std@@YA?AU_Scalar_ptr_iterator_tag@0@AAPAPAVActor@@0@Z 00414180 f i Actor.obj
- 0002:000031a0       ??$_Destroy_range@V?$allocator@PAVActor@@@std@@@std@@YAXPAPAVActor@@0AAV?$allocator@PAVActor@@@0@U_Scalar_ptr_iterator_tag@0@@Z 004141a0 f i Actor.obj
- 0002:000031c0       ??$_Checked_base@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@@std@@YAPBQAVActor@@AAV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@0@@Z 004141c0 f i Actor.obj
- 0002:000031f0       ??$_Ptr_cat@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@PAPAVActor@@@std@@YA?AU_Scalar_ptr_iterator_tag@0@AAV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@0@AAPAPAVActor@@@Z 004141f0 f i Actor.obj
- 0002:00003210       ??$_Uninit_copy@PBQAVActor@@PAPAV1@V?$allocator@PAVActor@@@std@@@std@@YAPAPAVActor@@PBQAV1@0PAPAV1@AAV?$allocator@PAVActor@@@0@U_Scalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z 00414210 f i Actor.obj
- 0002:00003280       ??$_Checked_base@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@U_Different_checked_iterator_base_type_tag@2@@std@@YAPBQAVActor@@AAV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@0@U_Different_checked_iterator_base_type_tag@0@@Z 00414280 f i Actor.obj
- 0002:000032a0       ?_Checked_iterator_base@?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEPBQAVActor@@XZ 004142a0 f i Actor.obj
- 0002:000032c0       ??0Infected@@QAE@PAVGameMain@@HPAVPlayer@@@Z 004142c0 f   Infected.obj
- 0002:00003430       ??_GInfected@@UAEPAXI@Z    00414430 f i Infected.obj
- 0002:00003430       ??_EInfected@@UAEPAXI@Z    00414430 f i Infected.obj
- 0002:00003480       ??1Infected@@UAE@XZ        00414480 f   Infected.obj
- 0002:000034b0       ?Draw@Infected@@UAEXXZ     004144b0 f   Infected.obj
- 0002:000034e0       ?DoUpdate@Infected@@UAEXH@Z 004144e0 f   Infected.obj
- 0002:00003600       _SDL_main                  00414600 f   mainfunction.obj
- 0002:000036d0       ??0GameMain@@QAE@XZ        004146d0 f i mainfunction.obj
- 0002:00003780       ?GetModifiedTime@BaseEngine@@UAEHXZ 00414780 f i mainfunction.obj
- 0002:000037a0       ??0TileManager@@QAE@XZ     004147a0 f i mainfunction.obj
- 0002:00003810       ??1TileManager@@QAE@XZ     00414810 f i mainfunction.obj
- 0002:00003870       ?DrawTile@TileManager@@UAEXPAVBaseEngine@@PAUSDL_Surface@@HHHH@Z 00414870 f i mainfunction.obj
- 0002:000038c0       ?DrawTile@TileManager@@UAEXPAVBaseEngine@@PAUSDL_Surface@@HH@Z 004148c0 f i mainfunction.obj
- 0002:00003940       ??_EGameMain@@UAEPAXI@Z    00414940 f i mainfunction.obj
- 0002:00003940       ??_GGameMain@@UAEPAXI@Z    00414940 f i mainfunction.obj
- 0002:00003990       ??1GameMain@@UAE@XZ        00414990 f i mainfunction.obj
- 0002:00003a20       ??0?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ 00414a20 f i mainfunction.obj
- 0002:00003ab0       ??0?$allocator@PAVActor@@@std@@QAE@XZ 00414ab0 f i mainfunction.obj
- 0002:00003ad0       ??0Player@@QAE@PAVGameMain@@H@Z 00414ad0 f   Player.obj
- 0002:00003b90       ??_GPlayer@@UAEPAXI@Z      00414b90 f i Player.obj
- 0002:00003b90       ??_EPlayer@@UAEPAXI@Z      00414b90 f i Player.obj
- 0002:00003be0       ??1Player@@UAE@XZ          00414be0 f   Player.obj
- 0002:00003c10       ?Draw@Player@@UAEXXZ       00414c10 f   Player.obj
- 0002:00003c40       ?DoUpdate@Player@@UAEXH@Z  00414c40 f   Player.obj
- 0002:00003c80       ?CheckKeys@Player@@AAEXH@Z 00414c80 f   Player.obj
- 0002:00003dc0       ??0BaseEngine@@QAE@H@Z     00414dc0 f   BaseEngine.obj
- 0002:00003f60       ??_GBaseEngine@@UAEPAXI@Z  00414f60 f i BaseEngine.obj
- 0002:00003f60       ??_EBaseEngine@@UAEPAXI@Z  00414f60 f i BaseEngine.obj
- 0002:00003fb0       ??1BaseEngine@@UAE@XZ      00414fb0 f   BaseEngine.obj
- 0002:00004050       ?DestroyOldObjects@BaseEngine@@UAEXXZ 00415050 f   BaseEngine.obj
- 0002:00004130       ?Initialise@BaseEngine@@QAEHPADHH0H@Z 00415130 f   BaseEngine.obj
- 0002:00004370       ?GameInit@BaseEngine@@UAEHXZ 00415370 f   BaseEngine.obj
- 0002:000043b0       ?InitialiseObjects@BaseEngine@@UAEHXZ 004153b0 f   BaseEngine.obj
- 0002:000043e0       ?MainLoop@BaseEngine@@QAEHXZ 004153e0 f   BaseEngine.obj
- 0002:00004610       ?GameAction@BaseEngine@@UAEXXZ 00415610 f   BaseEngine.obj
- 0002:00004670       ?GetTime@BaseEngine@@QAEHXZ 00415670 f i BaseEngine.obj
- 0002:00004690       ?TimeToAct@BaseEngine@@QAE_NXZ 00415690 f i BaseEngine.obj
- 0002:000046c0       ?SetTimeToAct@BaseEngine@@QAEXH@Z 004156c0 f i BaseEngine.obj
- 0002:000046f0       ?GameRender@BaseEngine@@UAEXXZ 004156f0 f   BaseEngine.obj
- 0002:00004920       ?DrawScreen@BaseEngine@@UAEXXZ 00415920 f   BaseEngine.obj
- 0002:00004970       ?DrawChanges@BaseEngine@@UAEXXZ 00415970 f   BaseEngine.obj
- 0002:000049c0       ?UpdateAllObjects@BaseEngine@@UAEXH@Z 004159c0 f   BaseEngine.obj
- 0002:00004a60       ?Deinitialise@BaseEngine@@QAEXXZ 00415a60 f   BaseEngine.obj
- 0002:00004ab0       ?CleanUp@BaseEngine@@UAEXXZ 00415ab0 f   BaseEngine.obj
- 0002:00004ad0       ?CopyAllBackgroundBuffer@BaseEngine@@QAEXXZ 00415ad0 f   BaseEngine.obj
- 0002:00004bc0       ?CopyBackgroundPixels@BaseEngine@@QAEXHHHH@Z 00415bc0 f   BaseEngine.obj
- 0002:00004cb0       ?IsKeyPressed@BaseEngine@@QAEHH@Z 00415cb0 f   BaseEngine.obj
- 0002:00004d00       ?KeyUp@BaseEngine@@UAEXH@Z 00415d00 f   BaseEngine.obj
- 0002:00004d20       ?KeyDown@BaseEngine@@UAEXH@Z 00415d20 f   BaseEngine.obj
- 0002:00004d40       ?MouseMoved@BaseEngine@@UAEXHH@Z 00415d40 f   BaseEngine.obj
- 0002:00004d60       ?MouseDown@BaseEngine@@UAEXHHH@Z 00415d60 f   BaseEngine.obj
- 0002:00004d80       ?MouseUp@BaseEngine@@UAEXHHH@Z 00415d80 f   BaseEngine.obj
- 0002:00004da0       ?GetNextUpdateRect@BaseEngine@@QAEPAUSDL_Rect@@XZ 00415da0 f   BaseEngine.obj
- 0002:00004e10       ?SetupBackgroundBuffer@BaseEngine@@UAEXXZ 00415e10 f   BaseEngine.obj
- 0002:00004e40       ?FillBackground@BaseEngine@@UAEXI@Z 00415e40 f   BaseEngine.obj
- 0002:00004eb0       ?DrawStrings@BaseEngine@@UAEXXZ 00415eb0 f   BaseEngine.obj
- 0002:00004ed0       ?GetUpdateRectanglesForChangingObjects@BaseEngine@@UAEXXZ 00415ed0 f   BaseEngine.obj
- 0002:00004f60       ?UndrawChangingObjects@BaseEngine@@QAEXXZ 00415f60 f   BaseEngine.obj
- 0002:00004ff0       ?DrawChangingObjects@BaseEngine@@UAEXXZ 00415ff0 f   BaseEngine.obj
- 0002:00005080       ?GetDisplayableObject@BaseEngine@@QAEPAVDisplayableObject@@H@Z 00416080 f   BaseEngine.obj
- 0002:000050c0       ?GetColour@BaseEngine@@QAEIH@Z 004160c0 f   BaseEngine.obj
- 0002:00005390       ?DrawString@BaseEngine@@QAEXHHPBDIPAVFont@@PAUSDL_Surface@@@Z 00416390 f   BaseEngine.obj
- 0002:00005520       ?GetFont@Font@@QAEPAU_TTF_Font@@XZ 00416520 f i BaseEngine.obj
- 0002:00005540       ?DrawTriangle@BaseEngine@@QAEXNNNNNNIPAUSDL_Surface@@@Z 00416540 f   BaseEngine.obj
- 0002:000057d0       ?DrawVerticalSidedRegion@BaseEngine@@QAEXNNNNNNIPAUSDL_Surface@@@Z 004167d0 f   BaseEngine.obj
- 0002:000059f0       ?SafeSetPixel@BaseEngine@@QAEXHHIPAUSDL_Surface@@@Z 004169f0 f i BaseEngine.obj
- 0002:00005a70       ?DrawRectangle@BaseEngine@@QAEXHHHHIPAUSDL_Surface@@@Z 00416a70 f   BaseEngine.obj
- 0002:00005b40       ?DrawOval@BaseEngine@@QAEXHHHHIPAUSDL_Surface@@@Z 00416b40 f   BaseEngine.obj
- 0002:00005ce0       ?DrawHollowOval@BaseEngine@@QAEXHHHHHHHHIPAUSDL_Surface@@@Z 00416ce0 f   BaseEngine.obj
- 0002:00005fc0       ?DrawLine@BaseEngine@@QAEXNNNNIPAUSDL_Surface@@@Z 00416fc0 f   BaseEngine.obj
- 0002:00006120       ?DrawThickLine@BaseEngine@@QAEXNNNNIHPAUSDL_Surface@@@Z 00417120 f   BaseEngine.obj
- 0002:00006490       ?DrawPolygon@BaseEngine@@QAEXHPAN0IPAUSDL_Surface@@@Z 00417490 f   BaseEngine.obj
- 0002:00006cb0       ??$Swap@N@@YAXAAN0@Z       00417cb0 f i BaseEngine.obj
- 0002:00006cf0       ??$Swap@H@@YAXAAH0@Z       00417cf0 f i BaseEngine.obj
- 0002:00006d30       ??$GetAngle@N@@YANNNNN@Z   00417d30 f i BaseEngine.obj
- 0002:00006dd0       ??0DisplayableObject@@QAE@PAVBaseEngine@@@Z 00417dd0 f   DisplayableObject.obj
- 0002:00006e70       ??_EDisplayableObject@@UAEPAXI@Z 00417e70 f i DisplayableObject.obj
- 0002:00006e70       ??_GDisplayableObject@@UAEPAXI@Z 00417e70 f i DisplayableObject.obj
- 0002:00006ec0       ??1DisplayableObject@@UAE@XZ 00417ec0 f   DisplayableObject.obj
- 0002:00006ef0       ?Draw@DisplayableObject@@UAEXXZ 00417ef0 f   DisplayableObject.obj
- 0002:00006fb0       ?SafeSetScreenPixel@BaseEngine@@QAEXHHI@Z 00417fb0 f i DisplayableObject.obj
- 0002:00006ff0       ?StoreLastScreenPositionAndUpdateRect@DisplayableObject@@QAEXXZ 00417ff0 f   DisplayableObject.obj
- 0002:00007160       ?RedrawBackground@DisplayableObject@@UAEXXZ 00418160 f   DisplayableObject.obj
- 0002:000071c0       ?GetRedrawRect@DisplayableObject@@UAEXPAUSDL_Rect@@@Z 004181c0 f   DisplayableObject.obj
- 0002:00007220       ?DoUpdate@DisplayableObject@@UAEXH@Z 00418220 f   DisplayableObject.obj
- 0002:00007240       ??0FontManager@@QAE@XZ     00418240 f   FontManager.obj
- 0002:000072d0       ??1FontManager@@QAE@XZ     004182d0 f   FontManager.obj
- 0002:00007370       ??_GFont@@QAEPAXI@Z        00418370 f i FontManager.obj
- 0002:000073c0       ??1Font@@QAE@XZ            004183c0 f i FontManager.obj
- 0002:00007440       ?GetFont@FontManager@@QAEPAVFont@@PADH@Z 00418440 f   FontManager.obj
- 0002:000076c0       ??0Font@@QAE@PAU_TTF_Font@@PADH@Z 004186c0 f i FontManager.obj
- 0002:00007740       ?LoadFonts@FontManager@@QAEXXZ 00418740 f   FontManager.obj
- 0002:000077d0       ??$GrowArray@PAVFont@@@@YAPAPAVFont@@PAPAV0@AAHH@Z 004187d0 f i FontManager.obj
- 0002:00007890       ?InitImage@@YAXXZ          00418890 f   JPGImage.obj
- 0002:000078b0       ?DeinitImage@@YAXXZ        004188b0 f   JPGImage.obj
- 0002:000078d0       ?LoadImage@ImageData@@QAE_NPAD@Z 004188d0 f   JPGImage.obj
- 0002:00007c30       ?GetXForRotationAndCrop@@YAHHHHHHH@Z 00418c30 f i JPGImage.obj
- 0002:00007cb0       ?GetYForRotationAndCrop@@YAHHHHHHH@Z 00418cb0 f i JPGImage.obj
- 0002:00007d30       ?ShrinkFrom@ImageData@@QAEXPAV1@H@Z 00418d30 f   JPGImage.obj
- 0002:00007fa0       ?ResizeTo@ImageData@@QAEXPAV1@HH_N@Z 00418fa0 f   JPGImage.obj
- 0002:00008320       ?RenderImage@ImageData@@QAEXPAUSDL_Surface@@HHHHHH@Z 00419320 f   JPGImage.obj
- 0002:000084a0       ?RenderImageWithMask@ImageData@@QAEXPAUSDL_Surface@@HHHHHH@Z 004194a0 f   JPGImage.obj
- 0002:00008670       ?LoadImage@ImageSurface@@QAE_NPAD@Z 00419670 f   JPGImage.obj
- 0002:000086b0       ?RenderImage@ImageSurface@@QAEXPAUSDL_Surface@@HHHHHH@Z 004196b0 f   JPGImage.obj
- 0002:00008740       ?GetTileWidth@TileManager@@UAEHXZ 00419740 f   TileManager.obj
- 0002:00008760       ?GetTileHeight@TileManager@@UAEHXZ 00419760 f   TileManager.obj
- 0002:00008780       ?DrawTileAt@TileManager@@UAEXPAVBaseEngine@@PAUSDL_Surface@@HHHH@Z 00419780 f   TileManager.obj
- 0002:00008830       ?GetValue@TileManager@@QAEHHH@Z 00419830 f i TileManager.obj
- 0002:00008870       ?DrawAllTilesAt@TileManager@@QAEXPAVBaseEngine@@PAUSDL_Surface@@HHHHHH@Z 00419870 f   TileManager.obj
- 0002:00008940       ?UpdateTileAt@TileManager@@QAEXPAVBaseEngine@@HHHHH@Z 00419940 f   TileManager.obj
- 0002:00008a40       ?GetBackground@BaseEngine@@QAEPAUSDL_Surface@@XZ 00419a40 f i TileManager.obj
- 0002:00008a60       ?SetValue@TileManager@@QAEXHHH@Z 00419a60 f i TileManager.obj
- 0002:00008aa0       ?SetupBackgroundBuffer@GameMain@@UAEXXZ 00419aa0 f   GameMain.obj
- 0002:00008ad0       ?InitialiseObjects@GameMain@@UAEHXZ 00419ad0 f   GameMain.obj
- 0002:00008dd0       ?DrawableObjectsChanged@BaseEngine@@QAEXXZ 00419dd0 f i GameMain.obj
- 0002:00008e30       ?DrawStrings@GameMain@@UAEXXZ 00419e30 f   GameMain.obj
- 0002:00008ef0       ?SetNextUpdateRect@BaseEngine@@QAEXHHHH@Z 00419ef0 f i GameMain.obj
- 0002:00008f50       ?DrawScreenString@BaseEngine@@QAEXHHPBDIPAVFont@@@Z 00419f50 f i GameMain.obj
- 0002:00008fa0       ?GameAction@GameMain@@UAEXXZ 00419fa0 f   GameMain.obj
- 0002:00009000       ?MouseDown@GameMain@@UAEXHHH@Z 0041a000 f   GameMain.obj
- 0002:00009040       ?KeyDown@GameMain@@UAEXH@Z 0041a040 f   GameMain.obj
- 0002:00009080       ?SetExitWithCode@BaseEngine@@QAEXH@Z 0041a080 f i GameMain.obj
- 0002:000090b0       ?RemoveActor@GameMain@@QAEXPAVActor@@@Z 0041a0b0 f   GameMain.obj
- 0002:000090d0       ?GetActors@GameMain@@QAEPAV?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@XZ 0041a0d0 f   GameMain.obj
- 0002:00009100       ?GetFrictionCoefficient@GameMain@@QAENXZ 0041a100 f   GameMain.obj
- 0002:00009130       ?push_back@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEXABQAVActor@@@Z 0041a130 f i GameMain.obj
- 0002:000091d0       ?capacity@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEIXZ 0041a1d0 f i GameMain.obj
- 0002:00009220       ?insert@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@ABQAVActor@@@Z 0041a220 f i GameMain.obj
- 0002:000092c0       ?_Ufill@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEPAPAVActor@@PAPAV3@IABQAV3@@Z 0041a2c0 f i GameMain.obj
- 0002:00009310       ?_Insert_n@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEXV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@IABQAVActor@@@Z 0041a310 f i GameMain.obj
- 0002:00009740       ??H?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE?AV01@H@Z 0041a740 f i GameMain.obj
- 0002:00009790       ??G?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEHABV01@@Z 0041a790 f i GameMain.obj
- 0002:000097f0       ??Y?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEAAV01@H@Z 0041a7f0 f i GameMain.obj
- 0002:00009820       ??Y?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEAAV01@H@Z 0041a820 f i GameMain.obj
- 0002:000098c0       ??$unchecked_uninitialized_fill_n@PAPAVActor@@IPAV1@V?$allocator@PAVActor@@@std@@@stdext@@YAXPAPAVActor@@IABQAV1@AAV?$allocator@PAVActor@@@std@@@Z 0041a8c0 f i GameMain.obj
- 0002:00009920       ??$_Umove@PAPAVActor@@@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEPAPAVActor@@PAPAV2@00@Z 0041a920 f i GameMain.obj
- 0002:00009960       ??$fill@PAPAVActor@@PAV1@@std@@YAXPAPAVActor@@0ABQAV1@@Z 0041a960 f i GameMain.obj
- 0002:000099b0       ??$_Unchecked_move_backward@PAPAVActor@@PAPAV1@@stdext@@YAPAPAVActor@@PAPAV1@00@Z 0041a9b0 f i GameMain.obj
- 0002:00009a40       ??$_Uninit_fill_n@PAPAVActor@@IPAV1@V?$allocator@PAVActor@@@std@@@std@@YAXPAPAVActor@@IABQAV1@AAV?$allocator@PAVActor@@@0@U_Scalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z 0041aa40 f i GameMain.obj
- 0002:00009a70       ??$_Unchecked_uninitialized_move@PAPAVActor@@PAPAV1@V?$allocator@PAVActor@@@std@@@stdext@@YAPAPAVActor@@PAPAV1@00AAV?$allocator@PAVActor@@@std@@@Z 0041aa70 f i GameMain.obj
- 0002:00009ae0       ??$_Checked_base@PAPAVActor@@@std@@YAPAPAVActor@@AAPAPAV1@@Z 0041aae0 f i GameMain.obj
- 0002:00009b10       ??$_Fill@PAPAVActor@@PAV1@@std@@YAXPAPAVActor@@0ABQAV1@@Z 0041ab10 f i GameMain.obj
- 0002:00009b50       ??$_Iter_random@PAPAVActor@@PAPAV1@@std@@YA?AUrandom_access_iterator_tag@0@ABQAPAVActor@@0@Z 0041ab50 f i GameMain.obj
- 0002:00009b70       ??$_Move_cat@PAPAVActor@@@std@@YA?AU_Undefined_move_tag@0@ABQAPAVActor@@@Z 0041ab70 f i GameMain.obj
- 0002:00009b90       ??$_Move_backward_opt@PAPAVActor@@PAPAV1@Urandom_access_iterator_tag@std@@U_Undefined_move_tag@3@@std@@YAPAPAVActor@@PAPAV1@00Urandom_access_iterator_tag@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z 0041ab90 f i GameMain.obj
- 0002:00009bf0       ??$unchecked_fill_n@PAPAVActor@@IPAV1@@stdext@@YAXPAPAVActor@@IABQAV1@@Z 0041abf0 f i GameMain.obj
- 0002:00009c50       ??$_Uninit_move@PAPAVActor@@PAPAV1@V?$allocator@PAVActor@@@std@@U_Undefined_move_tag@3@@std@@YAPAPAVActor@@PAPAV1@00AAV?$allocator@PAVActor@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z 0041ac50 f i GameMain.obj
- 0002:00009c90       ??$_Checked_base@PAPAVActor@@@std@@YAPAPAVActor@@AAPAPAV1@U_Unchanged_checked_iterator_base_type_tag@0@@Z 0041ac90 f i GameMain.obj
- 0002:00009cb0       ??$_Copy_backward_opt@PAPAVActor@@PAPAV1@Urandom_access_iterator_tag@std@@@std@@YAPAPAVActor@@PAPAV1@00Urandom_access_iterator_tag@0@U_Scalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z 0041acb0 f i GameMain.obj
- 0002:00009d20       ??$_Iter_cat@PAPAVActor@@@std@@YA?AUrandom_access_iterator_tag@0@ABQAPAVActor@@@Z 0041ad20 f i GameMain.obj
- 0002:00009d40       ??$_Fill_n@PAPAVActor@@IPAV1@@std@@YAXPAPAVActor@@IABQAV1@Urandom_access_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z 0041ad40 f i GameMain.obj
- 0002:00009da0       ??$unchecked_uninitialized_copy@PAPAVActor@@PAPAV1@V?$allocator@PAVActor@@@std@@@stdext@@YAPAPAVActor@@PAPAV1@00AAV?$allocator@PAVActor@@@std@@@Z 0041ada0 f i GameMain.obj
- 0002:00009e20       ??$_Fill_n@PAPAVActor@@IPAV1@@std@@YAXPAPAVActor@@IABQAV1@U_Range_checked_iterator_tag@0@@Z 0041ae20 f i GameMain.obj
- 0002:00009e70       ??$_Uninit_copy@PAPAVActor@@PAPAV1@V?$allocator@PAVActor@@@std@@@std@@YAPAPAVActor@@PAPAV1@00AAV?$allocator@PAVActor@@@0@U_Scalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z 0041ae70 f i GameMain.obj
- 0002:00009ed4       _SDL_CreateRGBSurface      0041aed4 f   sdl:SDL.dll
- 0002:00009eda       _SDL_GetWMInfo             0041aeda f   sdl:SDL.dll
- 0002:00009ee0       _SDL_WM_SetCaption         0041aee0 f   sdl:SDL.dll
- 0002:00009ee6       _SDL_SetVideoMode          0041aee6 f   sdl:SDL.dll
- 0002:00009eec       _SDL_Quit                  0041aeec f   sdl:SDL.dll
- 0002:00009ef2       _SDL_GetError              0041aef2 f   sdl:SDL.dll
- 0002:00009ef8       _SDL_Init                  0041aef8 f   sdl:SDL.dll
- 0002:00009efe       _SDL_PollEvent             0041aefe f   sdl:SDL.dll
- 0002:00009f04       _SDL_GetTicks              0041af04 f   sdl:SDL.dll
- 0002:00009f0a       _SDL_UpdateRects           0041af0a f   sdl:SDL.dll
- 0002:00009f10       _SDL_UpdateRect            0041af10 f   sdl:SDL.dll
- 0002:00009f16       _SDL_UnlockSurface         0041af16 f   sdl:SDL.dll
- 0002:00009f1c       _SDL_LockSurface           0041af1c f   sdl:SDL.dll
- 0002:00009f22       _SDL_UpperBlit             0041af22 f   sdl:SDL.dll
- 0002:00009f28       _SDL_FillRect              0041af28 f   sdl:SDL.dll
- 0002:00009f2e       _SDL_FreeSurface           0041af2e f   sdl:SDL.dll
- 0002:00009f34       _TTF_Quit                  0041af34 f   SDL_ttf:SDL_ttf.dll
- 0002:00009f3a       _TTF_Init                  0041af3a f   SDL_ttf:SDL_ttf.dll
- 0002:00009f40       _TTF_RenderText_Solid      0041af40 f   SDL_ttf:SDL_ttf.dll
- 0002:00009f46       _TTF_CloseFont             0041af46 f   SDL_ttf:SDL_ttf.dll
- 0002:00009f4c       _TTF_OpenFont              0041af4c f   SDL_ttf:SDL_ttf.dll
- 0002:00009f52       _IMG_Load                  0041af52 f   SDL_image:SDL_image.dll
- 0002:00009f58       _SetWindowPos@28           0041af58 f   user32:USER32.dll
- 0002:00009f5e       ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ 0041af5e f   msvcprt:MSVCP90.dll
- 0002:00009f64       ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z 0041af64 f   msvcprt:MSVCP90.dll
- 0002:00009f6a       ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z 0041af6a f   msvcprt:MSVCP90.dll
- 0002:00009f70       ?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ 0041af70 f   msvcprt:MSVCP90.dll
- 0002:00009f76       ??_U@YAPAXI@Z              0041af76 f   msvcprt:newaop_s.obj
- 0002:00009f83       _NtCurrentTeb              0041af83 f i MSVCRT:crtexe.obj
- 0002:0000a349       _mainCRTStartup            0041b349 f   MSVCRT:crtexe.obj
- 0002:0000a356       ___CxxFrameHandler3        0041b356 f   MSVCRT:MSVCR90.dll
- 0002:0000a35c       @__security_check_cookie@4 0041b35c f   MSVCRT:secchk.obj
- 0002:0000a370       __ftol2_sse                0041b370 f   MSVCRT:ftol2.obj
- 0002:0000a379       __ftol2_pentium4           0041b379 f   MSVCRT:ftol2.obj
- 0002:0000a38c       __ftol2_sse_excpt          0041b38c f   MSVCRT:ftol2.obj
- 0002:0000a3a6       __ftol2                    0041b3a6 f   MSVCRT:ftol2.obj
- 0002:0000a445       ??0type_info@@AAE@ABV0@@Z  0041b445 f   MSVCRT:ti_inst.obj
- 0002:0000a452       ??_Etype_info@@UAEPAXI@Z   0041b452 f i MSVCRT:ti_inst.obj
- 0002:0000a4b1       ??4type_info@@AAEAAV0@ABV0@@Z 0041b4b1 f   MSVCRT:ti_inst.obj
- 0002:0000a4b6       ??3@YAXPAX@Z               0041b4b6 f   MSVCRT:MSVCR90.dll
- 0002:0000a4bc       _sqrt                      0041b4bc f   MSVCRT:MSVCR90.dll
- 0002:0000a4c2       _sin                       0041b4c2 f   MSVCRT:MSVCR90.dll
- 0002:0000a4c8       _cos                       0041b4c8 f   MSVCRT:MSVCR90.dll
- 0002:0000a4ce       __CxxThrowException@8      0041b4ce f   MSVCRT:MSVCR90.dll
- 0002:0000a4d4       __invalid_parameter_noinfo 0041b4d4 f   MSVCRT:MSVCR90.dll
- 0002:0000a4da       ??0exception@std@@QAE@ABV01@@Z 0041b4da f   MSVCRT:MSVCR90.dll
- 0002:0000a4e0       ??1exception@std@@UAE@XZ   0041b4e0 f   MSVCRT:MSVCR90.dll
- 0002:0000a4e6       ??0exception@std@@QAE@XZ   0041b4e6 f   MSVCRT:MSVCR90.dll
- 0002:0000a4ec       ??2@YAPAXI@Z               0041b4ec f   MSVCRT:MSVCR90.dll
- 0002:0000a4f2       ??0exception@std@@QAE@ABQBD@Z 0041b4f2 f   MSVCRT:MSVCR90.dll
- 0002:0000a4f8       ?what@exception@std@@UBEPBDXZ 0041b4f8 f   MSVCRT:MSVCR90.dll
- 0002:0000a4fe       _memmove_s                 0041b4fe f   MSVCRT:MSVCR90.dll
- 0002:0000a504       _abs                       0041b504 f   MSVCRT:MSVCR90.dll
- 0002:0000a50a       _rand                      0041b50a f   MSVCRT:MSVCR90.dll
- 0002:0000a510       _atan2                     0041b510 f   MSVCRT:MSVCR90.dll
- 0002:0000a516       _sprintf                   0041b516 f   MSVCRT:MSVCR90.dll
- 0002:0000a51c       _memset                    0041b51c f   MSVCRT:MSVCR90.dll
- 0002:0000a522       _strlen                    0041b522 f   MSVCRT:MSVCR90.dll
- 0002:0000a528       __onexit                   0041b528 f   MSVCRT:atonexit.obj
- 0002:0000a5f6       _atexit                    0041b5f6 f   MSVCRT:atonexit.obj
- 0002:0000a612       _fprintf                   0041b612 f   MSVCRT:MSVCR90.dll
- 0002:0000a618       ___iob_func                0041b618 f   MSVCRT:MSVCR90.dll
- 0002:0000a61e       _printf                    0041b61e f   MSVCRT:MSVCR90.dll
- 0002:0000a624       _atan                      0041b624 f   MSVCRT:MSVCR90.dll
- 0002:0000a62a       _strcmp                    0041b62a f   MSVCRT:MSVCR90.dll
- 0002:0000a630       _strcpy                    0041b630 f   MSVCRT:MSVCR90.dll
- 0002:0000a636       _srand                     0041b636 f   MSVCRT:MSVCR90.dll
- 0002:0000a63c       __time64                   0041b63c f   MSVCRT:MSVCR90.dll
- 0002:0000a642       ?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z 0041b642 f   MSVCRT:unhandld.obj
- 0002:0000a694       ___CxxSetUnhandledExceptionFilter 0041b694 f   MSVCRT:unhandld.obj
- 0002:0000a6a6       __amsg_exit                0041b6a6 f   MSVCRT:MSVCR90.dll
- 0002:0000a6ac       ___getmainargs             0041b6ac f   MSVCRT:MSVCR90.dll
- 0002:0000a6b2       __RTC_Initialize           0041b6b2 f   MSVCRT:_initsect_.obj
- 0002:0000a6e1       __RTC_Terminate            0041b6e1 f   MSVCRT:_initsect_.obj
- 0002:0000a710       __cexit                    0041b710 f   MSVCRT:MSVCR90.dll
- 0002:0000a716       __exit                     0041b716 f   MSVCRT:MSVCR90.dll
- 0002:0000a71c       __XcptFilter               0041b71c f   MSVCRT:MSVCR90.dll
- 0002:0000a722       _exit                      0041b722 f   MSVCRT:MSVCR90.dll
- 0002:0000a730       __ValidateImageBase        0041b730 f   MSVCRT:pesect.obj
- 0002:0000a780       __FindPESection            0041b780 f   MSVCRT:pesect.obj
- 0002:0000a7e0       __IsNonwritableInCurrentImage 0041b7e0 f   MSVCRT:pesect.obj
- 0002:0000a8cc       __initterm                 0041b8cc f   MSVCRT:MSVCR90.dll
- 0002:0000a8d2       __initterm_e               0041b8d2 f   MSVCRT:MSVCR90.dll
- 0002:0000a8d8       __SEH_prolog4              0041b8d8 f   MSVCRT:sehprolg4.obj
- 0002:0000a91d       __SEH_epilog4              0041b91d f   MSVCRT:sehprolg4.obj
- 0002:0000a947       __except_handler4          0041b947 f   MSVCRT:chandler4gs.obj
- 0002:0000a976       __configthreadlocale       0041b976 f   MSVCRT:MSVCR90.dll
- 0002:0000a97c       __invoke_watson_if_error   0041b97c f i MSVCRT:fp8.obj
- 0002:0000a9a9       __setdefaultprecision      0041b9a9 f   MSVCRT:fp8.obj
- 0002:0000a9de       ___setusermatherr          0041b9de f   MSVCRT:MSVCR90.dll
- 0002:0000a9e4       __matherr                  0041b9e4 f   MSVCRT:merr.obj
- 0002:0000a9e7       __setargv                  0041b9e7 f   MSVCRT:dllargv.obj
- 0002:0000a9ea       ___p__commode              0041b9ea f   MSVCRT:MSVCR90.dll
- 0002:0000a9f0       ___p__fmode                0041b9f0 f   MSVCRT:MSVCR90.dll
- 0002:0000a9f6       __encode_pointer           0041b9f6 f   MSVCRT:MSVCR90.dll
- 0002:0000a9fc       ___set_app_type            0041b9fc f   MSVCRT:MSVCR90.dll
- 0002:0000aa02       ___security_init_cookie    0041ba02 f   MSVCRT:gs_support.obj
- 0002:0000aabd       ___report_gsfailure        0041babd f   MSVCRT:gs_report.obj
- 0002:0000ac68       __get_sse2_info            0041bc68 f   MSVCRT:cpu_disp.obj
- 0002:0000ace2       ___sse2_available_init     0041bce2 f   MSVCRT:cpu_disp.obj
- 0002:0000ad08       ?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z 0041bd08 f   MSVCRT:ehvecdtr.obj
- 0002:0000ad7d       ??_M@YGXPAXIHP6EX0@Z@Z     0041bd7d f   MSVCRT:ehvecdtr.obj
- 0002:0000adf8       __unlock                   0041bdf8 f   MSVCRT:MSVCR90.dll
- 0002:0000adfe       ___dllonexit               0041bdfe f   MSVCRT:MSVCR90.dll
- 0002:0000ae04       __lock                     0041be04 f   MSVCRT:MSVCR90.dll
- 0002:0000ae0a       __decode_pointer           0041be0a f   MSVCRT:MSVCR90.dll
- 0002:0000ae10       ?terminate@@YAXXZ          0041be10 f   MSVCRT:MSVCR90.dll
- 0002:0000ae16       __except_handler4_common   0041be16 f   MSVCRT:MSVCR90.dll
- 0002:0000ae1c       __invoke_watson            0041be1c f   MSVCRT:MSVCR90.dll
- 0002:0000ae22       __controlfp_s              0041be22 f   MSVCRT:MSVCR90.dll
- 0002:0000ae28       __crt_debugger_hook        0041be28 f   MSVCRT:MSVCR90.dll
- 0002:0000ae2e       ??1type_info@@UAE@XZ       0041be2e f   MSVCRT:MSVCR90.dll
- 0002:0000ae2e       ?_type_info_dtor_internal_method@type_info@@QAEXXZ 0041be2e f   MSVCRT:MSVCR90.dll
- 0002:0000b050       _main                      0041c050 f   sdlmain:SDL_win32_main.obj
- 0002:0000b190       _WinMain@16                0041c190 f   sdlmain:SDL_win32_main.obj
- 0002:0000b25e       _InterlockedExchange@8     0041c25e f   kernel32:KERNEL32.dll
- 0002:0000b264       _Sleep@4                   0041c264 f   kernel32:KERNEL32.dll
- 0002:0000b26a       _InterlockedCompareExchange@12 0041c26a f   kernel32:KERNEL32.dll
- 0002:0000b270       _SetUnhandledExceptionFilter@4 0041c270 f   kernel32:KERNEL32.dll
- 0002:0000b276       _QueryPerformanceCounter@4 0041c276 f   kernel32:KERNEL32.dll
- 0002:0000b27c       _GetTickCount@0            0041c27c f   kernel32:KERNEL32.dll
- 0002:0000b282       _GetCurrentThreadId@0      0041c282 f   kernel32:KERNEL32.dll
- 0002:0000b288       _GetCurrentProcessId@0     0041c288 f   kernel32:KERNEL32.dll
- 0002:0000b28e       _GetSystemTimeAsFileTime@4 0041c28e f   kernel32:KERNEL32.dll
- 0002:0000b294       _TerminateProcess@8        0041c294 f   kernel32:KERNEL32.dll
- 0002:0000b29a       _GetCurrentProcess@0       0041c29a f   kernel32:KERNEL32.dll
- 0002:0000b2a0       _UnhandledExceptionFilter@4 0041c2a0 f   kernel32:KERNEL32.dll
- 0002:0000b2a6       _IsDebuggerPresent@0       0041c2a6 f   kernel32:KERNEL32.dll
- 0002:0000b2ac       _GetModuleHandleA@4        0041c2ac f   kernel32:KERNEL32.dll
- 0002:0000b2b2       _GetCommandLineA@0         0041c2b2 f   kernel32:KERNEL32.dll
- 0002:0000b2b8       _FreeLibrary@4             0041c2b8 f   kernel32:KERNEL32.dll
- 0002:0000b2be       _LoadLibraryA@4            0041c2be f   kernel32:KERNEL32.dll
- 0002:0000b2c4       _isspace                   0041c2c4 f   MSVCRT:MSVCR90.dll
- 0002:0000b2ca       _fclose                    0041c2ca f   MSVCRT:MSVCR90.dll
- 0002:0000b2d0       _strrchr                   0041c2d0 f   MSVCRT:MSVCR90.dll
- 0002:0000b2e0       __alloca_probe_16          0041c2e0 f   MSVCRT:alloca16.obj
- 0002:0000b2f6       __alloca_probe_8           0041c2f6     MSVCRT:alloca16.obj
- 0002:0000b320       __alloca_probe             0041c320     MSVCRT:chkstk.obj
- 0002:0000b320       __chkstk                   0041c320 f   MSVCRT:chkstk.obj
- 0002:0000b356       _SDL_SetModuleHandle       0041c356 f   sdl:SDL.dll
- 0002:0000b35c       _SDL_strlcpy               0041c35c f   sdl:SDL.dll
+ 0002:00000fc0       ??0Actor@@QAE@PAVGameMain@@H@Z 00411fc0 f   Actor.obj
+ 0002:00001230       ?SetVisible@DisplayableObject@@QAEX_N@Z 00412230 f i Actor.obj
+ 0002:00001260       ??_EActor@@UAEPAXI@Z       00412260 f i Actor.obj
+ 0002:00001260       ??_GActor@@UAEPAXI@Z       00412260 f i Actor.obj
+ 0002:000012b0       ??1Actor@@UAE@XZ           004122b0 f   Actor.obj
+ 0002:000012e0       ?Draw@Actor@@UAEXXZ        004122e0 f   Actor.obj
+ 0002:00001390       ?DrawScreenOval@BaseEngine@@QAEXHHHHI@Z 00412390 f i Actor.obj
+ 0002:000013e0       ?GetEngine@DisplayableObject@@QAEPAVBaseEngine@@XZ 004123e0 f i Actor.obj
+ 0002:00001400       ?IsVisible@DisplayableObject@@QAE_NXZ 00412400 f i Actor.obj
+ 0002:00001420       ?DoUpdate@Actor@@UAEXH@Z   00412420 f   Actor.obj
+ 0002:00001600       ?RedrawObjects@DisplayableObject@@QAEXXZ 00412600 f i Actor.obj
+ 0002:00001630       ?Redraw@BaseEngine@@QAEX_N@Z 00412630 f i Actor.obj
+ 0002:00001670       ?pow@@YANNH@Z              00412670 f i Actor.obj
+ 0002:000016a0       ?SetPosition@Actor@@QAEXNN@Z 004126a0 f   Actor.obj
+ 0002:000016f0       ?GetX@Actor@@QAENXZ        004126f0 f   Actor.obj
+ 0002:00001720       ?GetY@Actor@@QAENXZ        00412720 f   Actor.obj
+ 0002:00001750       ?GetRadius@Actor@@QAEHXZ   00412750 f   Actor.obj
+ 0002:00001770       ?GetId@Actor@@QAEHXZ       00412770 f   Actor.obj
+ 0002:000017a0       ?IsIntersecting@Actor@@QAE_NPAV1@@Z 004127a0 f   Actor.obj
+ 0002:00001870       ?GetYCentre@DisplayableObject@@QAEHXZ 00412870 f i Actor.obj
+ 0002:000018b0       ?UpdatePixelPositionFromRealPosition@Actor@@IAEXXZ 004128b0 f   Actor.obj
+ 0002:00001910       ?CheckForBounce@Actor@@IAEXXZ 00412910 f   Actor.obj
+ 0002:00001b40       ?GetScreenWidth@BaseEngine@@QAEHXZ 00412b40 f i Actor.obj
+ 0002:00001b60       ?GetScreenHeight@BaseEngine@@QAEHXZ 00412b60 f i Actor.obj
+ 0002:00001b80       ?IsIntersecting@Actor@@IAE_NXZ 00412b80 f   Actor.obj
+ 0002:00001ca0       ?UpdateVelocityComponents@Actor@@IAEXXZ 00412ca0 f   Actor.obj
+ 0002:00001d30       ?SetAngle@Actor@@QAEXH@Z   00412d30 f   Actor.obj
+ 0002:00001d70       ?SetSpeed@Actor@@QAEXN@Z   00412d70 f   Actor.obj
+ 0002:00001da0       ??0?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@ABV01@@Z 00412da0 f i Actor.obj
+ 0002:00001ee0       ??1?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ 00412ee0 f i Actor.obj
+ 0002:00001f60       ?begin@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@XZ 00412f60 f i Actor.obj
+ 0002:00001fa0       ?end@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@XZ 00412fa0 f i Actor.obj
+ 0002:00001fe0       ??D?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEAAPAVActor@@XZ 00412fe0 f i Actor.obj
+ 0002:00002010       ??E?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV01@H@Z 00413010 f i Actor.obj
+ 0002:00002060       ??9?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE_NABV01@@Z 00413060 f i Actor.obj
+ 0002:000020a0       ??1?$_Vector_val@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ 004130a0 f i Actor.obj
+ 0002:000020d0       ?begin@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE?AV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@XZ 004130d0 f i Actor.obj
+ 0002:00002110       ?end@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE?AV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@XZ 00413110 f i Actor.obj
+ 0002:00002150       ?size@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEIXZ 00413150 f i Actor.obj
+ 0002:00002180       ?_Buy@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAE_NI@Z 00413180 f i Actor.obj
+ 0002:00002230       ?_Tidy@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEXXZ 00413230 f i Actor.obj
+ 0002:000022c0       ??0?$_Vector_val@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAE@V?$allocator@PAVActor@@@1@@Z 004132c0 f i Actor.obj
+ 0002:00002310       ??1?$_Container_base_aux_alloc_real@V?$allocator@PAVActor@@@std@@@std@@IAE@XZ 00413310 f i Actor.obj
+ 0002:00002390       ??1_Container_base_aux@std@@QAE@XZ 00413390 f i Actor.obj
+ 0002:000023b0       ??0?$allocator@PAVActor@@@std@@QAE@ABV01@@Z 004133b0 f i Actor.obj
+ 0002:000023d0       ??0?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@PAPAVActor@@PBV_Container_base_aux@1@@Z 004133d0 f i Actor.obj
+ 0002:00002410       ??E?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEAAV01@XZ 00413410 f i Actor.obj
+ 0002:00002440       ??D?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEABQAVActor@@XZ 00413440 f i Actor.obj
+ 0002:000024a0       ?_Getmycont@_Iterator_base_aux@std@@QBEPBV_Container_base_aux@2@XZ 004134a0 f i Actor.obj
+ 0002:000024f0       ?_Getcont@_Aux_cont@std@@QBEPBV_Container_base_aux@2@XZ 004134f0 f i Actor.obj
+ 0002:00002510       ?_Has_container@_Iterator_base_aux@std@@QBE_NXZ 00413510 f i Actor.obj
+ 0002:00002540       ??8?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE_NABV01@@Z 00413540 f i Actor.obj
+ 0002:000025b0       ?_Same_container@_Iterator_base_aux@std@@QBE_NABV12@@Z 004135b0 f i Actor.obj
+ 0002:000025e0       ?max_size@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEIXZ 004135e0 f i Actor.obj
+ 0002:00002610       ?_Destroy@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEXPAPAVActor@@0@Z 00413610 f i Actor.obj
+ 0002:00002650       ?_Xlen@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@KAXXZ 00413650 f i Actor.obj
+ 0002:00002700       ??0length_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 00413700 f i Actor.obj
+ 0002:00002740       ??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 00413740 f i Actor.obj
+ 0002:000027d0       ?what@logic_error@std@@UBEPBDXZ 004137d0 f i Actor.obj
+ 0002:00002800       ??_Glogic_error@std@@UAEPAXI@Z 00413800 f i Actor.obj
+ 0002:00002800       ??_Elogic_error@std@@UAEPAXI@Z 00413800 f i Actor.obj
+ 0002:00002850       ??1logic_error@std@@UAE@XZ 00413850 f i Actor.obj
+ 0002:00002890       ??1length_error@std@@UAE@XZ 00413890 f i Actor.obj
+ 0002:000028c0       ??_Glength_error@std@@UAEPAXI@Z 004138c0 f i Actor.obj
+ 0002:000028c0       ??_Elength_error@std@@UAEPAXI@Z 004138c0 f i Actor.obj
+ 0002:00002910       ??0?$_Container_base_aux_alloc_real@V?$allocator@PAVActor@@@std@@@std@@IAE@V?$allocator@PAVActor@@@1@@Z 00413910 f i Actor.obj
+ 0002:00002a00       ??0_Aux_cont@std@@QAE@QBV_Container_base_aux@1@@Z 00413a00 f i Actor.obj
+ 0002:00002a30       ??0_Container_base_aux@std@@QAE@XZ 00413a30 f i Actor.obj
+ 0002:00002a50       ??2@YAPAXIPAX@Z            00413a50 f i Actor.obj
+ 0002:00002a70       ??3@YAXPAX0@Z              00413a70 f i Actor.obj
+ 0002:00002a90       ?deallocate@?$allocator@PAVActor@@@std@@QAEXPAPAVActor@@I@Z 00413a90 f i Actor.obj
+ 0002:00002ac0       ?allocate@?$allocator@PAVActor@@@std@@QAEPAPAVActor@@I@Z 00413ac0 f i Actor.obj
+ 0002:00002af0       ?deallocate@?$allocator@V_Aux_cont@std@@@std@@QAEXPAV_Aux_cont@2@I@Z 00413af0 f i Actor.obj
+ 0002:00002b20       ??0?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@PAPAVActor@@PBV_Container_base_aux@1@@Z 00413b20 f i Actor.obj
+ 0002:00002b90       ?_Set_container@_Iterator_base_aux@std@@QAEXQBV_Container_base_aux@2@@Z 00413b90 f i Actor.obj
+ 0002:00002bc0       ??E?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEAAV01@XZ 00413bc0 f i Actor.obj
+ 0002:00002c30       ??0length_error@std@@QAE@ABV01@@Z 00413c30 f i Actor.obj
+ 0002:00002c70       ??0logic_error@std@@QAE@ABV01@@Z 00413c70 f i Actor.obj
+ 0002:00002d10       ??0?$_Ranit@PAVActor@@HPBQAV1@ABQAV1@@std@@QAE@XZ 00413d10 f i Actor.obj
+ 0002:00002d40       ??0?$_Iterator_with_base@Urandom_access_iterator_tag@std@@PAVActor@@HPBQAV3@ABQAV3@V_Iterator_base_aux@2@@std@@QAE@XZ 00413d40 f i Actor.obj
+ 0002:00002d70       ??0_Iterator_base_aux@std@@QAE@XZ 00413d70 f i Actor.obj
+ 0002:00002da0       ?max_size@?$allocator@PAVActor@@@std@@QBEIXZ 00413da0 f i Actor.obj
+ 0002:00002de0       ?allocate@?$allocator@V_Aux_cont@std@@@std@@QAEPAV_Aux_cont@2@I@Z 00413de0 f i Actor.obj
+ 0002:00002e10       ??$_Pow_int@N@@YANNH@Z     00413e10 f i Actor.obj
+ 0002:00002ea0       ??$_Ucopy@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEPAPAVActor@@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@1@0PAPAV2@@Z 00413ea0 f i Actor.obj
+ 0002:00002ef0       ??$_Destroy_range@V?$allocator@PAVActor@@@std@@@std@@YAXPAPAVActor@@0AAV?$allocator@PAVActor@@@0@@Z 00413ef0 f i Actor.obj
+ 0002:00002f40       ??$?0PAVActor@@@?$allocator@V_Aux_cont@std@@@std@@QAE@ABV?$allocator@PAVActor@@@1@@Z 00413f40 f i Actor.obj
+ 0002:00002f60       ??$_Allocate@PAVActor@@@std@@YAPAPAVActor@@IPAPAV1@@Z 00413f60 f i Actor.obj
+ 0002:00002fd0       ??0bad_alloc@std@@QAE@PBD@Z 00413fd0 f i Actor.obj
+ 0002:00003010       ??1bad_alloc@std@@UAE@XZ   00414010 f i Actor.obj
+ 0002:00003040       ??_Ebad_alloc@std@@UAEPAXI@Z 00414040 f i Actor.obj
+ 0002:00003040       ??_Gbad_alloc@std@@UAEPAXI@Z 00414040 f i Actor.obj
+ 0002:00003090       ??$_Allocate@V_Aux_cont@std@@@std@@YAPAV_Aux_cont@0@IPAV10@@Z 00414090 f i Actor.obj
+ 0002:00003100       ??0bad_alloc@std@@QAE@ABV01@@Z 00414100 f i Actor.obj
+ 0002:00003140       ??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@PAPAVActor@@V?$allocator@PAVActor@@@2@@stdext@@YAPAPAVActor@@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@0PAPAV1@AAV?$allocator@PAVActor@@@3@@Z 00414140 f i Actor.obj
+ 0002:000031c0       ??$_Ptr_cat@PAPAVActor@@PAPAV1@@std@@YA?AU_Scalar_ptr_iterator_tag@0@AAPAPAVActor@@0@Z 004141c0 f i Actor.obj
+ 0002:000031e0       ??$_Destroy_range@V?$allocator@PAVActor@@@std@@@std@@YAXPAPAVActor@@0AAV?$allocator@PAVActor@@@0@U_Scalar_ptr_iterator_tag@0@@Z 004141e0 f i Actor.obj
+ 0002:00003200       ??$_Checked_base@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@@std@@YAPBQAVActor@@AAV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@0@@Z 00414200 f i Actor.obj
+ 0002:00003230       ??$_Ptr_cat@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@PAPAVActor@@@std@@YA?AU_Scalar_ptr_iterator_tag@0@AAV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@0@AAPAPAVActor@@@Z 00414230 f i Actor.obj
+ 0002:00003250       ??$_Uninit_copy@PBQAVActor@@PAPAV1@V?$allocator@PAVActor@@@std@@@std@@YAPAPAVActor@@PBQAV1@0PAPAV1@AAV?$allocator@PAVActor@@@0@U_Scalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z 00414250 f i Actor.obj
+ 0002:000032c0       ??$_Checked_base@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@U_Different_checked_iterator_base_type_tag@2@@std@@YAPBQAVActor@@AAV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@0@U_Different_checked_iterator_base_type_tag@0@@Z 004142c0 f i Actor.obj
+ 0002:000032e0       ?_Checked_iterator_base@?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEPBQAVActor@@XZ 004142e0 f i Actor.obj
+ 0002:00003300       ??0Infected@@QAE@PAVGameMain@@HPAVPlayer@@@Z 00414300 f   Infected.obj
+ 0002:00003470       ??_EInfected@@UAEPAXI@Z    00414470 f i Infected.obj
+ 0002:00003470       ??_GInfected@@UAEPAXI@Z    00414470 f i Infected.obj
+ 0002:000034c0       ??1Infected@@UAE@XZ        004144c0 f   Infected.obj
+ 0002:000034f0       ?Draw@Infected@@UAEXXZ     004144f0 f   Infected.obj
+ 0002:00003520       ?DoUpdate@Infected@@UAEXH@Z 00414520 f   Infected.obj
+ 0002:00003640       _SDL_main                  00414640 f   mainfunction.obj
+ 0002:00003710       ??1GameMain@@UAE@XZ        00414710 f i mainfunction.obj
+ 0002:00003790       ??0Player@@QAE@PAVGameMain@@H@Z 00414790 f   Player.obj
+ 0002:00003850       ??_GPlayer@@UAEPAXI@Z      00414850 f i Player.obj
+ 0002:00003850       ??_EPlayer@@UAEPAXI@Z      00414850 f i Player.obj
+ 0002:000038a0       ??1Player@@UAE@XZ          004148a0 f   Player.obj
+ 0002:000038d0       ?Draw@Player@@UAEXXZ       004148d0 f   Player.obj
+ 0002:00003900       ?DoUpdate@Player@@UAEXH@Z  00414900 f   Player.obj
+ 0002:00003940       ?CheckKeys@Player@@AAEXH@Z 00414940 f   Player.obj
+ 0002:00003a80       ??0BaseEngine@@QAE@H@Z     00414a80 f   BaseEngine.obj
+ 0002:00003c20       ?GetModifiedTime@BaseEngine@@UAEHXZ 00414c20 f i BaseEngine.obj
+ 0002:00003c40       ??_GBaseEngine@@UAEPAXI@Z  00414c40 f i BaseEngine.obj
+ 0002:00003c40       ??_EBaseEngine@@UAEPAXI@Z  00414c40 f i BaseEngine.obj
+ 0002:00003c90       ??1BaseEngine@@UAE@XZ      00414c90 f   BaseEngine.obj
+ 0002:00003d30       ?DestroyOldObjects@BaseEngine@@UAEXXZ 00414d30 f   BaseEngine.obj
+ 0002:00003e10       ?Initialise@BaseEngine@@QAEHPADHH0H@Z 00414e10 f   BaseEngine.obj
+ 0002:00004050       ?GameInit@BaseEngine@@UAEHXZ 00415050 f   BaseEngine.obj
+ 0002:00004090       ?InitialiseObjects@BaseEngine@@UAEHXZ 00415090 f   BaseEngine.obj
+ 0002:000040c0       ?MainLoop@BaseEngine@@QAEHXZ 004150c0 f   BaseEngine.obj
+ 0002:000042f0       ?GameAction@BaseEngine@@UAEXXZ 004152f0 f   BaseEngine.obj
+ 0002:00004350       ?GetTime@BaseEngine@@QAEHXZ 00415350 f i BaseEngine.obj
+ 0002:00004370       ?TimeToAct@BaseEngine@@QAE_NXZ 00415370 f i BaseEngine.obj
+ 0002:000043a0       ?SetTimeToAct@BaseEngine@@QAEXH@Z 004153a0 f i BaseEngine.obj
+ 0002:000043d0       ?GameRender@BaseEngine@@UAEXXZ 004153d0 f   BaseEngine.obj
+ 0002:00004600       ?DrawScreen@BaseEngine@@UAEXXZ 00415600 f   BaseEngine.obj
+ 0002:00004650       ?DrawChanges@BaseEngine@@UAEXXZ 00415650 f   BaseEngine.obj
+ 0002:000046a0       ?UpdateAllObjects@BaseEngine@@UAEXH@Z 004156a0 f   BaseEngine.obj
+ 0002:00004740       ?Deinitialise@BaseEngine@@QAEXXZ 00415740 f   BaseEngine.obj
+ 0002:00004790       ?CleanUp@BaseEngine@@UAEXXZ 00415790 f   BaseEngine.obj
+ 0002:000047b0       ?CopyAllBackgroundBuffer@BaseEngine@@QAEXXZ 004157b0 f   BaseEngine.obj
+ 0002:000048a0       ?CopyBackgroundPixels@BaseEngine@@QAEXHHHH@Z 004158a0 f   BaseEngine.obj
+ 0002:00004990       ?IsKeyPressed@BaseEngine@@QAEHH@Z 00415990 f   BaseEngine.obj
+ 0002:000049e0       ?KeyUp@BaseEngine@@UAEXH@Z 004159e0 f   BaseEngine.obj
+ 0002:00004a00       ?KeyDown@BaseEngine@@UAEXH@Z 00415a00 f   BaseEngine.obj
+ 0002:00004a20       ?MouseMoved@BaseEngine@@UAEXHH@Z 00415a20 f   BaseEngine.obj
+ 0002:00004a40       ?MouseDown@BaseEngine@@UAEXHHH@Z 00415a40 f   BaseEngine.obj
+ 0002:00004a60       ?MouseUp@BaseEngine@@UAEXHHH@Z 00415a60 f   BaseEngine.obj
+ 0002:00004a80       ?GetNextUpdateRect@BaseEngine@@QAEPAUSDL_Rect@@XZ 00415a80 f   BaseEngine.obj
+ 0002:00004af0       ?SetupBackgroundBuffer@BaseEngine@@UAEXXZ 00415af0 f   BaseEngine.obj
+ 0002:00004b20       ?FillBackground@BaseEngine@@UAEXI@Z 00415b20 f   BaseEngine.obj
+ 0002:00004b90       ?DrawStrings@BaseEngine@@UAEXXZ 00415b90 f   BaseEngine.obj
+ 0002:00004bb0       ?GetUpdateRectanglesForChangingObjects@BaseEngine@@UAEXXZ 00415bb0 f   BaseEngine.obj
+ 0002:00004c40       ?UndrawChangingObjects@BaseEngine@@QAEXXZ 00415c40 f   BaseEngine.obj
+ 0002:00004cd0       ?DrawChangingObjects@BaseEngine@@UAEXXZ 00415cd0 f   BaseEngine.obj
+ 0002:00004d60       ?GetDisplayableObject@BaseEngine@@QAEPAVDisplayableObject@@H@Z 00415d60 f   BaseEngine.obj
+ 0002:00004da0       ?GetColour@BaseEngine@@QAEIH@Z 00415da0 f   BaseEngine.obj
+ 0002:00005070       ?DrawString@BaseEngine@@QAEXHHPBDIPAVFont@@PAUSDL_Surface@@@Z 00416070 f   BaseEngine.obj
+ 0002:00005200       ?GetFont@Font@@QAEPAU_TTF_Font@@XZ 00416200 f i BaseEngine.obj
+ 0002:00005220       ?DrawTriangle@BaseEngine@@QAEXNNNNNNIPAUSDL_Surface@@@Z 00416220 f   BaseEngine.obj
+ 0002:000054b0       ?DrawVerticalSidedRegion@BaseEngine@@QAEXNNNNNNIPAUSDL_Surface@@@Z 004164b0 f   BaseEngine.obj
+ 0002:000056d0       ?SafeSetPixel@BaseEngine@@QAEXHHIPAUSDL_Surface@@@Z 004166d0 f i BaseEngine.obj
+ 0002:00005750       ?DrawRectangle@BaseEngine@@QAEXHHHHIPAUSDL_Surface@@@Z 00416750 f   BaseEngine.obj
+ 0002:00005820       ?DrawOval@BaseEngine@@QAEXHHHHIPAUSDL_Surface@@@Z 00416820 f   BaseEngine.obj
+ 0002:000059c0       ?DrawHollowOval@BaseEngine@@QAEXHHHHHHHHIPAUSDL_Surface@@@Z 004169c0 f   BaseEngine.obj
+ 0002:00005ca0       ?DrawLine@BaseEngine@@QAEXNNNNIPAUSDL_Surface@@@Z 00416ca0 f   BaseEngine.obj
+ 0002:00005e00       ?DrawThickLine@BaseEngine@@QAEXNNNNIHPAUSDL_Surface@@@Z 00416e00 f   BaseEngine.obj
+ 0002:00006170       ?DrawPolygon@BaseEngine@@QAEXHPAN0IPAUSDL_Surface@@@Z 00417170 f   BaseEngine.obj
+ 0002:00006990       ??$Swap@N@@YAXAAN0@Z       00417990 f i BaseEngine.obj
+ 0002:000069d0       ??$Swap@H@@YAXAAH0@Z       004179d0 f i BaseEngine.obj
+ 0002:00006a10       ??$GetAngle@N@@YANNNNN@Z   00417a10 f i BaseEngine.obj
+ 0002:00006ab0       ??0DisplayableObject@@QAE@PAVBaseEngine@@@Z 00417ab0 f   DisplayableObject.obj
+ 0002:00006b50       ??_GDisplayableObject@@UAEPAXI@Z 00417b50 f i DisplayableObject.obj
+ 0002:00006b50       ??_EDisplayableObject@@UAEPAXI@Z 00417b50 f i DisplayableObject.obj
+ 0002:00006ba0       ??1DisplayableObject@@UAE@XZ 00417ba0 f   DisplayableObject.obj
+ 0002:00006bd0       ?Draw@DisplayableObject@@UAEXXZ 00417bd0 f   DisplayableObject.obj
+ 0002:00006c90       ?SafeSetScreenPixel@BaseEngine@@QAEXHHI@Z 00417c90 f i DisplayableObject.obj
+ 0002:00006cd0       ?StoreLastScreenPositionAndUpdateRect@DisplayableObject@@QAEXXZ 00417cd0 f   DisplayableObject.obj
+ 0002:00006e40       ?RedrawBackground@DisplayableObject@@UAEXXZ 00417e40 f   DisplayableObject.obj
+ 0002:00006ea0       ?GetRedrawRect@DisplayableObject@@UAEXPAUSDL_Rect@@@Z 00417ea0 f   DisplayableObject.obj
+ 0002:00006f00       ?DoUpdate@DisplayableObject@@UAEXH@Z 00417f00 f   DisplayableObject.obj
+ 0002:00006f20       ??0FontManager@@QAE@XZ     00417f20 f   FontManager.obj
+ 0002:00006fb0       ??1FontManager@@QAE@XZ     00417fb0 f   FontManager.obj
+ 0002:00007050       ??_GFont@@QAEPAXI@Z        00418050 f i FontManager.obj
+ 0002:000070a0       ??1Font@@QAE@XZ            004180a0 f i FontManager.obj
+ 0002:00007120       ?GetFont@FontManager@@QAEPAVFont@@PADH@Z 00418120 f   FontManager.obj
+ 0002:000073a0       ??0Font@@QAE@PAU_TTF_Font@@PADH@Z 004183a0 f i FontManager.obj
+ 0002:00007420       ?LoadFonts@FontManager@@QAEXXZ 00418420 f   FontManager.obj
+ 0002:000074b0       ??$GrowArray@PAVFont@@@@YAPAPAVFont@@PAPAV0@AAHH@Z 004184b0 f i FontManager.obj
+ 0002:00007570       ?InitImage@@YAXXZ          00418570 f   JPGImage.obj
+ 0002:00007590       ?DeinitImage@@YAXXZ        00418590 f   JPGImage.obj
+ 0002:000075b0       ?LoadImage@ImageData@@QAE_NPAD@Z 004185b0 f   JPGImage.obj
+ 0002:00007910       ?GetXForRotationAndCrop@@YAHHHHHHH@Z 00418910 f i JPGImage.obj
+ 0002:00007990       ?GetYForRotationAndCrop@@YAHHHHHHH@Z 00418990 f i JPGImage.obj
+ 0002:00007a10       ?ShrinkFrom@ImageData@@QAEXPAV1@H@Z 00418a10 f   JPGImage.obj
+ 0002:00007c80       ?ResizeTo@ImageData@@QAEXPAV1@HH_N@Z 00418c80 f   JPGImage.obj
+ 0002:00008000       ?RenderImage@ImageData@@QAEXPAUSDL_Surface@@HHHHHH@Z 00419000 f   JPGImage.obj
+ 0002:00008180       ?RenderImageWithMask@ImageData@@QAEXPAUSDL_Surface@@HHHHHH@Z 00419180 f   JPGImage.obj
+ 0002:00008350       ?LoadImage@ImageSurface@@QAE_NPAD@Z 00419350 f   JPGImage.obj
+ 0002:00008390       ?RenderImage@ImageSurface@@QAEXPAUSDL_Surface@@HHHHHH@Z 00419390 f   JPGImage.obj
+ 0002:00008420       ?GetTileWidth@TileManager@@UAEHXZ 00419420 f   TileManager.obj
+ 0002:00008440       ?GetTileHeight@TileManager@@UAEHXZ 00419440 f   TileManager.obj
+ 0002:00008460       ?DrawTileAt@TileManager@@UAEXPAVBaseEngine@@PAUSDL_Surface@@HHHH@Z 00419460 f   TileManager.obj
+ 0002:000086b0       ?GetValue@TileManager@@QAEHHH@Z 004196b0 f i TileManager.obj
+ 0002:000086f0       ?DrawAllTilesAt@TileManager@@QAEXPAVBaseEngine@@PAUSDL_Surface@@HHHHHH@Z 004196f0 f   TileManager.obj
+ 0002:000087c0       ?UpdateTileAt@TileManager@@QAEXPAVBaseEngine@@HHHHH@Z 004197c0 f   TileManager.obj
+ 0002:000088c0       ?GetBackground@BaseEngine@@QAEPAUSDL_Surface@@XZ 004198c0 f i TileManager.obj
+ 0002:000088e0       ?SetValue@TileManager@@QAEXHHH@Z 004198e0 f i TileManager.obj
+ 0002:00008920       ??0GameMain@@QAE@XZ        00419920 f   GameMain.obj
+ 0002:00008a10       ??_EGameMain@@UAEPAXI@Z    00419a10 f i GameMain.obj
+ 0002:00008a10       ??_GGameMain@@UAEPAXI@Z    00419a10 f i GameMain.obj
+ 0002:00008a60       ??0GameTileManager@@QAE@XZ 00419a60 f i GameMain.obj
+ 0002:00008a90       ??0TileManager@@QAE@XZ     00419a90 f i GameMain.obj
+ 0002:00008b00       ?DrawTile@TileManager@@UAEXPAVBaseEngine@@PAUSDL_Surface@@HHHH@Z 00419b00 f i GameMain.obj
+ 0002:00008b50       ?DrawTile@TileManager@@UAEXPAVBaseEngine@@PAUSDL_Surface@@HH@Z 00419b50 f i GameMain.obj
+ 0002:00008bd0       ?SetupBackgroundBuffer@GameMain@@UAEXXZ 00419bd0 f   GameMain.obj
+ 0002:00008db0       ?SetSize@TileManager@@QAEXHH@Z 00419db0 f i GameMain.obj
+ 0002:00008e60       ?SetBaseTilesPositionOnScreen@TileManager@@QAEXHH@Z 00419e60 f i GameMain.obj
+ 0002:00008e90       ?DrawAllTiles@TileManager@@QAEXPAVBaseEngine@@PAUSDL_Surface@@HHHH@Z 00419e90 f i GameMain.obj
+ 0002:00008ef0       ?GetNumber@GameMain@@AAEHD@Z 00419ef0 f   GameMain.obj
+ 0002:00009000       ?InitialiseObjects@GameMain@@UAEHXZ 0041a000 f   GameMain.obj
+ 0002:000092e0       ?DrawableObjectsChanged@BaseEngine@@QAEXXZ 0041a2e0 f i GameMain.obj
+ 0002:00009340       ?DrawStrings@GameMain@@UAEXXZ 0041a340 f   GameMain.obj
+ 0002:00009400       ?SetNextUpdateRect@BaseEngine@@QAEXHHHH@Z 0041a400 f i GameMain.obj
+ 0002:00009460       ?DrawScreenString@BaseEngine@@QAEXHHPBDIPAVFont@@@Z 0041a460 f i GameMain.obj
+ 0002:000094b0       ?GameAction@GameMain@@UAEXXZ 0041a4b0 f   GameMain.obj
+ 0002:00009510       ?MouseDown@GameMain@@UAEXHHH@Z 0041a510 f   GameMain.obj
+ 0002:00009550       ?KeyDown@GameMain@@UAEXH@Z 0041a550 f   GameMain.obj
+ 0002:00009590       ?SetExitWithCode@BaseEngine@@QAEXH@Z 0041a590 f i GameMain.obj
+ 0002:000095c0       ?RemoveActor@GameMain@@QAEXPAVActor@@@Z 0041a5c0 f   GameMain.obj
+ 0002:000095e0       ?GetActors@GameMain@@QAEPAV?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@XZ 0041a5e0 f   GameMain.obj
+ 0002:00009600       ?GetFrictionCoefficient@GameMain@@QAENXZ 0041a600 f   GameMain.obj
+ 0002:00009630       ??0?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE@XZ 0041a630 f i GameMain.obj
+ 0002:000096c0       ?push_back@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEXABQAVActor@@@Z 0041a6c0 f i GameMain.obj
+ 0002:00009760       ?capacity@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEIXZ 0041a760 f i GameMain.obj
+ 0002:000097b0       ?insert@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAE?AV?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@V?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@ABQAVActor@@@Z 0041a7b0 f i GameMain.obj
+ 0002:00009850       ?_Ufill@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEPAPAVActor@@PAPAV3@IABQAV3@@Z 0041a850 f i GameMain.obj
+ 0002:000098a0       ??0?$allocator@PAVActor@@@std@@QAE@XZ 0041a8a0 f i GameMain.obj
+ 0002:000098c0       ?_Insert_n@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEXV?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@2@IABQAVActor@@@Z 0041a8c0 f i GameMain.obj
+ 0002:00009cf0       ??H?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBE?AV01@H@Z 0041acf0 f i GameMain.obj
+ 0002:00009d40       ??G?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QBEHABV01@@Z 0041ad40 f i GameMain.obj
+ 0002:00009da0       ??Y?$_Vector_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEAAV01@H@Z 0041ada0 f i GameMain.obj
+ 0002:00009dd0       ??Y?$_Vector_const_iterator@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@QAEAAV01@H@Z 0041add0 f i GameMain.obj
+ 0002:00009e70       ??$unchecked_uninitialized_fill_n@PAPAVActor@@IPAV1@V?$allocator@PAVActor@@@std@@@stdext@@YAXPAPAVActor@@IABQAV1@AAV?$allocator@PAVActor@@@std@@@Z 0041ae70 f i GameMain.obj
+ 0002:00009ed0       ??$_Umove@PAPAVActor@@@?$vector@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@IAEPAPAVActor@@PAPAV2@00@Z 0041aed0 f i GameMain.obj
+ 0002:00009f10       ??$fill@PAPAVActor@@PAV1@@std@@YAXPAPAVActor@@0ABQAV1@@Z 0041af10 f i GameMain.obj
+ 0002:00009f60       ??$_Unchecked_move_backward@PAPAVActor@@PAPAV1@@stdext@@YAPAPAVActor@@PAPAV1@00@Z 0041af60 f i GameMain.obj
+ 0002:00009ff0       ??$_Uninit_fill_n@PAPAVActor@@IPAV1@V?$allocator@PAVActor@@@std@@@std@@YAXPAPAVActor@@IABQAV1@AAV?$allocator@PAVActor@@@0@U_Scalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z 0041aff0 f i GameMain.obj
+ 0002:0000a020       ??$_Unchecked_uninitialized_move@PAPAVActor@@PAPAV1@V?$allocator@PAVActor@@@std@@@stdext@@YAPAPAVActor@@PAPAV1@00AAV?$allocator@PAVActor@@@std@@@Z 0041b020 f i GameMain.obj
+ 0002:0000a090       ??$_Checked_base@PAPAVActor@@@std@@YAPAPAVActor@@AAPAPAV1@@Z 0041b090 f i GameMain.obj
+ 0002:0000a0c0       ??$_Fill@PAPAVActor@@PAV1@@std@@YAXPAPAVActor@@0ABQAV1@@Z 0041b0c0 f i GameMain.obj
+ 0002:0000a100       ??$_Iter_random@PAPAVActor@@PAPAV1@@std@@YA?AUrandom_access_iterator_tag@0@ABQAPAVActor@@0@Z 0041b100 f i GameMain.obj
+ 0002:0000a120       ??$_Move_cat@PAPAVActor@@@std@@YA?AU_Undefined_move_tag@0@ABQAPAVActor@@@Z 0041b120 f i GameMain.obj
+ 0002:0000a140       ??$_Move_backward_opt@PAPAVActor@@PAPAV1@Urandom_access_iterator_tag@std@@U_Undefined_move_tag@3@@std@@YAPAPAVActor@@PAPAV1@00Urandom_access_iterator_tag@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z 0041b140 f i GameMain.obj
+ 0002:0000a1a0       ??$unchecked_fill_n@PAPAVActor@@IPAV1@@stdext@@YAXPAPAVActor@@IABQAV1@@Z 0041b1a0 f i GameMain.obj
+ 0002:0000a200       ??$_Uninit_move@PAPAVActor@@PAPAV1@V?$allocator@PAVActor@@@std@@U_Undefined_move_tag@3@@std@@YAPAPAVActor@@PAPAV1@00AAV?$allocator@PAVActor@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z 0041b200 f i GameMain.obj
+ 0002:0000a240       ??$_Checked_base@PAPAVActor@@@std@@YAPAPAVActor@@AAPAPAV1@U_Unchanged_checked_iterator_base_type_tag@0@@Z 0041b240 f i GameMain.obj
+ 0002:0000a260       ??$_Copy_backward_opt@PAPAVActor@@PAPAV1@Urandom_access_iterator_tag@std@@@std@@YAPAPAVActor@@PAPAV1@00Urandom_access_iterator_tag@0@U_Scalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z 0041b260 f i GameMain.obj
+ 0002:0000a2d0       ??$_Iter_cat@PAPAVActor@@@std@@YA?AUrandom_access_iterator_tag@0@ABQAPAVActor@@@Z 0041b2d0 f i GameMain.obj
+ 0002:0000a2f0       ??$_Fill_n@PAPAVActor@@IPAV1@@std@@YAXPAPAVActor@@IABQAV1@Urandom_access_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z 0041b2f0 f i GameMain.obj
+ 0002:0000a350       ??$unchecked_uninitialized_copy@PAPAVActor@@PAPAV1@V?$allocator@PAVActor@@@std@@@stdext@@YAPAPAVActor@@PAPAV1@00AAV?$allocator@PAVActor@@@std@@@Z 0041b350 f i GameMain.obj
+ 0002:0000a3d0       ??$_Fill_n@PAPAVActor@@IPAV1@@std@@YAXPAPAVActor@@IABQAV1@U_Range_checked_iterator_tag@0@@Z 0041b3d0 f i GameMain.obj
+ 0002:0000a420       ??$_Uninit_copy@PAPAVActor@@PAPAV1@V?$allocator@PAVActor@@@std@@@std@@YAPAPAVActor@@PAPAV1@00AAV?$allocator@PAVActor@@@0@U_Scalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z 0041b420 f i GameMain.obj
+ 0002:0000a490       ?GetTileWidth@GameTileManager@@UAEHXZ 0041b490 f   GameTileManager.obj
+ 0002:0000a4b0       ?GetTileHeight@GameTileManager@@UAEHXZ 0041b4b0 f   GameTileManager.obj
+ 0002:0000a4d0       ?DrawTileAt@GameTileManager@@UAEXPAVBaseEngine@@PAUSDL_Surface@@HHHH@Z 0041b4d0 f   GameTileManager.obj
+ 0002:0000a6ec       _SDL_CreateRGBSurface      0041b6ec f   sdl:SDL.dll
+ 0002:0000a6f2       _SDL_GetWMInfo             0041b6f2 f   sdl:SDL.dll
+ 0002:0000a6f8       _SDL_WM_SetCaption         0041b6f8 f   sdl:SDL.dll
+ 0002:0000a6fe       _SDL_SetVideoMode          0041b6fe f   sdl:SDL.dll
+ 0002:0000a704       _SDL_Quit                  0041b704 f   sdl:SDL.dll
+ 0002:0000a70a       _SDL_GetError              0041b70a f   sdl:SDL.dll
+ 0002:0000a710       _SDL_Init                  0041b710 f   sdl:SDL.dll
+ 0002:0000a716       _SDL_PollEvent             0041b716 f   sdl:SDL.dll
+ 0002:0000a71c       _SDL_GetTicks              0041b71c f   sdl:SDL.dll
+ 0002:0000a722       _SDL_UpdateRects           0041b722 f   sdl:SDL.dll
+ 0002:0000a728       _SDL_UpdateRect            0041b728 f   sdl:SDL.dll
+ 0002:0000a72e       _SDL_UnlockSurface         0041b72e f   sdl:SDL.dll
+ 0002:0000a734       _SDL_LockSurface           0041b734 f   sdl:SDL.dll
+ 0002:0000a73a       _SDL_UpperBlit             0041b73a f   sdl:SDL.dll
+ 0002:0000a740       _SDL_FillRect              0041b740 f   sdl:SDL.dll
+ 0002:0000a746       _SDL_FreeSurface           0041b746 f   sdl:SDL.dll
+ 0002:0000a74c       _TTF_Quit                  0041b74c f   SDL_ttf:SDL_ttf.dll
+ 0002:0000a752       _TTF_Init                  0041b752 f   SDL_ttf:SDL_ttf.dll
+ 0002:0000a758       _TTF_RenderText_Solid      0041b758 f   SDL_ttf:SDL_ttf.dll
+ 0002:0000a75e       _TTF_CloseFont             0041b75e f   SDL_ttf:SDL_ttf.dll
+ 0002:0000a764       _TTF_OpenFont              0041b764 f   SDL_ttf:SDL_ttf.dll
+ 0002:0000a76a       _IMG_Load                  0041b76a f   SDL_image:SDL_image.dll
+ 0002:0000a770       _SetWindowPos@28           0041b770 f   user32:USER32.dll
+ 0002:0000a776       ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ 0041b776 f   msvcprt:MSVCP90.dll
+ 0002:0000a77c       ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z 0041b77c f   msvcprt:MSVCP90.dll
+ 0002:0000a782       ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z 0041b782 f   msvcprt:MSVCP90.dll
+ 0002:0000a788       ?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ 0041b788 f   msvcprt:MSVCP90.dll
+ 0002:0000a78e       ??_U@YAPAXI@Z              0041b78e f   msvcprt:newaop_s.obj
+ 0002:0000a79b       _NtCurrentTeb              0041b79b f i MSVCRT:crtexe.obj
+ 0002:0000ab61       _mainCRTStartup            0041bb61 f   MSVCRT:crtexe.obj
+ 0002:0000ab6e       ___CxxFrameHandler3        0041bb6e f   MSVCRT:MSVCR90.dll
+ 0002:0000ab74       @__security_check_cookie@4 0041bb74 f   MSVCRT:secchk.obj
+ 0002:0000ab90       __ftol2_sse                0041bb90 f   MSVCRT:ftol2.obj
+ 0002:0000ab99       __ftol2_pentium4           0041bb99 f   MSVCRT:ftol2.obj
+ 0002:0000abac       __ftol2_sse_excpt          0041bbac f   MSVCRT:ftol2.obj
+ 0002:0000abc6       __ftol2                    0041bbc6 f   MSVCRT:ftol2.obj
+ 0002:0000ac65       ??0type_info@@AAE@ABV0@@Z  0041bc65 f   MSVCRT:ti_inst.obj
+ 0002:0000ac72       ??_Etype_info@@UAEPAXI@Z   0041bc72 f i MSVCRT:ti_inst.obj
+ 0002:0000acd1       ??4type_info@@AAEAAV0@ABV0@@Z 0041bcd1 f   MSVCRT:ti_inst.obj
+ 0002:0000acd6       ??3@YAXPAX@Z               0041bcd6 f   MSVCRT:MSVCR90.dll
+ 0002:0000acdc       _sqrt                      0041bcdc f   MSVCRT:MSVCR90.dll
+ 0002:0000ace2       _sin                       0041bce2 f   MSVCRT:MSVCR90.dll
+ 0002:0000ace8       _cos                       0041bce8 f   MSVCRT:MSVCR90.dll
+ 0002:0000acee       __CxxThrowException@8      0041bcee f   MSVCRT:MSVCR90.dll
+ 0002:0000acf4       __invalid_parameter_noinfo 0041bcf4 f   MSVCRT:MSVCR90.dll
+ 0002:0000acfa       ??0exception@std@@QAE@ABV01@@Z 0041bcfa f   MSVCRT:MSVCR90.dll
+ 0002:0000ad00       ??1exception@std@@UAE@XZ   0041bd00 f   MSVCRT:MSVCR90.dll
+ 0002:0000ad06       ??0exception@std@@QAE@XZ   0041bd06 f   MSVCRT:MSVCR90.dll
+ 0002:0000ad0c       ??2@YAPAXI@Z               0041bd0c f   MSVCRT:MSVCR90.dll
+ 0002:0000ad12       ??0exception@std@@QAE@ABQBD@Z 0041bd12 f   MSVCRT:MSVCR90.dll
+ 0002:0000ad18       ?what@exception@std@@UBEPBDXZ 0041bd18 f   MSVCRT:MSVCR90.dll
+ 0002:0000ad1e       _memmove_s                 0041bd1e f   MSVCRT:MSVCR90.dll
+ 0002:0000ad24       _abs                       0041bd24 f   MSVCRT:MSVCR90.dll
+ 0002:0000ad2a       _rand                      0041bd2a f   MSVCRT:MSVCR90.dll
+ 0002:0000ad30       _atan2                     0041bd30 f   MSVCRT:MSVCR90.dll
+ 0002:0000ad36       _sprintf                   0041bd36 f   MSVCRT:MSVCR90.dll
+ 0002:0000ad3c       _memset                    0041bd3c f   MSVCRT:MSVCR90.dll
+ 0002:0000ad42       _strlen                    0041bd42 f   MSVCRT:MSVCR90.dll
+ 0002:0000ad48       __onexit                   0041bd48 f   MSVCRT:atonexit.obj
+ 0002:0000ae16       _atexit                    0041be16 f   MSVCRT:atonexit.obj
+ 0002:0000ae32       _fprintf                   0041be32 f   MSVCRT:MSVCR90.dll
+ 0002:0000ae38       ___iob_func                0041be38 f   MSVCRT:MSVCR90.dll
+ 0002:0000ae3e       _printf                    0041be3e f   MSVCRT:MSVCR90.dll
+ 0002:0000ae44       _atan                      0041be44 f   MSVCRT:MSVCR90.dll
+ 0002:0000ae4a       _strcmp                    0041be4a f   MSVCRT:MSVCR90.dll
+ 0002:0000ae50       _strcpy                    0041be50 f   MSVCRT:MSVCR90.dll
+ 0002:0000ae56       _srand                     0041be56 f   MSVCRT:MSVCR90.dll
+ 0002:0000ae5c       __time64                   0041be5c f   MSVCRT:MSVCR90.dll
+ 0002:0000ae62       ?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z 0041be62 f   MSVCRT:unhandld.obj
+ 0002:0000aeb4       ___CxxSetUnhandledExceptionFilter 0041beb4 f   MSVCRT:unhandld.obj
+ 0002:0000aec6       __amsg_exit                0041bec6 f   MSVCRT:MSVCR90.dll
+ 0002:0000aecc       ___getmainargs             0041becc f   MSVCRT:MSVCR90.dll
+ 0002:0000aed2       __RTC_Initialize           0041bed2 f   MSVCRT:_initsect_.obj
+ 0002:0000af01       __RTC_Terminate            0041bf01 f   MSVCRT:_initsect_.obj
+ 0002:0000af30       __cexit                    0041bf30 f   MSVCRT:MSVCR90.dll
+ 0002:0000af36       __exit                     0041bf36 f   MSVCRT:MSVCR90.dll
+ 0002:0000af3c       __XcptFilter               0041bf3c f   MSVCRT:MSVCR90.dll
+ 0002:0000af42       _exit                      0041bf42 f   MSVCRT:MSVCR90.dll
+ 0002:0000af50       __ValidateImageBase        0041bf50 f   MSVCRT:pesect.obj
+ 0002:0000afa0       __FindPESection            0041bfa0 f   MSVCRT:pesect.obj
+ 0002:0000b000       __IsNonwritableInCurrentImage 0041c000 f   MSVCRT:pesect.obj
+ 0002:0000b0ec       __initterm                 0041c0ec f   MSVCRT:MSVCR90.dll
+ 0002:0000b0f2       __initterm_e               0041c0f2 f   MSVCRT:MSVCR90.dll
+ 0002:0000b0f8       __SEH_prolog4              0041c0f8 f   MSVCRT:sehprolg4.obj
+ 0002:0000b13d       __SEH_epilog4              0041c13d f   MSVCRT:sehprolg4.obj
+ 0002:0000b167       __except_handler4          0041c167 f   MSVCRT:chandler4gs.obj
+ 0002:0000b196       __configthreadlocale       0041c196 f   MSVCRT:MSVCR90.dll
+ 0002:0000b19c       __invoke_watson_if_error   0041c19c f i MSVCRT:fp8.obj
+ 0002:0000b1c9       __setdefaultprecision      0041c1c9 f   MSVCRT:fp8.obj
+ 0002:0000b1fe       ___setusermatherr          0041c1fe f   MSVCRT:MSVCR90.dll
+ 0002:0000b204       __matherr                  0041c204 f   MSVCRT:merr.obj
+ 0002:0000b207       __setargv                  0041c207 f   MSVCRT:dllargv.obj
+ 0002:0000b20a       ___p__commode              0041c20a f   MSVCRT:MSVCR90.dll
+ 0002:0000b210       ___p__fmode                0041c210 f   MSVCRT:MSVCR90.dll
+ 0002:0000b216       __encode_pointer           0041c216 f   MSVCRT:MSVCR90.dll
+ 0002:0000b21c       ___set_app_type            0041c21c f   MSVCRT:MSVCR90.dll
+ 0002:0000b222       ___security_init_cookie    0041c222 f   MSVCRT:gs_support.obj
+ 0002:0000b2dd       ___report_gsfailure        0041c2dd f   MSVCRT:gs_report.obj
+ 0002:0000b488       __get_sse2_info            0041c488 f   MSVCRT:cpu_disp.obj
+ 0002:0000b502       ___sse2_available_init     0041c502 f   MSVCRT:cpu_disp.obj
+ 0002:0000b528       ?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z 0041c528 f   MSVCRT:ehvecdtr.obj
+ 0002:0000b59d       ??_M@YGXPAXIHP6EX0@Z@Z     0041c59d f   MSVCRT:ehvecdtr.obj
+ 0002:0000b618       __unlock                   0041c618 f   MSVCRT:MSVCR90.dll
+ 0002:0000b61e       ___dllonexit               0041c61e f   MSVCRT:MSVCR90.dll
+ 0002:0000b624       __lock                     0041c624 f   MSVCRT:MSVCR90.dll
+ 0002:0000b62a       __decode_pointer           0041c62a f   MSVCRT:MSVCR90.dll
+ 0002:0000b630       ?terminate@@YAXXZ          0041c630 f   MSVCRT:MSVCR90.dll
+ 0002:0000b636       __except_handler4_common   0041c636 f   MSVCRT:MSVCR90.dll
+ 0002:0000b63c       __invoke_watson            0041c63c f   MSVCRT:MSVCR90.dll
+ 0002:0000b642       __controlfp_s              0041c642 f   MSVCRT:MSVCR90.dll
+ 0002:0000b648       __crt_debugger_hook        0041c648 f   MSVCRT:MSVCR90.dll
+ 0002:0000b64e       ?_type_info_dtor_internal_method@type_info@@QAEXXZ 0041c64e f   MSVCRT:MSVCR90.dll
+ 0002:0000b64e       ??1type_info@@UAE@XZ       0041c64e f   MSVCRT:MSVCR90.dll
+ 0002:0000b870       _main                      0041c870 f   sdlmain:SDL_win32_main.obj
+ 0002:0000b9b0       _WinMain@16                0041c9b0 f   sdlmain:SDL_win32_main.obj
+ 0002:0000ba7e       _InterlockedExchange@8     0041ca7e f   kernel32:KERNEL32.dll
+ 0002:0000ba84       _Sleep@4                   0041ca84 f   kernel32:KERNEL32.dll
+ 0002:0000ba8a       _InterlockedCompareExchange@12 0041ca8a f   kernel32:KERNEL32.dll
+ 0002:0000ba90       _SetUnhandledExceptionFilter@4 0041ca90 f   kernel32:KERNEL32.dll
+ 0002:0000ba96       _QueryPerformanceCounter@4 0041ca96 f   kernel32:KERNEL32.dll
+ 0002:0000ba9c       _GetTickCount@0            0041ca9c f   kernel32:KERNEL32.dll
+ 0002:0000baa2       _GetCurrentThreadId@0      0041caa2 f   kernel32:KERNEL32.dll
+ 0002:0000baa8       _GetCurrentProcessId@0     0041caa8 f   kernel32:KERNEL32.dll
+ 0002:0000baae       _GetSystemTimeAsFileTime@4 0041caae f   kernel32:KERNEL32.dll
+ 0002:0000bab4       _TerminateProcess@8        0041cab4 f   kernel32:KERNEL32.dll
+ 0002:0000baba       _GetCurrentProcess@0       0041caba f   kernel32:KERNEL32.dll
+ 0002:0000bac0       _UnhandledExceptionFilter@4 0041cac0 f   kernel32:KERNEL32.dll
+ 0002:0000bac6       _IsDebuggerPresent@0       0041cac6 f   kernel32:KERNEL32.dll
+ 0002:0000bacc       _GetModuleHandleA@4        0041cacc f   kernel32:KERNEL32.dll
+ 0002:0000bad2       _GetCommandLineA@0         0041cad2 f   kernel32:KERNEL32.dll
+ 0002:0000bad8       _FreeLibrary@4             0041cad8 f   kernel32:KERNEL32.dll
+ 0002:0000bade       _LoadLibraryA@4            0041cade f   kernel32:KERNEL32.dll
+ 0002:0000bae4       _isspace                   0041cae4 f   MSVCRT:MSVCR90.dll
+ 0002:0000baea       _fclose                    0041caea f   MSVCRT:MSVCR90.dll
+ 0002:0000baf0       _strrchr                   0041caf0 f   MSVCRT:MSVCR90.dll
+ 0002:0000bb00       __alloca_probe_16          0041cb00 f   MSVCRT:alloca16.obj
+ 0002:0000bb16       __alloca_probe_8           0041cb16     MSVCRT:alloca16.obj
+ 0002:0000bb40       __alloca_probe             0041cb40     MSVCRT:chkstk.obj
+ 0002:0000bb40       __chkstk                   0041cb40 f   MSVCRT:chkstk.obj
+ 0002:0000bb76       _SDL_SetModuleHandle       0041cb76 f   sdl:SDL.dll
+ 0002:0000bb7c       _SDL_strlcpy               0041cb7c f   sdl:SDL.dll
  0003:00000000       ___xc_a                    0041f000     MSVCRT:cinitexe.obj
  0003:00000208       ___xc_z                    0041f208     MSVCRT:cinitexe.obj
  0003:0000030c       ___xi_a                    0041f30c     MSVCRT:cinitexe.obj
@@ -464,97 +471,112 @@
  0003:00000968       __real@407c200000000000    0041f968     Infected.obj
  0003:00000974       ??_C@_0BI@NHFDFHOB@Cornerstone?5Regular?4ttf?$AA@ 0041f974     mainfunction.obj
  0003:00000990       ??_C@_0CI@ODDNEOI@My?5Demonstration?5Program?5?3?5Size?5@ 0041f990     mainfunction.obj
- 0003:000009c4       ??_7GameMain@@6B@          0041f9c4     mainfunction.obj
- 0003:00000a30       ??_7TileManager@@6B@       0041fa30     mainfunction.obj
- 0003:00000a48       __real@4059000000000000    0041fa48     Player.obj
- 0003:00000a58       ??_7Player@@6B@            0041fa58     Player.obj
- 0003:00000a70       __real@3f50624dd2f1a9fc    0041fa70     Player.obj
- 0003:00000a84       ??_7BaseEngine@@6B@        0041fa84     BaseEngine.obj
- 0003:00000aec       ??_C@_0BM@KCLNHPJ@Unable?5to?5set?5up?5video?3?5?$CFs?6?$AA@ 0041faec     BaseEngine.obj
- 0003:00000b10       ??_C@_0BI@FBLGJKMC@Unable?5to?5init?5SDL?3?5?$CFs?6?$AA@ 0041fb10     BaseEngine.obj
- 0003:00000b30       __real@4010000000000000    0041fb30     BaseEngine.obj
- 0003:00000b40       __real@400921fb54442d18    0041fb40     BaseEngine.obj
- 0003:00000b50       __real@400f6a7a2955385e    0041fb50     BaseEngine.obj
- 0003:00000b5c       ??_C@_0BG@KPFFDCIH@?7Copy?5point?5?$CFd?5to?5?$CFd?6?$AA@ 0041fb5c     BaseEngine.obj
- 0003:00000b78       ??_C@_0CM@IHOJMAHM@Draw?5for?5points?5?$CFd?0?5?$CFd?0?5?$CFd?5of?5?$CFd@ 0041fb78     BaseEngine.obj
- 0003:00000bb0       __real@401921fb54442d18    0041fbb0     BaseEngine.obj
- 0003:00000bc0       __real@4008000000000000    0041fbc0     BaseEngine.obj
- 0003:00000bd0       __real@3ff921fb54442d18    0041fbd0     BaseEngine.obj
- 0003:00000be0       ??_7DisplayableObject@@6B@ 0041fbe0     DisplayableObject.obj
- 0003:00000bf8       ??_C@_0BI@GMOFELCF@Free?5font?3?5?$CFd?5point?5?$CFs?6?$AA@ 0041fbf8     FontManager.obj
- 0003:00000c14       ??_C@_0BG@EJGFOME@Font?5loading?5failed?4?6?$AA@ 0041fc14     FontManager.obj
- 0003:00000c30       ??_C@_0BL@IIGPEFFA@Loading?5font?3?5?$CFd?5point?5?$CFs?6?$AA@ 0041fc30     FontManager.obj
- 0003:00000c50       ??_C@_0BF@NJKJJNPJ@Changing?5text?5?$CFd?5?$CFd?6?$AA@ 0041fc50     GameMain.obj
- 0003:00000c70       ??_7type_info@@6B@         0041fc70     MSVCRT:ti_inst.obj
- 0003:00000c78       ?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB 0041fc78     MSVCRT:unhandld.obj
- 0003:00000c7c       ?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB 0041fc7c     MSVCRT:unhandld.obj
- 0003:00000c80       ?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB 0041fc80     MSVCRT:unhandld.obj
- 0003:00000c84       ?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB 0041fc84     MSVCRT:unhandld.obj
- 0003:00000c88       ?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB 0041fc88     MSVCRT:unhandld.obj
- 0003:00000c98       ??_C@_07KJFPOMFC@?$CFs?3?5?$CFs?6?$AA@ 0041fc98     sdlmain:SDL_win32_main.obj
- 0003:00000ca4       ??_C@_0M@HFFOIJBL@Fatal?5Error?$AA@ 0041fca4     sdlmain:SDL_win32_main.obj
- 0003:00000cb4       ??_C@_0BJ@HFNMHALN@Out?5of?5memory?5?9?5aborting?$AA@ 0041fcb4     sdlmain:SDL_win32_main.obj
- 0003:00000cd4       ??_C@_0BA@KMDNPDDA@WinMain?$CI?$CJ?5error?$AA@ 0041fcd4     sdlmain:SDL_win32_main.obj
- 0003:00000ce8       ??_C@_09KDGFPKMD@DDRAW?4DLL?$AA@ 0041fce8     sdlmain:SDL_win32_main.obj
- 0003:00000fac       ??_R4Actor@@6B@            0041ffac     Actor.obj
- 0003:00000fc4       ??_R3Actor@@8              0041ffc4     Actor.obj
- 0003:00000fd8       ??_R2Actor@@8              0041ffd8     Actor.obj
- 0003:00000fe4       ??_R1A@?0A@EA@Actor@@8     0041ffe4     Actor.obj
- 0003:00001008       ??_R1A@?0A@EA@DisplayableObject@@8 00420008     Actor.obj
- 0003:0000102c       ??_R3DisplayableObject@@8  0042002c     Actor.obj
- 0003:00001040       ??_R2DisplayableObject@@8  00420040     Actor.obj
- 0003:00001048       ??_R4length_error@std@@6B@ 00420048     Actor.obj
- 0003:00001060       ??_R3length_error@std@@8   00420060     Actor.obj
- 0003:00001074       ??_R2length_error@std@@8   00420074     Actor.obj
- 0003:00001084       ??_R1A@?0A@EA@length_error@std@@8 00420084     Actor.obj
- 0003:000010a8       ??_R1A@?0A@EA@logic_error@std@@8 004200a8     Actor.obj
- 0003:000010cc       ??_R3logic_error@std@@8    004200cc     Actor.obj
- 0003:000010e0       ??_R2logic_error@std@@8    004200e0     Actor.obj
- 0003:000010ec       ??_R1A@?0A@EA@exception@std@@8 004200ec     Actor.obj
- 0003:00001110       ??_R3exception@std@@8      00420110     Actor.obj
- 0003:00001124       ??_R2exception@std@@8      00420124     Actor.obj
- 0003:0000112c       ??_R4logic_error@std@@6B@  0042012c     Actor.obj
- 0003:00001144       ??_R4bad_alloc@std@@6B@    00420144     Actor.obj
- 0003:0000115c       ??_R3bad_alloc@std@@8      0042015c     Actor.obj
- 0003:00001170       ??_R2bad_alloc@std@@8      00420170     Actor.obj
- 0003:0000117c       ??_R1A@?0A@EA@bad_alloc@std@@8 0042017c     Actor.obj
- 0003:000011a0       ??_R4Infected@@6B@         004201a0     Infected.obj
- 0003:000011b8       ??_R3Infected@@8           004201b8     Infected.obj
- 0003:000011cc       ??_R2Infected@@8           004201cc     Infected.obj
- 0003:000011dc       ??_R1A@?0A@EA@Infected@@8  004201dc     Infected.obj
- 0003:00001200       ??_R4GameMain@@6B@         00420200     mainfunction.obj
- 0003:00001218       ??_R3GameMain@@8           00420218     mainfunction.obj
- 0003:0000122c       ??_R2GameMain@@8           0042022c     mainfunction.obj
- 0003:00001238       ??_R1A@?0A@EA@GameMain@@8  00420238     mainfunction.obj
- 0003:0000125c       ??_R1A@?0A@EA@BaseEngine@@8 0042025c     mainfunction.obj
- 0003:00001280       ??_R3BaseEngine@@8         00420280     mainfunction.obj
- 0003:00001294       ??_R2BaseEngine@@8         00420294     mainfunction.obj
- 0003:0000129c       ??_R4TileManager@@6B@      0042029c     mainfunction.obj
- 0003:000012b4       ??_R3TileManager@@8        004202b4     mainfunction.obj
- 0003:000012c8       ??_R2TileManager@@8        004202c8     mainfunction.obj
- 0003:000012d0       ??_R1A@?0A@EA@TileManager@@8 004202d0     mainfunction.obj
- 0003:000012f4       ??_R4Player@@6B@           004202f4     Player.obj
- 0003:0000130c       ??_R3Player@@8             0042030c     Player.obj
- 0003:00001320       ??_R2Player@@8             00420320     Player.obj
- 0003:00001330       ??_R1A@?0A@EA@Player@@8    00420330     Player.obj
- 0003:00001354       ??_R4BaseEngine@@6B@       00420354     BaseEngine.obj
- 0003:0000136c       ??_R4DisplayableObject@@6B@ 0042036c     DisplayableObject.obj
- 0003:00001384       ??_R4type_info@@6B@        00420384     MSVCRT:ti_inst.obj
- 0003:0000139c       ??_R3type_info@@8          0042039c     MSVCRT:ti_inst.obj
- 0003:000013b0       ??_R2type_info@@8          004203b0     MSVCRT:ti_inst.obj
- 0003:000013b8       ??_R1A@?0A@EA@type_info@@8 004203b8     MSVCRT:ti_inst.obj
- 0003:000014f4       ___rtc_iaa                 004204f4     MSVCRT:_initsect_.obj
- 0003:000015f8       ___rtc_izz                 004205f8     MSVCRT:_initsect_.obj
- 0003:000016fc       ___rtc_taa                 004206fc     MSVCRT:_initsect_.obj
- 0003:00001800       ___rtc_tzz                 00420800     MSVCRT:_initsect_.obj
- 0003:00001a34       __TI3?AVlength_error@std@@ 00420a34     Actor.obj
- 0003:00001a78       __CTA3?AVlength_error@std@@ 00420a78     Actor.obj
- 0003:00001a8c       __CT??_R0?AVlength_error@std@@@8??0length_error@std@@QAE@ABV01@@Z40 00420a8c     Actor.obj
- 0003:00001aac       __CT??_R0?AVlogic_error@std@@@8??0logic_error@std@@QAE@ABV01@@Z40 00420aac     Actor.obj
- 0003:00001acc       __CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12 00420acc     Actor.obj
- 0003:00001b88       __TI2?AVbad_alloc@std@@    00420b88     Actor.obj
- 0003:00001b9c       __CTA2?AVbad_alloc@std@@   00420b9c     Actor.obj
- 0003:00001bac       __CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12 00420bac     Actor.obj
+ 0003:000009c0       __real@4059000000000000    0041f9c0     Player.obj
+ 0003:000009d0       ??_7Player@@6B@            0041f9d0     Player.obj
+ 0003:000009e8       __real@3f50624dd2f1a9fc    0041f9e8     Player.obj
+ 0003:000009fc       ??_7BaseEngine@@6B@        0041f9fc     BaseEngine.obj
+ 0003:00000a64       ??_C@_0BM@KCLNHPJ@Unable?5to?5set?5up?5video?3?5?$CFs?6?$AA@ 0041fa64     BaseEngine.obj
+ 0003:00000a88       ??_C@_0BI@FBLGJKMC@Unable?5to?5init?5SDL?3?5?$CFs?6?$AA@ 0041fa88     BaseEngine.obj
+ 0003:00000aa8       __real@4010000000000000    0041faa8     BaseEngine.obj
+ 0003:00000ab8       __real@400921fb54442d18    0041fab8     BaseEngine.obj
+ 0003:00000ac8       __real@400f6a7a2955385e    0041fac8     BaseEngine.obj
+ 0003:00000ad4       ??_C@_0BG@KPFFDCIH@?7Copy?5point?5?$CFd?5to?5?$CFd?6?$AA@ 0041fad4     BaseEngine.obj
+ 0003:00000af0       ??_C@_0CM@IHOJMAHM@Draw?5for?5points?5?$CFd?0?5?$CFd?0?5?$CFd?5of?5?$CFd@ 0041faf0     BaseEngine.obj
+ 0003:00000b28       __real@401921fb54442d18    0041fb28     BaseEngine.obj
+ 0003:00000b38       __real@4008000000000000    0041fb38     BaseEngine.obj
+ 0003:00000b48       __real@3ff921fb54442d18    0041fb48     BaseEngine.obj
+ 0003:00000b58       ??_7DisplayableObject@@6B@ 0041fb58     DisplayableObject.obj
+ 0003:00000b70       ??_C@_0BI@GMOFELCF@Free?5font?3?5?$CFd?5point?5?$CFs?6?$AA@ 0041fb70     FontManager.obj
+ 0003:00000b8c       ??_C@_0BG@EJGFOME@Font?5loading?5failed?4?6?$AA@ 0041fb8c     FontManager.obj
+ 0003:00000ba8       ??_C@_0BL@IIGPEFFA@Loading?5font?3?5?$CFd?5point?5?$CFs?6?$AA@ 0041fba8     FontManager.obj
+ 0003:00000bcc       ??_7GameMain@@6B@          0041fbcc     GameMain.obj
+ 0003:00000c38       ??_7GameTileManager@@6B@   0041fc38     GameMain.obj
+ 0003:00000c54       ??_7TileManager@@6B@       0041fc54     GameMain.obj
+ 0003:00000c6c       ??_C@_01EEMJAFIK@?6?$AA@   0041fc6c     GameMain.obj
+ 0003:00000c70       ??_C@_03JDANDILB@?$CFd?5?$AA@ 0041fc70     GameMain.obj
+ 0003:00000c74       ??_C@_0BB@BMHLDPEI@?$HM?5?5?5?5?5?9?9?9?$CLx?5?5?5?5?$HM?$AA@ 0041fc74     GameMain.obj
+ 0003:00000c88       ??_C@_0BB@KNMMJLCG@?$HM?5?5x?5?5?$CL?9?9?5?5?5?5?5?5?$HM?$AA@ 0041fc88     GameMain.obj
+ 0003:00000c9c       ??_C@_0BB@OMKKOKMN@?$HM?5?5?5?5?5?$HM?5?5?5?5?5?5?5?5?$HM?$AA@ 0041fc9c     GameMain.obj
+ 0003:00000cb0       ??_C@_0BB@FMHDJJEP@?$HM?5?5?5?5?5x?5?5?5?5?5?5?5?5?$HM?$AA@ 0041fcb0     GameMain.obj
+ 0003:00000cc4       ??_C@_0BB@JOAOKFCO@?$HM?5?5?5?5?5?5?5?5?5?5?5?5?5?5?$HM?$AA@ 0041fcc4     GameMain.obj
+ 0003:00000cd8       ??_C@_0BB@IODEACPO@?$HM?5?5?5?5?5?5?5?5?5x?5?5?5?5?$HM?$AA@ 0041fcd8     GameMain.obj
+ 0003:00000cec       ??_C@_0BB@DEMNGDJC@?$HM?5?5?5?5?5?5x?5?5?5?5?5?5?5?$HM?$AA@ 0041fcec     GameMain.obj
+ 0003:00000d00       ??_C@_0BB@BBAHAGPB@?$CL?9?9?9?9?9?9?9?9?9?9?9?9?9?9?$CL?$AA@ 0041fd00     GameMain.obj
+ 0003:00000d14       ??_C@_0BF@NJKJJNPJ@Changing?5text?5?$CFd?5?$CFd?6?$AA@ 0041fd14     GameMain.obj
+ 0003:00000d34       ??_7type_info@@6B@         0041fd34     MSVCRT:ti_inst.obj
+ 0003:00000d3c       ?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB 0041fd3c     MSVCRT:unhandld.obj
+ 0003:00000d40       ?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB 0041fd40     MSVCRT:unhandld.obj
+ 0003:00000d44       ?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB 0041fd44     MSVCRT:unhandld.obj
+ 0003:00000d48       ?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB 0041fd48     MSVCRT:unhandld.obj
+ 0003:00000d4c       ?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB 0041fd4c     MSVCRT:unhandld.obj
+ 0003:00000d5c       ??_C@_07KJFPOMFC@?$CFs?3?5?$CFs?6?$AA@ 0041fd5c     sdlmain:SDL_win32_main.obj
+ 0003:00000d68       ??_C@_0M@HFFOIJBL@Fatal?5Error?$AA@ 0041fd68     sdlmain:SDL_win32_main.obj
+ 0003:00000d78       ??_C@_0BJ@HFNMHALN@Out?5of?5memory?5?9?5aborting?$AA@ 0041fd78     sdlmain:SDL_win32_main.obj
+ 0003:00000d98       ??_C@_0BA@KMDNPDDA@WinMain?$CI?$CJ?5error?$AA@ 0041fd98     sdlmain:SDL_win32_main.obj
+ 0003:00000dac       ??_C@_09KDGFPKMD@DDRAW?4DLL?$AA@ 0041fdac     sdlmain:SDL_win32_main.obj
+ 0003:00001074       ??_R4Actor@@6B@            00420074     Actor.obj
+ 0003:0000108c       ??_R3Actor@@8              0042008c     Actor.obj
+ 0003:000010a0       ??_R2Actor@@8              004200a0     Actor.obj
+ 0003:000010ac       ??_R1A@?0A@EA@Actor@@8     004200ac     Actor.obj
+ 0003:000010d0       ??_R1A@?0A@EA@DisplayableObject@@8 004200d0     Actor.obj
+ 0003:000010f4       ??_R3DisplayableObject@@8  004200f4     Actor.obj
+ 0003:00001108       ??_R2DisplayableObject@@8  00420108     Actor.obj
+ 0003:00001110       ??_R4length_error@std@@6B@ 00420110     Actor.obj
+ 0003:00001128       ??_R3length_error@std@@8   00420128     Actor.obj
+ 0003:0000113c       ??_R2length_error@std@@8   0042013c     Actor.obj
+ 0003:0000114c       ??_R1A@?0A@EA@length_error@std@@8 0042014c     Actor.obj
+ 0003:00001170       ??_R1A@?0A@EA@logic_error@std@@8 00420170     Actor.obj
+ 0003:00001194       ??_R3logic_error@std@@8    00420194     Actor.obj
+ 0003:000011a8       ??_R2logic_error@std@@8    004201a8     Actor.obj
+ 0003:000011b4       ??_R1A@?0A@EA@exception@std@@8 004201b4     Actor.obj
+ 0003:000011d8       ??_R3exception@std@@8      004201d8     Actor.obj
+ 0003:000011ec       ??_R2exception@std@@8      004201ec     Actor.obj
+ 0003:000011f4       ??_R4logic_error@std@@6B@  004201f4     Actor.obj
+ 0003:0000120c       ??_R4bad_alloc@std@@6B@    0042020c     Actor.obj
+ 0003:00001224       ??_R3bad_alloc@std@@8      00420224     Actor.obj
+ 0003:00001238       ??_R2bad_alloc@std@@8      00420238     Actor.obj
+ 0003:00001244       ??_R1A@?0A@EA@bad_alloc@std@@8 00420244     Actor.obj
+ 0003:00001268       ??_R4Infected@@6B@         00420268     Infected.obj
+ 0003:00001280       ??_R3Infected@@8           00420280     Infected.obj
+ 0003:00001294       ??_R2Infected@@8           00420294     Infected.obj
+ 0003:000012a4       ??_R1A@?0A@EA@Infected@@8  004202a4     Infected.obj
+ 0003:000012c8       ??_R4Player@@6B@           004202c8     Player.obj
+ 0003:000012e0       ??_R3Player@@8             004202e0     Player.obj
+ 0003:000012f4       ??_R2Player@@8             004202f4     Player.obj
+ 0003:00001304       ??_R1A@?0A@EA@Player@@8    00420304     Player.obj
+ 0003:00001328       ??_R4BaseEngine@@6B@       00420328     BaseEngine.obj
+ 0003:00001340       ??_R3BaseEngine@@8         00420340     BaseEngine.obj
+ 0003:00001354       ??_R2BaseEngine@@8         00420354     BaseEngine.obj
+ 0003:0000135c       ??_R1A@?0A@EA@BaseEngine@@8 0042035c     BaseEngine.obj
+ 0003:00001380       ??_R4DisplayableObject@@6B@ 00420380     DisplayableObject.obj
+ 0003:00001398       ??_R4GameMain@@6B@         00420398     GameMain.obj
+ 0003:000013b0       ??_R3GameMain@@8           004203b0     GameMain.obj
+ 0003:000013c4       ??_R2GameMain@@8           004203c4     GameMain.obj
+ 0003:000013d0       ??_R1A@?0A@EA@GameMain@@8  004203d0     GameMain.obj
+ 0003:000013f4       ??_R4GameTileManager@@6B@  004203f4     GameMain.obj
+ 0003:0000140c       ??_R3GameTileManager@@8    0042040c     GameMain.obj
+ 0003:00001420       ??_R2GameTileManager@@8    00420420     GameMain.obj
+ 0003:0000142c       ??_R1A@?0A@EA@GameTileManager@@8 0042042c     GameMain.obj
+ 0003:00001450       ??_R1A@?0A@EA@TileManager@@8 00420450     GameMain.obj
+ 0003:00001474       ??_R3TileManager@@8        00420474     GameMain.obj
+ 0003:00001488       ??_R2TileManager@@8        00420488     GameMain.obj
+ 0003:00001490       ??_R4TileManager@@6B@      00420490     GameMain.obj
+ 0003:000014a8       ??_R4type_info@@6B@        004204a8     MSVCRT:ti_inst.obj
+ 0003:000014c0       ??_R3type_info@@8          004204c0     MSVCRT:ti_inst.obj
+ 0003:000014d4       ??_R2type_info@@8          004204d4     MSVCRT:ti_inst.obj
+ 0003:000014dc       ??_R1A@?0A@EA@type_info@@8 004204dc     MSVCRT:ti_inst.obj
+ 0003:0000161c       ___rtc_iaa                 0042061c     MSVCRT:_initsect_.obj
+ 0003:00001720       ___rtc_izz                 00420720     MSVCRT:_initsect_.obj
+ 0003:00001824       ___rtc_taa                 00420824     MSVCRT:_initsect_.obj
+ 0003:00001928       ___rtc_tzz                 00420928     MSVCRT:_initsect_.obj
+ 0003:00001b5c       __TI3?AVlength_error@std@@ 00420b5c     Actor.obj
+ 0003:00001ba0       __CTA3?AVlength_error@std@@ 00420ba0     Actor.obj
+ 0003:00001bb4       __CT??_R0?AVlength_error@std@@@8??0length_error@std@@QAE@ABV01@@Z40 00420bb4     Actor.obj
+ 0003:00001bd4       __CT??_R0?AVlogic_error@std@@@8??0logic_error@std@@QAE@ABV01@@Z40 00420bd4     Actor.obj
+ 0003:00001bf4       __CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12 00420bf4     Actor.obj
+ 0003:00001cb0       __TI2?AVbad_alloc@std@@    00420cb0     Actor.obj
+ 0003:00001cc4       __CTA2?AVbad_alloc@std@@   00420cc4     Actor.obj
+ 0003:00001cd4       __CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12 00420cd4     Actor.obj
  0004:00000004       ??_R0?AVActor@@@8          00422004     Actor.obj
  0004:0000001c       ??_R0?AVDisplayableObject@@@8 0042201c     Actor.obj
  0004:00000044       ??_R0?AVlength_error@std@@@8 00422044     Actor.obj
@@ -562,33 +584,34 @@
  0004:00000090       ??_R0?AVexception@std@@@8  00422090     Actor.obj
  0004:000000b4       ??_R0?AVbad_alloc@std@@@8  004220b4     Actor.obj
  0004:000000dc       ??_R0?AVInfected@@@8       004220dc     Infected.obj
- 0004:000000fc       ??_R0?AVGameMain@@@8       004220fc     mainfunction.obj
- 0004:00000118       ??_R0?AVBaseEngine@@@8     00422118     mainfunction.obj
- 0004:00000138       ??_R0?AVTileManager@@@8    00422138     mainfunction.obj
- 0004:0000015c       ??_R0?AVPlayer@@@8         0042215c     Player.obj
- 0004:00000180       ___security_cookie         00422180     MSVCRT:gs_cookie.obj
- 0004:00000184       ___security_cookie_complement 00422184     MSVCRT:gs_cookie.obj
- 0004:00000190       ??_R0?AVtype_info@@@8      00422190     MSVCRT:ti_inst.obj
- 0004:000001ac       ___native_dllmain_reason   004221ac     MSVCRT:natstart.obj
- 0004:000001b0       ___native_vcclrit_reason   004221b0     MSVCRT:natstart.obj
- 0004:000001b8       ___globallocalestatus      004221b8     MSVCRT:xthdloc.obj
- 0004:000001bc       ___defaultmatherr          004221bc     MSVCRT:merr.obj
- 0004:000002d8       ?g_iCropLeft@ImageData@@1HA 004222d8     JPGImage.obj
- 0004:000002dc       ?g_iCropRight@ImageData@@1HA 004222dc     JPGImage.obj
- 0004:000002e0       ?g_iCropTop@ImageData@@1HA 004222e0     JPGImage.obj
- 0004:000002e4       ?g_iCropBottom@ImageData@@1HA 004222e4     JPGImage.obj
- 0004:000002e8       ?g_iRotation@ImageData@@1HA 004222e8     JPGImage.obj
- 0004:00000318       __dowildcard               00422318     MSVCRT:wildcard.obj
- 0004:0000031c       __newmode                  0042231c     MSVCRT:_newmode.obj
- 0004:00000320       __commode                  00422320     MSVCRT:xncommod.obj
- 0004:00000324       __fmode                    00422324     MSVCRT:xtxtmode.obj
- 0004:000006ec       ___sse2_available          004226ec     <common>
- 0004:000006f8       __adjust_fdiv              004226f8     <common>
- 0004:00000704       ___native_startup_state    00422704     <common>
- 0004:00000714       ___native_startup_lock     00422714     <common>
- 0004:00000718       ___onexitend               00422718     <common>
- 0004:00000728       ___onexitbegin             00422728     <common>
- 0004:0000072c       ___dyn_tls_init_callback   0042272c     <common>
+ 0004:00000100       ??_R0?AVPlayer@@@8         00422100     Player.obj
+ 0004:0000011c       ??_R0?AVBaseEngine@@@8     0042211c     BaseEngine.obj
+ 0004:00000140       ??_R0?AVGameMain@@@8       00422140     GameMain.obj
+ 0004:0000015c       ??_R0?AVGameTileManager@@@8 0042215c     GameMain.obj
+ 0004:00000180       ??_R0?AVTileManager@@@8    00422180     GameMain.obj
+ 0004:000001a4       ___security_cookie         004221a4     MSVCRT:gs_cookie.obj
+ 0004:000001a8       ___security_cookie_complement 004221a8     MSVCRT:gs_cookie.obj
+ 0004:000001b0       ??_R0?AVtype_info@@@8      004221b0     MSVCRT:ti_inst.obj
+ 0004:000001cc       ___native_dllmain_reason   004221cc     MSVCRT:natstart.obj
+ 0004:000001d0       ___native_vcclrit_reason   004221d0     MSVCRT:natstart.obj
+ 0004:000001d8       ___globallocalestatus      004221d8     MSVCRT:xthdloc.obj
+ 0004:000001dc       ___defaultmatherr          004221dc     MSVCRT:merr.obj
+ 0004:000002f8       ?g_iCropLeft@ImageData@@1HA 004222f8     JPGImage.obj
+ 0004:000002fc       ?g_iCropRight@ImageData@@1HA 004222fc     JPGImage.obj
+ 0004:00000300       ?g_iCropTop@ImageData@@1HA 00422300     JPGImage.obj
+ 0004:00000304       ?g_iCropBottom@ImageData@@1HA 00422304     JPGImage.obj
+ 0004:00000308       ?g_iRotation@ImageData@@1HA 00422308     JPGImage.obj
+ 0004:00000338       __dowildcard               00422338     MSVCRT:wildcard.obj
+ 0004:0000033c       __newmode                  0042233c     MSVCRT:_newmode.obj
+ 0004:00000340       __commode                  00422340     MSVCRT:xncommod.obj
+ 0004:00000344       __fmode                    00422344     MSVCRT:xtxtmode.obj
+ 0004:0000070c       ___sse2_available          0042270c     <common>
+ 0004:00000718       __adjust_fdiv              00422718     <common>
+ 0004:00000724       ___native_startup_state    00422724     <common>
+ 0004:00000734       ___native_startup_lock     00422734     <common>
+ 0004:00000738       ___onexitend               00422738     <common>
+ 0004:00000748       ___onexitbegin             00422748     <common>
+ 0004:0000074c       ___dyn_tls_init_callback   0042274c     <common>
  0005:00000000       __IMPORT_DESCRIPTOR_SDL    00423000     sdl:SDL.dll
  0005:00000014       __IMPORT_DESCRIPTOR_SDL_ttf 00423014     SDL_ttf:SDL_ttf.dll
  0005:00000028       __IMPORT_DESCRIPTOR_SDL_image 00423028     SDL_image:SDL_image.dll
@@ -709,5 +732,5 @@
  0005:000006a8       __imp__SetWindowPos@28     004236a8     user32:USER32.dll
  0005:000006ac       \177USER32_NULL_THUNK_DATA 004236ac     user32:USER32.dll
 
- entry point at        0002:000004a1
+ entry point at        0002:000004bf
 

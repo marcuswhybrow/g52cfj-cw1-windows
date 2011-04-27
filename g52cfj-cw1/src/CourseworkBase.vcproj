@@ -178,6 +178,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\GameTileManager.h"
+				>
+			</File>
+			<File
 				RelativePath=".\header.h"
 				>
 			</File>
@@ -239,6 +243,10 @@
 			</File>
 			<File
 				RelativePath=".\GameMain.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\GameTileManager.cpp"
 				>
 			</File>
 			<File

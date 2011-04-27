@@ -5,7 +5,7 @@
 Player::Player(GameMain *pGameMain, int id)
 : Actor(pGameMain, id)
 {
-	_colour = 0xff0000;
+	_colour = 0xffffff;
 
 	SetPosition(100,100);
 }

@@ -8,6 +8,15 @@
 #include "Player.h"
 #include "Infected.h"
 #include <time.h>
+#include "GameTileManager.h"
+
+GameMain::GameMain()
+: BaseEngine(6), 
+_frictionCoefficient(1)
+{
+	_pGameTileManager = new GameTileManager();
+}
+
 
 /*
 Do any setup of back buffer prior to locking the screen buffer
@@ -15,19 +24,52 @@ Basically do the drawing of the background in here and it'll be copied to the sc
 */
 void GameMain::SetupBackgroundBuffer()
 {
-	FillBackground( 0x000000 );
+	FillBackground(0x000000);
 
-	//for ( int iX = 0 ; iX < GetScreenWidth() ; iX++ )
-	//	for ( int iY = 0 ; iY < this->GetScreenHeight() ; iY++ )
-	//		switch( rand()%100 )
-	//		{
-	//		case 0: SetBackgroundPixel( iX, iY, 0xFF0000 ); break;
-	//		case 1: SetBackgroundPixel( iX, iY, 0x00FF00 ); break;
-	//		case 2: SetBackgroundPixel( iX, iY, 0x0000FF ); break;
-	//		case 3: SetBackgroundPixel( iX, iY, 0xFFFF00 ); break;
-	//		case 4: SetBackgroundPixel( iX, iY, 0x00FFFF ); break;
-	//		case 5: SetBackgroundPixel( iX, iY, 0xFF00FF ); break;
-	//		}
+	char* data[] = {
+		"+--------------+",
+		"|      x       |",
+		"|         x    |",
+		"|              |",
+		"|     x        |",
+		"|     |        |",
+		"|  x  +--      |",
+		"|              |",
+		"|     ---+x    |",
+		"|              |",
+		"|              |",
+		"+--------------+" };
+
+	// Specify how many tiles wide and high
+	_pGameTileManager->SetSize( 16, 12 ); 
+	// Set up the tiles
+	for ( int x = 0 ; x < 16 ; x++ )
+		for ( int y = 0 ; y < 12 ; y++ )
+			_pGameTileManager->SetValue(x, y, GetNumber(data[y][x]));
+
+	for ( int y = 0 ; y < 12 ; y++ )
+	{
+		for ( int x = 0 ; x < 16 ; x++ )
+			printf("%d ", _pGameTileManager->GetValue(x,y) );
+		printf("\n" );
+	}
+
+	// Specify the screen x,y of top left corner
+	_pGameTileManager->SetBaseTilesPositionOnScreen(0, 0);
+
+	_pGameTileManager->DrawAllTiles(this, this->GetBackground(), 0, 0, 15, 11);
+}
+
+int GameMain::GetNumber(char c)
+{
+	switch(c)
+	{
+	case '|': return 0;
+	case '-': return 1;
+	case '+': return 2;
+	case ' ': return 3;
+	case 'x': return 4;
+	}
 }
 
 
