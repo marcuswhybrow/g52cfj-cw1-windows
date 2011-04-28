@@ -4,6 +4,7 @@
 #include "BaseEngine.h"
 #include "GameTileManager.h"
 #include <vector>
+#include "FontManager.h"
 using namespace std;
 
 class Actor;
@@ -34,6 +35,7 @@ public:
 
 	// Handle pressing of a mouse button
 	void MouseDown(int iButton, int iX, int iY);
+	void MouseUp(int iButton, int iX, int iY);
 
 	// Handle pressing of a key
 	virtual void KeyDown(int iKeyCode);
@@ -51,6 +53,15 @@ protected:
 	double _frictionCoefficient;
 private:
 	int GetNumber(char c);
+
+	enum State {INTRO, PLAYING, PAUSED, END_OF_LEVEL, GAME_OVER};
+	State _state;
+
+	Font *_titleFont;
+	Font *_normalFont;
+
+	void ChangeState(State newState);
+	void StartLevel(int levelNumber);
 };
 
 #endif
