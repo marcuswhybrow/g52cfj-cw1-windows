@@ -85,7 +85,7 @@ int GameMain::InitialiseObjects()
 	// Destroy any existing objects
 	DestroyOldObjects();
 
-	int numInfected = 300;
+	int numInfected = 5;
 	int numDisplayableObjects = numInfected + 1;
 
 	Player *pPlayer = new Player(this, numInfected);
@@ -140,8 +140,7 @@ void GameMain::GameAction()
 // Override to add a node at specified point
 void GameMain::MouseDown( int iButton, int iX, int iY )
 {
-	SetupBackgroundBuffer();
-	Redraw(true); // Force total redraw
+	
 }
 
 /*
