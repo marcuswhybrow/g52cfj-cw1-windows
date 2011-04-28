@@ -16,7 +16,7 @@ _previousLOSDifference(0)
 	double x = abs(rand()) % _pGameMain->GetScreenWidth();
 	double y = abs(rand()) % _pGameMain->GetScreenHeight();
 	SetPosition(x, y);
-	_speed = 0.3;
+	_speed = 0.05;
 }
 
 Infected::~Infected() {}

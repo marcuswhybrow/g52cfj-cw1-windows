@@ -1,6 +1,6 @@
  CourseworkBase
 
- Timestamp is 4db89ea4 (Wed Apr 27 23:54:28 2011)
+ Timestamp is 4db9b34c (Thu Apr 28 19:34:52 2011)
 
  Preferred load address is 00400000
 
@@ -35,9 +35,9 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       __except_list              00000000     <absolute>
  0000:00000000       ___safe_se_handler_count   00000000     <absolute>
  0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0000:00000000       __except_list              00000000     <absolute>
  0000:00009876       __fltused                  00009876     <absolute>
  0000:00009876       __ldused                   00009876     <absolute>
  0000:00000000       ___ImageBase               00400000     <linker-defined>
@@ -45,8 +45,8 @@
  0001:00010000       __enc$textbss$end          00411000     <linker-defined>
  0002:00000fe0       ??0Actor@@QAE@PAVGameMain@@H@Z 00411fe0 f   Actor.obj
  0002:00001250       ?SetVisible@DisplayableObject@@QAEX_N@Z 00412250 f i Actor.obj
- 0002:00001280       ??_EActor@@UAEPAXI@Z       00412280 f i Actor.obj
  0002:00001280       ??_GActor@@UAEPAXI@Z       00412280 f i Actor.obj
+ 0002:00001280       ??_EActor@@UAEPAXI@Z       00412280 f i Actor.obj
  0002:000012d0       ??1Actor@@UAE@XZ           004122d0 f   Actor.obj
  0002:00001300       ?Draw@Actor@@UAEXXZ        00412300 f   Actor.obj
  0002:000013b0       ?DrawScreenOval@BaseEngine@@QAEXHHHHI@Z 004123b0 f i Actor.obj
@@ -102,12 +102,12 @@
  0002:00002720       ??0length_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 00413720 f i Actor.obj
  0002:00002760       ??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 00413760 f i Actor.obj
  0002:000027f0       ?what@logic_error@std@@UBEPBDXZ 004137f0 f i Actor.obj
- 0002:00002820       ??_Glogic_error@std@@UAEPAXI@Z 00413820 f i Actor.obj
  0002:00002820       ??_Elogic_error@std@@UAEPAXI@Z 00413820 f i Actor.obj
+ 0002:00002820       ??_Glogic_error@std@@UAEPAXI@Z 00413820 f i Actor.obj
  0002:00002870       ??1logic_error@std@@UAE@XZ 00413870 f i Actor.obj
  0002:000028b0       ??1length_error@std@@UAE@XZ 004138b0 f i Actor.obj
- 0002:000028e0       ??_Glength_error@std@@UAEPAXI@Z 004138e0 f i Actor.obj
  0002:000028e0       ??_Elength_error@std@@UAEPAXI@Z 004138e0 f i Actor.obj
+ 0002:000028e0       ??_Glength_error@std@@UAEPAXI@Z 004138e0 f i Actor.obj
  0002:00002930       ??0?$_Container_base_aux_alloc_real@V?$allocator@PAVActor@@@std@@@std@@IAE@V?$allocator@PAVActor@@@1@@Z 00413930 f i Actor.obj
  0002:00002a20       ??0_Aux_cont@std@@QAE@QBV_Container_base_aux@1@@Z 00413a20 f i Actor.obj
  0002:00002a50       ??0_Container_base_aux@std@@QAE@XZ 00413a50 f i Actor.obj
@@ -215,22 +215,22 @@
  0002:00005350       ?GetWidth@ImageData@@QAEHXZ 00416350 f i GameTileManager.obj
  0002:00005370       ?GetHeight@ImageData@@QAEHXZ 00416370 f i GameTileManager.obj
  0002:00005390       ??0Infected@@QAE@PAVGameMain@@HPAVPlayer@@@Z 00416390 f   Infected.obj
- 0002:00005500       ??_GInfected@@UAEPAXI@Z    00416500 f i Infected.obj
  0002:00005500       ??_EInfected@@UAEPAXI@Z    00416500 f i Infected.obj
+ 0002:00005500       ??_GInfected@@UAEPAXI@Z    00416500 f i Infected.obj
  0002:00005550       ??1Infected@@UAE@XZ        00416550 f   Infected.obj
  0002:00005580       ?Draw@Infected@@UAEXXZ     00416580 f   Infected.obj
  0002:000055b0       ?DoUpdate@Infected@@UAEXH@Z 004165b0 f   Infected.obj
  0002:000056d0       _SDL_main                  004166d0 f   mainfunction.obj
  0002:000057a0       ??0Player@@QAE@PAVGameMain@@H@Z 004167a0 f   Player.obj
- 0002:00005860       ??_GPlayer@@UAEPAXI@Z      00416860 f i Player.obj
  0002:00005860       ??_EPlayer@@UAEPAXI@Z      00416860 f i Player.obj
+ 0002:00005860       ??_GPlayer@@UAEPAXI@Z      00416860 f i Player.obj
  0002:000058b0       ??1Player@@UAE@XZ          004168b0 f   Player.obj
  0002:000058e0       ?Draw@Player@@UAEXXZ       004168e0 f   Player.obj
  0002:00005910       ?DoUpdate@Player@@UAEXH@Z  00416910 f   Player.obj
  0002:00005950       ?CheckKeys@Player@@AAEXH@Z 00416950 f   Player.obj
  0002:00005a90       ??0BaseEngine@@QAE@H@Z     00416a90 f   BaseEngine.obj
- 0002:00005c30       ??_EBaseEngine@@UAEPAXI@Z  00416c30 f i BaseEngine.obj
  0002:00005c30       ??_GBaseEngine@@UAEPAXI@Z  00416c30 f i BaseEngine.obj
+ 0002:00005c30       ??_EBaseEngine@@UAEPAXI@Z  00416c30 f i BaseEngine.obj
  0002:00005c80       ??1BaseEngine@@UAE@XZ      00416c80 f   BaseEngine.obj
  0002:00005d20       ?DestroyOldObjects@BaseEngine@@UAEXXZ 00416d20 f   BaseEngine.obj
  0002:00005e00       ?Initialise@BaseEngine@@QAEHPADHH0H@Z 00416e00 f   BaseEngine.obj
@@ -446,8 +446,8 @@
  0002:0000bbf0       _strrchr                   0041cbf0 f   MSVCRT:MSVCR90.dll
  0002:0000bc00       __alloca_probe_16          0041cc00 f   MSVCRT:alloca16.obj
  0002:0000bc16       __alloca_probe_8           0041cc16     MSVCRT:alloca16.obj
- 0002:0000bc40       __alloca_probe             0041cc40     MSVCRT:chkstk.obj
  0002:0000bc40       __chkstk                   0041cc40 f   MSVCRT:chkstk.obj
+ 0002:0000bc40       __alloca_probe             0041cc40     MSVCRT:chkstk.obj
  0002:0000bc76       _SDL_SetModuleHandle       0041cc76 f   sdl:SDL.dll
  0002:0000bc7c       _SDL_strlcpy               0041cc7c f   sdl:SDL.dll
  0003:00000000       ___xc_a                    0041f000     MSVCRT:cinitexe.obj
@@ -486,7 +486,7 @@
  0003:00000aa8       ??_C@_0BA@GOFANFFP@wall?9corner?4png?$AA@ 0041faa8     GameTileManager.obj
  0003:00000abc       ??_C@_0BE@PGMDCLGE@wall?9horizontal?4png?$AA@ 0041fabc     GameTileManager.obj
  0003:00000ad4       ??_C@_0BC@NFLDMMON@wall?9vertical?4png?$AA@ 0041fad4     GameTileManager.obj
- 0003:00000af0       __real@3fd3333333333333    0041faf0     Infected.obj
+ 0003:00000af0       __real@3fa999999999999a    0041faf0     Infected.obj
  0003:00000b00       __real@3f1a36e2eb1c432d    0041fb00     Infected.obj
  0003:00000b10       ??_7Infected@@6B@          0041fb10     Infected.obj
  0003:00000b28       __real@407c200000000000    0041fb28     Infected.obj
