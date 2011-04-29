@@ -25,15 +25,21 @@ public:
 	void SetAngle(int angle);
 	double GetVelocityX();
 	double GetVelocityY();
+	void SetInHole(int iMapX, int iMapY);
 
 protected:
 	// A pointer to the main engine object
 	GameMain *_pGameMain;
 
 	// The radius of this actor
-	int _radius;
+	double _radius;
 	// The colour of this actor
 	int _colour;
+
+	bool _isFallingInHole;
+	int _holeCenterX;
+	int _holeCenterY;
+	double _radiusFallReductionRate;
 	
 	double _mass;
 	double _acceleration;

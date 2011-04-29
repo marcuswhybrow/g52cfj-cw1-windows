@@ -42,7 +42,9 @@ bool GameTileManager::CheckCollisionHorizontal(int iMapX, int iMapY, Actor *pAct
 	case 3: // ' '
 		return false;
 	case 4: // 'x'
-		return CollisionHorizontalHole(iMapX, iMapY, pActor);
+		if (CollisionHorizontalHole(iMapX, iMapY, pActor))
+			pActor->SetInHole(iMapX, iMapY);
+		return false;
 	}
 }
 
@@ -64,7 +66,9 @@ bool GameTileManager::CheckCollisionVertical(int iMapX, int iMapY, Actor *pActor
 	case 3: // ' '
 		return false;
 	case 4: // 'x'
-		return CollisionVerticalHole(iMapX, iMapY, pActor);;
+		if (CollisionVerticalHole(iMapX, iMapY, pActor))
+			pActor->SetInHole(iMapX, iMapY);
+		return false;
 	}
 }
 
@@ -165,7 +169,18 @@ bool GameTileManager::CollisionVerticalWallCorner(int iMapX, int iMapY, Actor *p
 }
 bool GameTileManager::CollisionVerticalHole(int iMapX, int iMapY, Actor *pActor)
 {
-	return false;
+	int width = GetTileWidth();
+	int height = GetTileHeight();
+	double actorVelocityY = pActor->GetVelocityY();
+	int actorX = pActor->GetX() + pActor->GetVelocityX();
+	int actorY = pActor->GetY() + actorVelocityY;
+	int actorRadius = pActor->GetRadius();
+
+	return
+		actorY + 1 >= iMapY * height &&
+		actorY - 1 <= ((iMapY + 1) * height - 1) &&
+		actorX >= iMapX * width &&
+		actorX <= ((iMapX + 1) * width - 1);
 }
 
 
@@ -206,5 +221,15 @@ bool GameTileManager::CollisionHorizontalWallCorner(int iMapX, int iMapY, Actor 
 }
 bool GameTileManager::CollisionHorizontalHole(int iMapX, int iMapY, Actor *pActor)
 {
-	return false;
+	int width = GetTileWidth();
+	int height = GetTileHeight();
+	double actorVelocityX = pActor->GetVelocityX();
+	int actorX = pActor->GetX() + actorVelocityX;
+	int actorY = pActor->GetY() + pActor->GetVelocityY();
+
+	return
+		actorX + 1 >= iMapX * width &&
+		actorX - 1 <= ((iMapX + 1) * width - 1) &&
+		actorY >= iMapY * height &&
+		actorY <= ((iMapY + 1) * height - 1);
 }

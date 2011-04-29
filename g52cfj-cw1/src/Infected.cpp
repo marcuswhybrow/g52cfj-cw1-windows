@@ -13,6 +13,8 @@ _previousLOSDifference(0)
 	_colour = 0x00ff00;
 	_acceleration = 0.0001;
 
+	_radiusFallReductionRate = 0.01;
+
 	double x = abs(rand()) % _pGameMain->GetScreenWidth();
 	double y = abs(rand()) % _pGameMain->GetScreenHeight();
 	SetPosition(x, y);
@@ -39,20 +41,6 @@ void Infected::DoUpdate(int iCurrentTime)
 	double rotation = 0.5 * difference;
 
 	SetAngle(_angle + rotation);
-	
-	//if (_pPlayer->GetY() > _y)
-	//	_velocityY += _acceleration * delta;
-	//else
-	//	_velocityY -= _acceleration * delta;
-		
-	//int currentAngle = _angle;
-	//int preferedAngle = ((int) (atan2(_pPlayer->GetY() - _y, _pPlayer->GetX() - _x) * 180 / PI) + 450) % 360;
-	//SetDirection(preferedAngle);
-
-	//double distanceToPlayer = sqrt(pow(_pPlayer->GetX() - _x, 2) + pow(_pPlayer->GetYCentre() - _y, 2));
-
-	//if (distanceToPlayer < (_radius + _pPlayer->GetRadius()))
-	//	_pGameMain->RemoveActor(this);
 
 	_previousLOSDifference = difference;
 

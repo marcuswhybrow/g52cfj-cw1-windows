@@ -159,7 +159,7 @@ void GameMain::KeyDown(int iKeyCode)
 
 void GameMain::RemoveActor(Actor *pActor)
 {
-	//pActor->SetVisible(false);
+	pActor->SetVisible(false);
 }
 
 vector<Actor*>* GameMain::GetActors()
@@ -192,7 +192,7 @@ void GameMain::StartLevel(int levelNumber)
 		// Destroy any existing objects
 		DestroyOldObjects();
 
-		int numInfected = 10;
+		int numInfected = 300;
 		int numDisplayableObjects = numInfected + 1;
 
 		Player *pPlayer = new Player(this, numInfected);

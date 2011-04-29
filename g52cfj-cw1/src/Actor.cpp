@@ -12,7 +12,9 @@ _mass(200),
 _velocityX(0),
 _velocityY(0),
 _acceleration(10),
-_maxVelocity(2)
+_maxVelocity(2),
+_isFallingInHole(false),
+_radiusFallReductionRate(0.02)
 {
 	_radius = 10;
 	_colour = 0xff0000;
@@ -41,13 +43,15 @@ void Actor::Draw()
 {
 	if (!IsVisible())
 		return;
+
+	int radius = (int) (_radius + 0.5);
 	
 	// Draw a circle
 	GetEngine()->DrawScreenOval(
-		m_iCurrentScreenX - _radius - 1,
-		m_iCurrentScreenY - _radius - 1,
-		m_iCurrentScreenX + _radius + 1,
-		m_iCurrentScreenY + _radius + 1,
+		m_iCurrentScreenX - radius - 1,
+		m_iCurrentScreenY - radius - 1,
+		m_iCurrentScreenX + radius + 1,
+		m_iCurrentScreenY + radius + 1,
 		_colour
 	);
 	
@@ -75,28 +79,27 @@ void Actor::DoUpdate(int iCurrentTime)
 		}
 	}
 
-	if (! IsIntersecting())
+	double delta = iCurrentTime - _previousTime;
+
+	if (_isFallingInHole)
 	{
-		double delta = iCurrentTime - _previousTime;
-		
+		double dx = _holeCenterX - _x;
+		double dy =  _holeCenterY - _y;
+
+		int angle = (int) ((atan2(dy, dx) * 180 / PI) + 450) % 360;
+		SetAngle(angle);
+
+		_radius -= _radiusFallReductionRate * delta;
+		if (_radius < 0)
+			_pGameMain->RemoveActor(this);
+		_x += _velocityX * delta;
+		_y += _velocityY * delta;
+	}
+	else
+	{
 		_x += _velocityX * delta;
 		_y += _velocityY * delta;
 
-		if (_velocityX != 0 || _velocityY != 0)
-		{
-			double vSquared = pow(_velocityX, 2) + pow(_velocityY, 2);
-			double vLength = sqrt(vSquared);
-			double drag = _pGameMain->GetFrictionCoefficient() * vSquared;
-
-			if (vLength != 0)
-			{
-				double dragX = drag * _velocityX / vLength;
-				double dragY = drag * _velocityY / vLength;
-
-				_x -= dragX * delta / _mass;
-				_y -= dragY * delta / _mass;
-			}
-		}
 	}
 
 	CheckForBounce();
@@ -135,7 +138,7 @@ double Actor::GetVelocityY()
 
 int Actor::GetRadius()
 {
-	return _radius;
+	return (int) (_radius + 0.5);
 }
 
 int Actor::GetId()
@@ -231,3 +234,13 @@ void Actor::SetSpeed(double speed)
 	UpdateVelocityComponents();
 }
 
+void Actor::SetInHole(int iMapX, int iMapY)
+{
+	GameTileManager *pGameTileManager = _pGameMain->GetGameTileManager();
+	int width = pGameTileManager->GetTileWidth();
+	int height = pGameTileManager->GetTileHeight();
+
+	_isFallingInHole = true;
+	_holeCenterX = iMapX * width + width / 2;
+	_holeCenterY = iMapY * height + height / 2;
+}
