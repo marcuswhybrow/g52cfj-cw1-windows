@@ -57,6 +57,24 @@ void Actor::Draw()
 
 void Actor::DoUpdate(int iCurrentTime)
 {
+	GameTileManager *pGameTileManager = _pGameMain->GetGameTileManager();
+	int x = pGameTileManager->GetTileXForPositionOnScreen(_x);
+	int y = pGameTileManager->GetTileYForPositionOnScreen(_y);
+
+	int maxWidth = pGameTileManager->GetWidth();
+	int maxHeight = pGameTileManager->GetHeight();
+
+	for (int i = max(x - 1, 0); i <= min(x + 1, maxWidth - 1); i++)
+	{
+		for (int j = max(y - 1, 0); j <= min(y + 1 , maxHeight - 1); j++)
+		{
+			if (pGameTileManager->CheckCollisionHorizontal(i, j, this))
+				_velocityX = 0;
+			if (pGameTileManager->CheckCollisionVertical(i, j, this))
+				_velocityY = 0;
+		}
+	}
+
 	if (! IsIntersecting())
 	{
 		double delta = iCurrentTime - _previousTime;
@@ -103,6 +121,16 @@ double Actor::GetX()
 double Actor::GetY()
 {
 	return _y;
+}
+
+double Actor::GetVelocityX()
+{
+	return _velocityX;
+}
+
+double Actor::GetVelocityY()
+{
+	return _velocityY;
 }
 
 int Actor::GetRadius()

@@ -11,7 +11,7 @@ Player::Player(GameMain *pGameMain, int id)
 	_colour = 0xffffff;
 	_speed = 0.1;
 
-	SetPosition(100,100);
+	SetPosition(100,200);
 }
 
 Player::~Player() {}

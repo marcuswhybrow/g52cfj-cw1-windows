@@ -46,6 +46,8 @@ public:
 
 	double GetFrictionCoefficient();
 
+	GameTileManager* GetGameTileManager();
+
 protected:
 	GameTileManager* _pGameTileManager;
 

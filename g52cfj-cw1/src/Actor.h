@@ -4,6 +4,8 @@
 #include "DisplayableObject.h"
 #include "GameMain.h"
 
+class GameMain;
+
 class Actor : public DisplayableObject
 {
 public:
@@ -21,6 +23,8 @@ public:
 	int GetId();
 	bool IsIntersecting(Actor *pActor);
 	void SetAngle(int angle);
+	double GetVelocityX();
+	double GetVelocityY();
 
 protected:
 	// A pointer to the main engine object

@@ -192,7 +192,7 @@ void GameMain::StartLevel(int levelNumber)
 		// Destroy any existing objects
 		DestroyOldObjects();
 
-		int numInfected = 5;
+		int numInfected = 10;
 		int numDisplayableObjects = numInfected + 1;
 
 		Player *pPlayer = new Player(this, numInfected);
@@ -211,4 +211,9 @@ void GameMain::StartLevel(int levelNumber)
 		m_ppDisplayableObjects[_actors.size()] = NULL;
 		break;
 	}
+}
+
+GameTileManager* GameMain::GetGameTileManager()
+{
+	return _pGameTileManager;
 }
