@@ -13,6 +13,7 @@
 #include <string>
 #include <fstream>
 
+#define NUM_LEVELS			3
 #define NUM_TILE_COLUMNS	16
 #define NUM_TILE_ROWS		12
 
@@ -30,6 +31,21 @@ _kills(0)
 	_normalFont = m_oFontManager.GetFont("fonts/SUPERPOI_S.ttf", 24);
 
 	_statsFont = m_oFontManager.GetFont("fonts/strenuous.ttf", 24);
+}
+
+GameMain::~GameMain()
+{
+	// Deallocate the _levels array which stores the tile layout.
+	for(int i = 0; i < NUM_LEVELS; i++)
+	{
+		for(int j = 0; j < NUM_TILE_ROWS; j++)
+			delete [] _levels[i][j];
+		delete [] _levels[i];
+	}
+	delete [] _levels;
+
+	// Deallocate the GameTileManager
+	delete _pGameTileManager;
 }
 
 
@@ -88,7 +104,7 @@ int GameMain::InitialiseObjects()
 	// Seed the random numbers generated for placing infected randomly
 	srand(time(NULL));
 
-	_levels = new char **[3];
+	_levels = new char **[NUM_LEVELS];
 	LoadLevel("levels/level1.txt", 0);
 	LoadLevel("levels/level2.txt", 1);
 	LoadLevel("levels/level3.txt", 2);
@@ -223,6 +239,9 @@ void GameMain::StartLevel(int levelNumber)
 
 		// Destroy any existing objects
 		DestroyOldObjects();
+
+		// Calls destructors on all actors
+		_actors.clear();
 
 		int numInfected = 300;
 		int numDisplayableObjects = numInfected + 1;

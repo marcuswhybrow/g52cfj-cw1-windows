@@ -1,8 +1,17 @@
 #include "header.h"
 
 #include "GameTileManager.h"
-#include "JPGImage.h"
 #include "Actor.h"
+
+GameTileManager::GameTileManager()
+{
+	_pImageData = new ImageData();
+}
+
+GameTileManager::~GameTileManager()
+{
+	delete _pImageData;
+}
 
 int GameTileManager::GetWidth()
 {
@@ -80,35 +89,33 @@ void GameTileManager::DrawTileAt(
 		int iStartPositionScreenY
 	)
 {
-	ImageData *pWall = new ImageData();
-
 	switch(GetValue(iMapX, iMapY))
 	{
 	case 0: // '|'
-		pWall->LoadImage("wall-vertical.png");
-		pWall->RenderImage(
+		_pImageData->LoadImage("wall-vertical.png");
+		_pImageData->RenderImage(
 			pEngine->GetBackground(),
 			0, 0,
 			iStartPositionScreenX, iStartPositionScreenY,
-			pWall->GetWidth(), pWall->GetHeight()
+			_pImageData->GetWidth(), _pImageData->GetHeight()
 		);
 		break;
 	case 1: // '-'
-		pWall->LoadImage("wall-horizontal.png");
-		pWall->RenderImage(
+		_pImageData->LoadImage("wall-horizontal.png");
+		_pImageData->RenderImage(
 			pEngine->GetBackground(),
 			0, 0,
 			iStartPositionScreenX, iStartPositionScreenY,
-			pWall->GetWidth(), pWall->GetHeight()
+			_pImageData->GetWidth(), _pImageData->GetHeight()
 		);
 		break;
 	case 2: // '+'
-		pWall->LoadImage("wall-corner.png");
-		pWall->RenderImage(
+		_pImageData->LoadImage("wall-corner.png");
+		_pImageData->RenderImage(
 			pEngine->GetBackground(),
 			0, 0,
 			iStartPositionScreenX, iStartPositionScreenY,
-			pWall->GetWidth(), pWall->GetHeight()
+			_pImageData->GetWidth(), _pImageData->GetHeight()
 		);
 		break;
 	case 3: // ' '
@@ -121,12 +128,12 @@ void GameTileManager::DrawTileAt(
 			pSurface );
 		break;
 	case 4: // 'x'
-		pWall->LoadImage("hole-dark.png");
-		pWall->RenderImage(
+		_pImageData->LoadImage("hole-dark.png");
+		_pImageData->RenderImage(
 			pEngine->GetBackground(),
 			0, 0,
 			iStartPositionScreenX, iStartPositionScreenY,
-			pWall->GetWidth(), pWall->GetHeight()
+			_pImageData->GetWidth(), _pImageData->GetHeight()
 		);
 		break;
 	}

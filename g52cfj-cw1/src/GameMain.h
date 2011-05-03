@@ -17,6 +17,7 @@ public:
 	Constructor
 	*/
 	GameMain(void);
+	~GameMain();
 	
 	// Do any setup of back buffer prior to locking the screen buffer
 	// Basically do the drawing of the background in here and it'll be copied to the screen for you as needed

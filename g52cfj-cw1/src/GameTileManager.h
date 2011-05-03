@@ -2,12 +2,16 @@
 #define GAMETILEMANAGER_H
 
 #include "TileManager.h"
+#include "JPGImage.h"
 
 class Actor;
 
 class GameTileManager : public TileManager
 {
 public:
+	GameTileManager(void);
+	~GameTileManager();
+
 	virtual int GetTileWidth();
 	virtual int GetTileHeight();
 	virtual void DrawTileAt(
@@ -32,6 +36,8 @@ private:
 	bool CollisionHorizontalWallHorizontal(int iMapX, int iMapY, Actor *pActor);
 	bool CollisionHorizontalWallCorner(int iMapX, int iMapY, Actor *pActor);
 	bool CollisionHorizontalHole(int iMapX, int iMapY, Actor *pActor);
+
+	ImageData *_pImageData;
 };
 
 #endif
