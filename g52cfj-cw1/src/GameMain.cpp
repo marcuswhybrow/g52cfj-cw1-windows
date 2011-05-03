@@ -21,12 +21,15 @@ GameMain::GameMain()
 : BaseEngine(6), 
 _frictionCoefficient(1),
 _currentLevel(1),
-_levelsLoaded(false)
+_levelsLoaded(false),
+_kills(0)
 {
 	_pGameTileManager = new GameTileManager();
 	_state = INTRO;
-	_titleFont = m_oFontManager.GetFont("Acidic.ttf", 120);
-	_normalFont = m_oFontManager.GetFont("SUPERPOI_S.ttf", 24);
+	_titleFont = m_oFontManager.GetFont("fonts/Acidic.ttf", 120);
+	_normalFont = m_oFontManager.GetFont("fonts/SUPERPOI_S.ttf", 24);
+
+	_statsFont = m_oFontManager.GetFont("fonts/strenuous.ttf", 24);
 }
 
 
@@ -121,11 +124,15 @@ void GameMain::DrawStrings()
 		DrawScreenString(275, 420, "CLICK TO START", 0x000000, NULL);
 		break;
 	case PLAYING:
-		CopyBackgroundPixels( 0, 0, GetScreenWidth(), 30 );
-		char buf[128];
-		sprintf( buf, "Changing text %d %d\n", rand(), rand() );
-		DrawScreenString( 150, 10, buf, 0xffffff, NULL );
-		SetNextUpdateRect( 0/*X*/, 0/*Y*/, GetScreenWidth(), 30/*Height*/ );
+		CopyBackgroundPixels(0, 0, GetScreenWidth(), 40);
+		char score[128];
+		sprintf(score, "KILLS: %d", _kills);
+		char level[128];
+		sprintf(level, "LEVEL: %d", _currentLevel);
+
+		DrawScreenString(200, 10, score, 0xffffff, _statsFont);
+		DrawScreenString(50, 10, level, 0xffffff, _statsFont);
+		SetNextUpdateRect(0, 0, GetScreenWidth(), 40);
 		break;
 	}
 }
@@ -180,6 +187,7 @@ void GameMain::KeyDown(int iKeyCode)
 void GameMain::RemoveActor(Actor *pActor)
 {
 	pActor->SetVisible(false);
+	pActor->HasBeenRemoved();
 }
 
 list<Actor*>* GameMain::GetActors()
@@ -240,4 +248,9 @@ void GameMain::StartLevel(int levelNumber)
 GameTileManager* GameMain::GetGameTileManager()
 {
 	return _pGameTileManager;
+}
+
+void GameMain::AddKill()
+{
+	_kills++;
 }

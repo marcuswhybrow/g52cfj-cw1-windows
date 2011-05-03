@@ -13,6 +13,8 @@ public:
 	void Draw();
 	void DoUpdate(int iCurrentTime);
 
+	virtual void HasBeenRemoved();
+
 private:
 	Player *_pPlayer;
 	int _previousLOSDifference;

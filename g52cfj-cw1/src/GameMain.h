@@ -49,6 +49,8 @@ public:
 
 	GameTileManager* GetGameTileManager();
 
+	void AddKill();
+
 protected:
 	GameTileManager* _pGameTileManager;
 
@@ -59,6 +61,8 @@ protected:
 	int _currentLevel;
 	char ***_levels;
 	bool _levelsLoaded;
+
+	int _kills;
 private:
 	int GetNumber(char c);
 
@@ -67,6 +71,7 @@ private:
 
 	Font *_titleFont;
 	Font *_normalFont;
+	Font *_statsFont;
 
 	void ChangeState(State newState);
 	void StartLevel(int levelNumber);

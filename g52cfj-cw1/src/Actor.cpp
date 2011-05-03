@@ -247,3 +247,8 @@ void Actor::SetInHole(int iMapX, int iMapY)
 	_holeCenterX = iMapX * width + width / 2;
 	_holeCenterY = iMapY * height + height / 2;
 }
+
+void Actor::HasBeenRemoved()
+{
+	// nothing to do in the base class
+}

@@ -27,6 +27,8 @@ public:
 	double GetVelocityY();
 	void SetInHole(int iMapX, int iMapY);
 
+	virtual void HasBeenRemoved();
+
 protected:
 	// A pointer to the main engine object
 	GameMain *_pGameMain;

@@ -59,4 +59,12 @@ void Infected::DoUpdate(int iCurrentTime)
 	SetAngle(newAngle);
 
 	Actor::DoUpdate(iCurrentTime);
+
+	if (_pPlayer->IsIntersecting(this) && IsVisible())
+		_pGameMain->RemoveActor(this);
+}
+
+void Infected::HasBeenRemoved()
+{
+	_pGameMain->AddKill();
 }
