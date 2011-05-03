@@ -1,0 +1,25 @@
+\section{Requirements}
+
+\subsection{Draw an appropriate background}
+
+\begin{itemize}
+	\item The drawing of tiles is taken care of by the \verb!GameTileManager! class which is a subclass of \verb!TileManager!.
+	\item The \verb!DrawTileAt! method has been overridden to draw 5 different types of tile. These are \emph{empty space}, \emph{vertical wall}, \emph{horizontal wall}, \emph{intersection wall} and \emph{hole}. The three wall tiles and the hole are drawn using the \verb!JPGImage! class from images created in Photoshop, whereas all empty space tiles are drawn as a grey rectangle.
+	\item This class also contains new methods for testing whether an \verb!Actor! (base class for ball) will collide with a particular tile. Collision detection is done separately for each axis so you will see methods such as \verb!CheckCollisionVertical! and the private methods for checking collision for each of the different possible tiles (e.g. \verb!CollisionVerticalWallVertical!).
+\end{itemize}
+
+\subsection{Have moving objects}
+
+\subsection{Have interaction between the moving objects and the background}
+
+\subsection{Provide user interaction by handling keyboard or mouse input}
+
+\subsection{Provide AI-controlled objects}
+
+\subsection{Load data from files}
+
+\subsection{Save and load information}
+
+\subsection{Display status information on the screen}
+
+\subsection{Support different states}
