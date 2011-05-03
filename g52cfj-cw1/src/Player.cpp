@@ -28,17 +28,17 @@ void Player::DoUpdate(int iCurrentTime)
 	double dx = _pGameMain->GetCurrentMouseX() - _x;
 	double dy =  _pGameMain->GetCurrentMouseY() - _y;
 
-	if (sqrt(pow(dx, 2) + pow(dy, 2)) < 1)
-		SetSpeed(0);
-	else
+	double dist = sqrt(pow(dx, 2) + pow(dy, 2));
+
+	if (dist > 1 && dist < 50)
+		SetSpeed(_maxVelocity * dist / 50);
+	else if (dist > 1)
 		SetSpeed(_maxVelocity);
+	else
+		SetSpeed(0);
 
-	int LOS = (int) ((atan2(dy, dx) * 180 / PI) + 450) % 360;
-	int difference = LOS - _angle;
-	
-	double rotation = 0.5 * difference;
-
-	SetAngle(_angle + rotation);
+	int angle = (int) ((atan2(dy, dx) * 180 / PI) + 450) % 360;
+	SetAngle(angle);
 
 	CheckKeys(iCurrentTime);
 	Actor::DoUpdate(iCurrentTime);
