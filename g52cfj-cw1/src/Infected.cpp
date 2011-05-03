@@ -50,10 +50,14 @@ void Infected::DoUpdate(int iCurrentTime)
 	double dx = _pPlayer->GetX() - _x;
 	double dy =  _pPlayer->GetY() - _y;
 
-	if (sqrt(pow(dx, 2) + pow(dy, 2)) < 2)
-		SetSpeed(0);
-	else
+	double dist = sqrt(pow(dx, 2) + pow(dy, 2));
+
+	if (dist > 2 && dist <= 100)
 		SetSpeed(_maxVelocity);
+	else if (dist > 100 && dist <= 200)
+		SetSpeed(_maxVelocity * (200 - dist) / 100);
+	else
+		SetSpeed(0);
 
 	int newAngle = (int) ((atan2(dy, dx) * 180 / PI) + 450) % 360;
 	SetAngle(newAngle);
