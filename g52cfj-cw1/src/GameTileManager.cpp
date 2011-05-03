@@ -3,6 +3,9 @@
 #include "GameTileManager.h"
 #include "Actor.h"
 
+#define POWERUP_RADIUS 7
+#define POWERUP_OUTER_RADIUS 9
+
 GameTileManager::GameTileManager()
 {
 	_pImageData = new ImageData();
@@ -121,13 +124,15 @@ void GameTileManager::DrawTileAt(
 		);
 		break;
 	case 3: // ' '
+	case 5: // 'S' or 'C'
 		pEngine->DrawRectangle( 
 			iStartPositionScreenX,
 			iStartPositionScreenY, 
 			iStartPositionScreenX + GetTileWidth() - 1,
 			iStartPositionScreenY + GetTileHeight() - 1,
 			0x999999,
-			pSurface );
+			pSurface
+		);
 		break;
 	case 4: // 'x'
 		_pImageData->LoadImage("hole-dark.png");
@@ -136,6 +141,58 @@ void GameTileManager::DrawTileAt(
 			0, 0,
 			iStartPositionScreenX, iStartPositionScreenY,
 			_pImageData->GetWidth(), _pImageData->GetHeight()
+		);
+		break;
+	case 6: // 'Z'
+		pEngine->DrawRectangle( 
+			iStartPositionScreenX,
+			iStartPositionScreenY, 
+			iStartPositionScreenX + GetTileWidth() - 1,
+			iStartPositionScreenY + GetTileHeight() - 1,
+			0x999999,
+			pSurface
+		);
+		pEngine->DrawOval(
+			iStartPositionScreenX + GetTileWidth() / 2 - POWERUP_OUTER_RADIUS,
+			iStartPositionScreenY + GetTileHeight() / 2 - POWERUP_OUTER_RADIUS,
+			iStartPositionScreenX + GetTileWidth() / 2 + POWERUP_OUTER_RADIUS,
+			iStartPositionScreenY + GetTileHeight() / 2 + POWERUP_OUTER_RADIUS,
+			0x000000,
+			pSurface
+		);
+		pEngine->DrawOval(
+			iStartPositionScreenX + GetTileWidth() / 2 - POWERUP_RADIUS,
+			iStartPositionScreenY + GetTileHeight() / 2 - POWERUP_RADIUS,
+			iStartPositionScreenX + GetTileWidth() / 2 + POWERUP_RADIUS,
+			iStartPositionScreenY + GetTileHeight() / 2 + POWERUP_RADIUS,
+			0xffffff,
+			pSurface
+		);
+		break;
+	case 7: // 'P'
+		pEngine->DrawRectangle( 
+			iStartPositionScreenX,
+			iStartPositionScreenY, 
+			iStartPositionScreenX + GetTileWidth() - 1,
+			iStartPositionScreenY + GetTileHeight() - 1,
+			0x999999,
+			pSurface
+		);
+		pEngine->DrawOval(
+			iStartPositionScreenX + GetTileWidth() / 2 - POWERUP_OUTER_RADIUS,
+			iStartPositionScreenY + GetTileHeight() / 2 - POWERUP_OUTER_RADIUS,
+			iStartPositionScreenX + GetTileWidth() / 2 + POWERUP_OUTER_RADIUS,
+			iStartPositionScreenY + GetTileHeight() / 2 + POWERUP_OUTER_RADIUS,
+			0xffffff,
+			pSurface
+		);
+		pEngine->DrawOval(
+			iStartPositionScreenX + GetTileWidth() / 2 - POWERUP_RADIUS,
+			iStartPositionScreenY + GetTileHeight() / 2 - POWERUP_RADIUS,
+			iStartPositionScreenX + GetTileWidth() / 2 + POWERUP_RADIUS,
+			iStartPositionScreenY + GetTileHeight() / 2 + POWERUP_RADIUS,
+			0x000000,
+			pSurface
 		);
 		break;
 	}
@@ -241,4 +298,9 @@ bool GameTileManager::CollisionHorizontalHole(int iMapX, int iMapY, Actor *pActo
 		actorX - 1 <= ((iMapX + 1) * width - 1) &&
 		actorY >= iMapY * height &&
 		actorY <= ((iMapY + 1) * height - 1);
+}
+
+int GameTileManager::GetPowerupRadius()
+{
+	return POWERUP_OUTER_RADIUS;
 }

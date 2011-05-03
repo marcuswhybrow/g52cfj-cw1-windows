@@ -8,9 +8,7 @@ class Infected : public Actor
 {
 public:
 	Infected(GameMain *pEngine, int id, Player *pPlayer);
-	virtual ~Infected(void);
 
-	void Draw();
 	void DoUpdate(int iCurrentTime);
 
 	virtual void HasBeenRemoved();

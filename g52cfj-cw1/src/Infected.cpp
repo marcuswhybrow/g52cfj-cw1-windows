@@ -31,7 +31,7 @@ _previousLOSDifference(0)
 
 	int tileX;
 	int tileY;
-
+	
 	do
 	{
 		tileX = rand() % pGameTileManager->GetWidth();
@@ -46,13 +46,6 @@ _previousLOSDifference(0)
 
 	SetPosition(x, y);
 	_speed = _maxVelocity = 0.05;
-}
-
-Infected::~Infected() {}
-
-void Infected::Draw()
-{
-	Actor::Draw();
 }
 
 void Infected::DoUpdate(int iCurrentTime)
@@ -73,7 +66,7 @@ void Infected::DoUpdate(int iCurrentTime)
 
 	int newAngle = (int) ((atan2(dy, dx) * 180 / PI) + 450) % 360;
 
-	if (_pPlayer->GetColour() != _colour)
+	if (! _pPlayer->ShouldAttract(this))
 		newAngle -= 180;
 
 	SetAngle(newAngle);

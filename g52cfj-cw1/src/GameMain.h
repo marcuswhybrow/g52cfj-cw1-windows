@@ -10,7 +10,7 @@ using namespace std;
 class Actor;
 class Player;
 
-#define NUM_LEVELS			6
+#define NUM_LEVELS			7
 #define NUM_TILE_COLUMNS	16
 #define NUM_TILE_ROWS		12
 
@@ -45,6 +45,7 @@ public:
 
 	// Handle pressing of a key
 	virtual void KeyDown(int iKeyCode);
+	virtual void KeyUp(int iKeyCode);
 
 	void RemoveActor(Actor *pActor);
 

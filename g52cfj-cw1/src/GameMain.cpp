@@ -109,6 +109,10 @@ int GameMain::GetNumber(char c)
 	case '+': return 2;
 	case ' ': return 3;
 	case 'x': return 4;
+	case 'C':
+	case 'S': return 5;
+	case 'Z': return 6;
+	case 'P': return 7;
 	default: return 3;
 	}
 }
@@ -130,9 +134,10 @@ int GameMain::InitialiseObjects()
 	LoadLevel("levels/intro1.txt", 0);
 	LoadLevel("levels/intro2.txt", 1);
 	LoadLevel("levels/intro3.txt", 2);
-	LoadLevel("levels/level1.txt", 3);
-	LoadLevel("levels/level2.txt", 4);
-	LoadLevel("levels/level3.txt", 5);
+	LoadLevel("levels/intro4.txt", 3);
+	LoadLevel("levels/level1.txt", 4);
+	LoadLevel("levels/level2.txt", 5);
+	LoadLevel("levels/level3.txt", 6);
 	_levelsLoaded = true;
 
 	return 0;
@@ -209,6 +214,11 @@ void GameMain::DrawStrings()
 			DrawScreenString(75, 460, "Kill colours different to you, using collision", 0x000000, _statsFont);
 			DrawScreenString(75, 480, "or lure them into a hole.", 0x000000, _statsFont);
 			DrawScreenString(75, 500, "Kill one to start the game.", 0x000000, _statsFont);
+			break;
+		case 4:
+			DrawScreenString(75, 460, "Gain +10 for colliding with difference colours.", 0x000000, _statsFont);
+			DrawScreenString(75, 480, "Lose -5 for colliding with a same colour ball.", 0x000000, _statsFont);
+			DrawScreenString(75, 500, "Kill all balls to finish the level!", 0x000000, _statsFont);
 			break;
 		}
 		break;
@@ -343,6 +353,17 @@ void GameMain::KeyDown(int iKeyCode)
 	}
 }
 
+void GameMain::KeyUp(int iKeyCode)
+{
+	switch (iKeyCode)
+	{
+	case SDLK_s:
+		if (_state == INTRO)
+			StartLevel(5);
+		break;
+	}
+}
+
 void GameMain::RemoveActor(Actor *pActor)
 {
 	pActor->SetVisible(false);
@@ -433,8 +454,16 @@ void GameMain::StartLevel(int levelNumber)
 		_actors.front()->SetPreviousTime(GetTime());
 		break;
 	case 4:
+		_numInfected = 20;
+		for (int i = 0; i < _numInfected; i++)
+		{
+			_actors.push_front(new Infected(this, i, _pPlayer));
+			_actors.front()->SetPreviousTime(GetTime());
+		}
+		break;
 	case 5:
 	case 6:
+	case 7:
 		_numInfected = 100;
 		for (int i = 0; i < _numInfected; i++)
 		{

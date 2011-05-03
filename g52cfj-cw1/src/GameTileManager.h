@@ -26,6 +26,8 @@ public:
 
 	bool CheckCollisionHorizontal(int iMapX, int iMapY, Actor *pActor);
 	bool CheckCollisionVertical(int iMapX, int iMapY, Actor *pActor);
+
+	int GetPowerupRadius();
 private:
 	bool CollisionVerticalWallVertical(int iMapX, int iMapY, Actor *pActor);
 	bool CollisionVerticalWallHorizontal(int iMapX, int iMapY, Actor *pActor);
