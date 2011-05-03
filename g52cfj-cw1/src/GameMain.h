@@ -10,6 +10,10 @@ using namespace std;
 class Actor;
 class Player;
 
+#define NUM_LEVELS			6
+#define NUM_TILE_COLUMNS	16
+#define NUM_TILE_ROWS		12
+
 class GameMain : public BaseEngine
 {
 public:
@@ -50,7 +54,12 @@ public:
 
 	GameTileManager* GetGameTileManager();
 
-	void AddKill();
+	void AddPoints();
+	void Penalise();
+	void EndLevel();
+	void EndGame();
+
+	const enum State {INTRO, PLAYING, COMPLETED, GAME_OVER};
 
 protected:
 	GameTileManager* _pGameTileManager;
@@ -63,21 +72,27 @@ protected:
 	char ***_levels;
 	bool _levelsLoaded;
 
-	int _kills;
+	int _points;
+	int _killsThisLevel;
+	int _numInfected;
+	int *_playerStartX;
+	int *_playerStartY;
+
 private:
 	int GetNumber(char c);
 
-	enum State {INTRO, PLAYING, PAUSED, END_OF_LEVEL, GAME_OVER};
 	State _state;
 
 	Font *_titleFont;
 	Font *_normalFont;
 	Font *_statsFont;
+	Font *_highScoresFont;
 
 	void ChangeState(State newState);
 	void StartLevel(int levelNumber);
 
 	void LoadLevel(char *pathToFile, int level);
+	void SetupHighScores();
 };
 
 #endif

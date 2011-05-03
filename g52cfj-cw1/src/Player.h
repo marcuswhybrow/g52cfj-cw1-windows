@@ -11,9 +11,11 @@ public:
 
 	void Draw();
 	void DoUpdate(int iCurrentTime);
+	virtual void HasBeenRemoved();
 
 private:
 	void CheckKeys(int iCurrentTime);
+	bool _spaceIsDown;
 };
 
 #endif

@@ -64,6 +64,12 @@ void Actor::DoUpdate(int iCurrentTime)
 	if (!IsVisible())
 		return;
 
+	double delta = iCurrentTime - _previousTime;
+	_previousTime = iCurrentTime;
+
+	if (delta > 100)
+		return;
+
 	GameTileManager *pGameTileManager = _pGameMain->GetGameTileManager();
 	int x = pGameTileManager->GetTileXForPositionOnScreen(_x);
 	int y = pGameTileManager->GetTileYForPositionOnScreen(_y);
@@ -81,8 +87,6 @@ void Actor::DoUpdate(int iCurrentTime)
 				_velocityY = 0;
 		}
 	}
-
-	double delta = iCurrentTime - _previousTime;
 
 	if (_isFallingInHole)
 	{
@@ -108,8 +112,6 @@ void Actor::DoUpdate(int iCurrentTime)
 	CheckForBounce();
 	UpdatePixelPositionFromRealPosition();
 	RedrawObjects();
-
-	_previousTime = iCurrentTime;
 }
 
 void Actor::SetPosition(double x, double y)
@@ -251,4 +253,28 @@ void Actor::SetInHole(int iMapX, int iMapY)
 void Actor::HasBeenRemoved()
 {
 	// nothing to do in the base class
+}
+
+int Actor::GetColour()
+{
+	return _colour;
+}
+
+double Actor::GetSpeed()
+{
+	return _speed;
+}
+
+void Actor::SetColour(int colour)
+{
+	_colour = colour;
+}
+
+bool Actor::IsInfectable()
+{
+	return false;
+}
+
+void Actor::SetPreviousTime(int previousTime){
+	_previousTime = previousTime;
 }

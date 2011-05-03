@@ -55,6 +55,7 @@ bool GameTileManager::CheckCollisionHorizontal(int iMapX, int iMapY, Actor *pAct
 			pActor->SetInHole(iMapX, iMapY);
 		return false;
 	}
+	return false;
 }
 
 bool GameTileManager::CheckCollisionVertical(int iMapX, int iMapY, Actor *pActor)
@@ -79,6 +80,7 @@ bool GameTileManager::CheckCollisionVertical(int iMapX, int iMapY, Actor *pActor
 			pActor->SetInHole(iMapX, iMapY);
 		return false;
 	}
+	return false;
 }
 
 void GameTileManager::DrawTileAt(

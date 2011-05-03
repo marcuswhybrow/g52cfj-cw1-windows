@@ -6,10 +6,12 @@
 #define PI 3.14159265
 
 Player::Player(GameMain *pGameMain, int id)
-: Actor(pGameMain, id)
+: Actor(pGameMain, id),
+_spaceIsDown(false)
 {
-	_colour = 0xffffff;
-	_speed = _maxVelocity = 0.1;
+	_colour = 0xff0000;
+	//_maxVelocity = 0.1;
+	_maxVelocity = 0.5;
 
 	SetPosition(100,200);
 }
@@ -48,15 +50,27 @@ void Player::CheckKeys(int iCurrentTime)
 {
 	int delta = iCurrentTime - _previousTime;
 
-	// Change speed if player presses a key
-	//if (GetEngine()->IsKeyPressed(SDLK_UP))
-	//	_velocityY -= 0.001 * delta;
-	//if (GetEngine()->IsKeyPressed(SDLK_DOWN))
-	//	_velocityY += 0.001 * delta;
-	//if (GetEngine()->IsKeyPressed(SDLK_LEFT))
-	//	_velocityX -= 0.001 * delta;
-	//if (GetEngine()->IsKeyPressed(SDLK_RIGHT))
-	//	_velocityX += 0.001 * delta;
-	//if (GetEngine()->IsKeyPressed(SDLK_SPACE))
-	//	_velocityX = _velocityY = 0.0;
+	bool spaceWasDown = _spaceIsDown;
+	_spaceIsDown = GetEngine()->IsKeyPressed(SDLK_SPACE);
+
+	if (spaceWasDown && _spaceIsDown == false)
+	{
+		switch (_colour)
+		{
+		case 0xff0000:
+			_colour = 0x00ff00;
+			break;
+		case 0x00ff00:
+			_colour = 0x0000ff;
+			break;
+		case 0x0000ff:
+			_colour = 0xff0000;
+			break;
+		}
+	}
+}
+
+void Player::HasBeenRemoved()
+{
+	_pGameMain->EndGame();
 }

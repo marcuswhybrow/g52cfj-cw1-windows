@@ -193,6 +193,10 @@
 				RelativePath=".\Player.h"
 				>
 			</File>
+			<File
+				RelativePath=".\TutorialInfected.h"
+				>
+			</File>
 			<Filter
 				Name="Shared"
 				>
@@ -259,6 +263,10 @@
 			</File>
 			<File
 				RelativePath=".\Player.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TutorialInfected.cpp"
 				>
 			</File>
 			<Filter

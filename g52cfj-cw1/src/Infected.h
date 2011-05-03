@@ -14,6 +14,7 @@ public:
 	void DoUpdate(int iCurrentTime);
 
 	virtual void HasBeenRemoved();
+	virtual bool IsInfectable();
 
 private:
 	Player *_pPlayer;

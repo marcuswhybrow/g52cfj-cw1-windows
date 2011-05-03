@@ -1,6 +1,7 @@
 #include "header.h"
 #include "Infected.h"
 #include <math.h>
+#include <list>
 
 #define PI 3.14159265
 
@@ -10,7 +11,18 @@ _pPlayer(pPlayer),
 _previousLOSDifference(0)
 {
 	_radius = rand() % 5 + 2;
-	_colour =  0x00dd00;
+	switch (rand() % 3)
+	{
+	case 0:
+		_colour = 0xff0000;
+		break;
+	case 1:
+		_colour = 0x00ff00;
+		break;
+	case 2:
+		_colour = 0x0000ff;
+		break;
+	}
 	_acceleration = 0.0001;
 
 	_radiusFallReductionRate = 0.01;
@@ -60,15 +72,34 @@ void Infected::DoUpdate(int iCurrentTime)
 		SetSpeed(0);
 
 	int newAngle = (int) ((atan2(dy, dx) * 180 / PI) + 450) % 360;
+
+	if (_pPlayer->GetColour() != _colour)
+		newAngle -= 180;
+
 	SetAngle(newAngle);
 
-	Actor::DoUpdate(iCurrentTime);
+	list<Actor*>* pActors = _pGameMain->GetActors();
 
+	for (list<Actor*>::iterator it = pActors->begin(); it != pActors->end(); it++)
+		if ((*it)->IsInfectable() && this->IsIntersecting(*it) && _speed > (*it)->GetSpeed())
+			(*it)->SetColour(_colour);
+
+	
 	if (_pPlayer->IsIntersecting(this) && IsVisible())
 		_pGameMain->RemoveActor(this);
+
+	Actor::DoUpdate(iCurrentTime);
 }
 
 void Infected::HasBeenRemoved()
 {
-	_pGameMain->AddKill();
+	if (_pPlayer->GetColour() == _colour)
+		_pGameMain->Penalise();
+	else
+		_pGameMain->AddPoints();
+}
+
+bool Infected::IsInfectable()
+{
+	return true;
 }

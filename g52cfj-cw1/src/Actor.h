@@ -17,15 +17,20 @@ public:
 	void SetPosition(double x, double y);
 	void SetSpeed(double speed);
 	void SetDirection(int angle);
+	void SetColour(int colour);
+	void SetPreviousTime(int previousTime);
 	double GetX();
 	double GetY();
 	int GetRadius();
+	int GetColour();
 	int GetId();
+	double GetSpeed();
 	bool IsIntersecting(Actor *pActor);
 	void SetAngle(int angle);
 	double GetVelocityX();
 	double GetVelocityY();
 	void SetInHole(int iMapX, int iMapY);
+	virtual bool IsInfectable();
 
 	virtual void HasBeenRemoved();
 
