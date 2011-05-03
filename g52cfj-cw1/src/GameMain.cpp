@@ -10,10 +10,18 @@
 #include <time.h>
 #include "GameTileManager.h"
 #include "FontManager.h"
+#include <string>
+#include <fstream>
+
+#define NUM_TILE_COLUMNS	16
+#define NUM_TILE_ROWS		12
+
 
 GameMain::GameMain()
 : BaseEngine(6), 
-_frictionCoefficient(1)
+_frictionCoefficient(1),
+_currentLevel(1),
+_levelsLoaded(false)
 {
 	_pGameTileManager = new GameTileManager();
 	_state = INTRO;
@@ -34,31 +42,22 @@ void GameMain::SetupBackgroundBuffer()
 		FillBackground(0x444444);
 		break;
 	case PLAYING:
-		char* data[] = {
-			"+--------------+",
-			"|              |",
-			"| x          x |",
-			"|              |",
-			"|     x  x     |",
-			"|     +--+     |",
-			"|              |",
-			"|     +--+     |",
-			"|     x  x     |",
-			"| x          x |",
-			"|              |",
-			"+--------------+" };
+		if (! _levelsLoaded)
+			break;
+
+		char** data = _levels[_currentLevel - 1];
 
 		// Specify how many tiles wide and high
-		_pGameTileManager->SetSize( 16, 12 ); 
+		_pGameTileManager->SetSize(NUM_TILE_COLUMNS, NUM_TILE_ROWS); 
 		// Set up the tiles
-		for ( int x = 0 ; x < 16 ; x++ )
-			for ( int y = 0 ; y < 12 ; y++ )
+		for ( int x = 0 ; x < NUM_TILE_COLUMNS ; x++ )
+			for ( int y = 0 ; y < NUM_TILE_ROWS ; y++ )
 				_pGameTileManager->SetValue(x, y, GetNumber(data[y][x]));
 
 		// Specify the screen x,y of top left corner
 		_pGameTileManager->SetBaseTilesPositionOnScreen(0, 0);
 
-		_pGameTileManager->DrawAllTiles(this, this->GetBackground(), 0, 0, 15, 11);
+		_pGameTileManager->DrawAllTiles(this, this->GetBackground(), 0, 0, NUM_TILE_COLUMNS-1, NUM_TILE_ROWS-1);
 		break;
 	}
 }
@@ -86,8 +85,29 @@ int GameMain::InitialiseObjects()
 	// Seed the random numbers generated for placing infected randomly
 	srand(time(NULL));
 
+	_levels = new char **[3];
+	LoadLevel("levels/level1.txt", 0);
+	LoadLevel("levels/level2.txt", 1);
+	LoadLevel("levels/level3.txt", 2);
+	_levelsLoaded = true;
+
 	return 0;
 }
+
+void GameMain::LoadLevel(char *pathToFile, int level)
+{
+	std::ifstream ifs(pathToFile);
+	string line;
+
+	_levels[level] = new char*[NUM_TILE_ROWS];
+	int i = 0;
+	while (getline(ifs, line) && i < NUM_TILE_ROWS)
+	{
+		_levels[level][i] = new char[NUM_TILE_COLUMNS];
+		strncpy(_levels[level][i++], line.c_str(), NUM_TILE_COLUMNS);
+	}
+}
+
 
 
 /* Draw text labels */
@@ -136,7 +156,7 @@ void GameMain::MouseUp(int iButton, int iX, int iY)
 	switch (_state)
 	{
 	case INTRO:
-		StartLevel(0);
+		StartLevel(1);
 		break;
 	}
 }
@@ -182,10 +202,14 @@ void GameMain::ChangeState(State newState)
 
 void GameMain::StartLevel(int levelNumber)
 {
+	_currentLevel = levelNumber;
+
 	ChangeState(PLAYING);
 	switch (levelNumber)
 	{
-	case 0:
+	case 1:
+	case 2:
+	case 3:
 		// Record the fact that we are about to change the array - so it doesn't get used elsewhere without reloading it
 		DrawableObjectsChanged();
 

@@ -55,6 +55,10 @@ protected:
 	list<Actor*> _actors;
 	Player *_pPlayer;
 	double _frictionCoefficient;
+
+	int _currentLevel;
+	char ***_levels;
+	bool _levelsLoaded;
 private:
 	int GetNumber(char c);
 
@@ -66,6 +70,8 @@ private:
 
 	void ChangeState(State newState);
 	void StartLevel(int levelNumber);
+
+	void LoadLevel(char *pathToFile, int level);
 };
 
 #endif
