@@ -36,17 +36,17 @@ void GameMain::SetupBackgroundBuffer()
 	case PLAYING:
 		char* data[] = {
 			"+--------------+",
-			"|      x       |",
-			"|         x----+",
 			"|              |",
-			"|     x        |",
-			"|     |        |",
-			"|  x  +--      |",
-			"|     |        |",
-			"|     +--+x    |",
+			"| x          x |",
 			"|              |",
-			"|   +------+   |",
-			"+---+------+---+" };
+			"|     x  x     |",
+			"|     +--+     |",
+			"|              |",
+			"|     +--+     |",
+			"|     x  x     |",
+			"| x          x |",
+			"|              |",
+			"+--------------+" };
 
 		// Specify how many tiles wide and high
 		_pGameTileManager->SetSize( 16, 12 ); 
@@ -162,7 +162,7 @@ void GameMain::RemoveActor(Actor *pActor)
 	pActor->SetVisible(false);
 }
 
-vector<Actor*>* GameMain::GetActors()
+list<Actor*>* GameMain::GetActors()
 {
 	return &_actors;
 }
@@ -195,17 +195,17 @@ void GameMain::StartLevel(int levelNumber)
 		int numInfected = 300;
 		int numDisplayableObjects = numInfected + 1;
 
-		Player *pPlayer = new Player(this, numInfected);
+		_pPlayer = new Player(this, numInfected);
 
 		for (int i = 0; i < numInfected; i++)
-			_actors.push_back(new Infected(this, i, pPlayer));
-		_actors.push_back(pPlayer);
+			_actors.push_back(new Infected(this, i, _pPlayer));
+		_actors.push_back(_pPlayer);
 
 		// Create an array one element larger than the number of objects that you want.
 		m_ppDisplayableObjects = new DisplayableObject*[_actors.size() + 1];
 		
 		int i = 0;
-		for (vector<Actor*>::iterator it = _actors.begin(); it != _actors.end(); it++)
+		for (list<Actor*>::iterator it = _actors.begin(); it != _actors.end(); it++)
 			m_ppDisplayableObjects[i++] = *it;
 		
 		m_ppDisplayableObjects[_actors.size()] = NULL;

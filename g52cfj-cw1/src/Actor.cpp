@@ -61,6 +61,9 @@ void Actor::Draw()
 
 void Actor::DoUpdate(int iCurrentTime)
 {
+	if (!IsVisible())
+		return;
+
 	GameTileManager *pGameTileManager = _pGameMain->GetGameTileManager();
 	int x = pGameTileManager->GetTileXForPositionOnScreen(_x);
 	int y = pGameTileManager->GetTileYForPositionOnScreen(_y);
@@ -200,9 +203,9 @@ bool Actor::IsIntersecting()
 {
 	bool intersecting = false;
 
-	vector<Actor*> actors = *_pGameMain->GetActors();
+	list<Actor*> actors = *_pGameMain->GetActors();
 
-	for (vector<Actor*>::iterator it = actors.begin(); it != actors.end(); it++)
+	for (list<Actor*>::iterator it = actors.begin(); it != actors.end(); it++)
 	{
 		Actor* pActor = *it;
 		if(pActor != this && pActor->IsIntersecting(this))

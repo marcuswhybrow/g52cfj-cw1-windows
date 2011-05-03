@@ -9,16 +9,31 @@ Infected::Infected(GameMain *pGameMain, int id, Player *pPlayer)
 _pPlayer(pPlayer),
 _previousLOSDifference(0)
 {
-	_radius = 3;
-	_colour = 0x00ff00;
+	_radius = rand() % 5 + 2;
+	_colour =  0x00dd00;
 	_acceleration = 0.0001;
 
 	_radiusFallReductionRate = 0.01;
+	
+	GameTileManager *pGameTileManager = _pGameMain->GetGameTileManager();
 
-	double x = abs(rand()) % _pGameMain->GetScreenWidth();
-	double y = abs(rand()) % _pGameMain->GetScreenHeight();
+	int tileX;
+	int tileY;
+
+	do
+	{
+		tileX = rand() % pGameTileManager->GetWidth();
+		tileY = rand() % pGameTileManager->GetHeight();
+	} while(pGameTileManager->GetValue(tileX, tileY) != 3);
+
+	int offsetX = rand() % pGameTileManager->GetTileWidth();
+	int offsetY = rand() % pGameTileManager->GetTileHeight();
+
+	int x = tileX * pGameTileManager->GetTileWidth() + offsetX;
+	int y = tileY * pGameTileManager->GetTileHeight() + offsetY;
+
 	SetPosition(x, y);
-	_speed = 0.05;
+	_speed = _maxVelocity = 0.05;
 }
 
 Infected::~Infected() {}
@@ -35,14 +50,13 @@ void Infected::DoUpdate(int iCurrentTime)
 	double dx = _pPlayer->GetX() - _x;
 	double dy =  _pPlayer->GetY() - _y;
 
-	int LOS = (int) ((atan2(dy, dx) * 180 / PI) + 450) % 360;
-	int difference = LOS - _angle;
-	
-	double rotation = 0.5 * difference;
+	if (sqrt(pow(dx, 2) + pow(dy, 2)) < 2)
+		SetSpeed(0);
+	else
+		SetSpeed(_maxVelocity);
 
-	SetAngle(_angle + rotation);
-
-	_previousLOSDifference = difference;
+	int newAngle = (int) ((atan2(dy, dx) * 180 / PI) + 450) % 360;
+	SetAngle(newAngle);
 
 	Actor::DoUpdate(iCurrentTime);
 }

@@ -9,7 +9,7 @@ Player::Player(GameMain *pGameMain, int id)
 : Actor(pGameMain, id)
 {
 	_colour = 0xffffff;
-	_speed = 0.1;
+	_speed = _maxVelocity = 0.1;
 
 	SetPosition(100,200);
 }
@@ -27,6 +27,11 @@ void Player::DoUpdate(int iCurrentTime)
 
 	double dx = _pGameMain->GetCurrentMouseX() - _x;
 	double dy =  _pGameMain->GetCurrentMouseY() - _y;
+
+	if (sqrt(pow(dx, 2) + pow(dy, 2)) < 1)
+		SetSpeed(0);
+	else
+		SetSpeed(_maxVelocity);
 
 	int LOS = (int) ((atan2(dy, dx) * 180 / PI) + 450) % 360;
 	int difference = LOS - _angle;

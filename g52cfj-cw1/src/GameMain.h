@@ -3,11 +3,12 @@
 
 #include "BaseEngine.h"
 #include "GameTileManager.h"
-#include <vector>
+#include <list>
 #include "FontManager.h"
 using namespace std;
 
 class Actor;
+class Player;
 
 class GameMain : public BaseEngine
 {
@@ -42,7 +43,7 @@ public:
 
 	void RemoveActor(Actor *pActor);
 
-	vector<Actor*>* GetActors();
+	list<Actor*>* GetActors();
 
 	double GetFrictionCoefficient();
 
@@ -51,7 +52,8 @@ public:
 protected:
 	GameTileManager* _pGameTileManager;
 
-	vector<Actor*> _actors;
+	list<Actor*> _actors;
+	Player *_pPlayer;
 	double _frictionCoefficient;
 private:
 	int GetNumber(char c);
