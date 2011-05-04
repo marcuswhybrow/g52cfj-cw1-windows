@@ -18,82 +18,109 @@ class Player;
 class GameMain : public BaseEngine
 {
 public:
-	/**
-	Constructor
-	*/
 	GameMain(void);
 	~GameMain();
+
+	// -- Overridden methods from BaseEngine --
 	
-	// Do any setup of back buffer prior to locking the screen buffer
-	// Basically do the drawing of the background in here and it'll be copied to the screen for you as needed
+	// Overriden to take control of the background
 	virtual void SetupBackgroundBuffer();
 
-	// Create any moving objects
-	int InitialiseObjects();
+	// Defines the objects needed to start the game
+	virtual int InitialiseObjects();
 
-	/** Draw any strings */
-	void DrawStrings();
+	// Overriden to draw text to the screen for different states
+	virtual void DrawStrings();
 
-	/**
-	The game logic - move things and change the state if necessary.
-	Must call Redraw(true/false) if anything changes that shows on the screen.
-	*/
+	// Actions to be taken each frame
 	virtual void GameAction();
 
-	// Handle pressing of a mouse button
-	void MouseDown(int iButton, int iX, int iY);
-	void MouseUp(int iButton, int iX, int iY);
+	// Handle mouse clicks
+	virtual void MouseUp(int iButton, int iX, int iY);
 
-	// Handle pressing of a key
+	// Handle key presses
 	virtual void KeyDown(int iKeyCode);
 	virtual void KeyUp(int iKeyCode);
 
+public:
+	
+	// Removes and actor from play
 	void RemoveActor(Actor *pActor);
-
+	
+	// Getters
 	list<Actor*>* GetActors();
-
-	double GetFrictionCoefficient();
-
 	GameTileManager* GetGameTileManager();
 
+	// Gameplay controllers
 	void AddPoints();
 	void Penalise();
 	void EndLevel();
 	void EndGame();
 
+	// The states this game can be in
 	const enum State {INTRO, PLAYING, COMPLETED, GAME_OVER, HIGH_SCORES};
 
 protected:
+	// A reference to the tile manager used whilst in the PLAYING state
 	GameTileManager* _pGameTileManager;
 
+	// A list of Actors
 	list<Actor*> _actors;
-	Player *_pPlayer;
-	double _frictionCoefficient;
 
-	int _currentLevel;
+	// The single player ball
+	Player *_pPlayer;
+
+	// The level files loaded into memory, this variable
+	// will be initialised before the game starts
 	char ***_levels;
+	// True if the _levels variables has been initialised
 	bool _levelsLoaded;
 
+	// The current level being played
+	int _currentLevel;
+	// The number of points accumulated by the player
 	int _points;
-	int _killsThisLevel;
+	// The number of infected (coloured) balls in this level
 	int _numInfected;
+	// The number of actors removed from play this level,
+	// the level is completed when this number equals _numInfected
+	int _killsThisLevel;
+
+	// Arrays of the x and y positions for placing the player
+	// in each level.
 	int *_playerStartX;
 	int *_playerStartY;
 
 private:
+	// Returns the numerical representation for use with the tile manager
+	// given a level file character
 	int GetNumber(char c);
 
+	// The state this game is currently in
 	State _state;
 
+	// All the fonts used throughout the game
 	Font *_titleFont;
 	Font *_normalFont;
 	Font *_statsFont;
 	Font *_highScoresFont;
 
+	// Allows the game to move into a new state, this method
+	// takes care of any cleanup necessary for the previous state
 	void ChangeState(State newState);
+
+	// Move the game into the PLAYING state and starting playing
+	// a specific level
 	void StartLevel(int levelNumber);
 
+	// Load a leve from file to a specific index in the _level variable
 	void LoadLevel(char *pathToFile, int level);
+
+	// Renders the high scores list, by reading them from a file
+	// and then displaying text on the screen.
+	// If called in an end of gameplay state such as GAME_OVER, or
+	// COMPLETED, this method will also log that score in the high
+	// scores list and write it to file.
 	void SetupHighScores();
 };
 
