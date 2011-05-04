@@ -7,19 +7,23 @@
 	\item Enemy balls can also be either red, green or blue.
 	\item Hitting a ball which {\bf is not} the colour of the player increases the total points. This is what the player should be attempting to do. Once collided with an enemy ball will removed from play.
 	\item Hitting a ball which {\bf is} the same colour as the player results in a penalty. The player should avoid doing this.
+	\item Balls which are the same colour as the player are attracted to the player (remember if they hit you, a penalty of -5 points is given).
+	\item Balls which are a different colour to the player are repelled (run away) from the player (you have to catch them up or corner them and collide with them to gain +10 points).
 	\item All this takes place in a birds eye view of an arena filled with walls and holes.
 	\item Balls cannot pass through walls, but can fall down holes (which removes the ball from play).
 	\item The player can cycle the their colour using the space bar.
-	\item Enemy balls of the same colour as the player will be attracted to the player, whereas enemy balls of a different colour will be repelled.
-	\item Therefor the player is always being chased by enemy balls of the same colour which (if they hit the player) inflict a penalty of 5 points. Whilst the player is at the same time chasing enemy balls which are a different colour (which are running away) for point increases.
 	\item If the player falls down a hole then its game over.
 	\item If an enemy ball falls down a hole, points are awarded to the player as if they had collided according to the colour of the enemy ball and the player.
-	\item Sometimes if an enemy ball collides with another enemy ball at a high enough speed, the slower ball will change colour to that of the faster impacting ball, making things a little harder.
-	\item The game has several tutorial levels with on screen explanations and specifically places enemies to introduce the player to the mechanics of the game.
-	\item Completing the tutorial levels leads into 3 levels with many more enemies which are randomly placed.
-	\item Completing all the levels displays a high score screen, depicting the players score relative to past scores.
-	\item If the player falls down a hole any remaining levels are skipped and the current score is entered in the high score list and shown to the player as with the previous bullet point.
-	\item Once on the high score screen clicking anywhere starts the game again from the first scoring level (i.e. not the tutorial levels).
-	\item Before starting a welcome screen explains the game in short and clicking anywhere starts the game.
-	\item The player progresses to the next level when all enemy balls have been removed from play.
+	\item Sometimes if an enemy ball collides with another enemy ball at a high enough speed, the slower ball will change colour to that of the faster impacting ball, making things a little harder to keep track of.
+	\item The game has several tutorial levels with on screen explanations and specifically placed enemies to introduce the player to the mechanics of the game.
+	\item Completing the tutorial levels leads into 3 levels where gained points are counted towards the final score. These non-training levels have many more enemies, which are randomly placed.
+	\item Completing all the non-training levels displays a end of game high score screen, depicting the players score relative to past scores.
+	\item If the player falls down a hole any remaining levels are skipped and the player is taken straight to the end of game high score screen. The total points accumulated are still entered into the list and shown to the player as with the previous bullet point.
+	\item Once on the high score screen clicking anywhere starts the game again from the first non-training level. Pressing \verb!Esc! returns the player to the home screen.
+	\item When starting the game a welcome screen explains what to press to start the game, skip to the non-training levels or view the high-score list.
+	\item The player {\bf progresses to the next level when all enemy balls have been removed} from play.
+	\item The player can pickup powerups, of which there are two kinds. Onc which gives speed (the white centred one) and one which sucks in all colours (the black centred one). Both powerups allows any colour to be consumed for +10, there are no penalties.
+	\item Powerups wear off after a set amount of time, and change visually 1 second before they are removed to give the player some warning.
+	\item Once enabled each powerup changes the visual appearance of the player in a certain way.
+	\item Once picked up a powerup disappears from the tile it was on, and does not re-appear.
 \end{itemize}
