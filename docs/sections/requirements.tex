@@ -28,7 +28,10 @@
 \subsection{Provide user interaction by handling keyboard or mouse input}
 
 \begin{itemize}
-	\item
+	\item The \verb!Player::DoUpdate! method gets the current x an y positions of the mouse, and calculates the angle necessary to point the player at the mouse, and then sets the player ball direction to be that angle.
+	\item \verb!DoUpdate! also makes a call to \verb!Player::CheckKeys! which watches for the space key being released (as in pressed down and then released again) and then cycles the colour of the player ball to the next colour. This is what allows the player ball to change from red to green to blue and back to red again.
+	\item \verb!GameMain::KeyUp! is overridden to provide some extra game wide functionality. The \verb!S! key when released and the game is in the \verb!INTRO! state starts the game at the first non-training level. When \verb!S! is pressed in the \verb!PLAYING! state the level is ended and the next level begins (skipping the level). And when \verb!H! is pressed in the \verb!INTRO! state the game changes to the \verb!HIGH_SCORES! state displaying the high scores list.
+	\item \verb!GameMain::KeyDown! is overridden to provide actions more quickly (i.e. when the key is pressed down, not released). Pressing \verb!Esc! whilst in the INTRO state exits the game, whereas pressing it in any other state returns the game back to the \verb!INTRO! state.
 \end{itemize}
 
 \subsection{Provide AI-controlled objects}
