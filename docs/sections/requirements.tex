@@ -12,16 +12,51 @@
 
 \subsection{Have moving objects}
 
+\begin{itemize}
+	\item This game has multiple moving objects, one is controlled by the player and the rest are controlled by the game (AI).
+	\item The \verb!Actor! base class inherits from \verb!DisplayableObject! and overrides the the \verb!DoUpdate! method to change the position of each actor based upon its current velocity, after tacking into account any obstacles such as walls.
+\end{itemize}
+
 \subsection{Have interaction between the moving objects and the background}
+
+\begin{itemize}
+	\item \verb!Actor!s cannot pass through walls and fall down holes, this effect is upheld by collision logic contained with the (for example) \verb!GameTileManager::CheckCollisionHorizontal! method and checked on \verb!DoUpdate! in each \verb!Actor!.
+	\item The \verb!Infected! (enemy ball) which inherits from \verb!Actor! is placed in a new level at a random position in its constructor, but only inside of tiles which are empty spaces. This is another level of (pre) interaction between movable objects and the background.
+	\item When an actor is colliding with a hole background tile it puts the \verb!Actor! into a state where it animates the ball so it appears to fall down the hole. The movement of the ball is directed towards the the centre of the hole, and the ball stops moving when it reaches the centre.
+\end{itemize}
 
 \subsection{Provide user interaction by handling keyboard or mouse input}
 
+\begin{itemize}
+	\item
+\end{itemize}
+
 \subsection{Provide AI-controlled objects}
+
+\begin{itemize}
+	\item
+\end{itemize}
 
 \subsection{Load data from files}
 
+\begin{itemize}
+	\item
+\end{itemize}
+
 \subsection{Save and load information}
+
+\begin{itemize}
+	\item
+\end{itemize}
 
 \subsection{Display status information on the screen}
 
+\begin{itemize}
+	\item
+\end{itemize}
+
 \subsection{Support different states}
+
+\begin{itemize}
+	\item
+\end{itemize}
