@@ -50,13 +50,24 @@
 \subsection{Load data from files}
 
 \begin{itemize}
-	\item
+	\item The \verb!GameMain::LoadLevel! method loads in a file which is written in a syntax for defining level layouts. This level information is stored in a 3 dimensional array of characters for later use in the \verb!GameMain::SetupBackgroundBuffer! method.
+	\item Each line in the level file is a row of tiles for the background of a level, and each character in that line matches a column in the background tile layout.
+	\item Different characters are then assigned a numerical value for use in the tile manager, instructing different tiles to be drawn in different ways, and detect collisions in different ways as is appropriate for the visual representation of that tile.
+	\item The syntax of a level layout file is as follows: A `\emph{space}' is an empty tile, the lowercase `\verb!x!' is a hole, a `\verb!|!' is a vertical wall, a `\verb!-!' is a horizontal wall, a `\verb!+!' is an intersection wall (connects on all four sides), `\verb!P!' is a tile with a power powerup, `\verb!Z!' is a tile with a speed powerup, `\verb!S!' is the starting location for the player and `\verb!C!' is visually represented as an empty space tile but is a tile where `\verb!Infected!' objects cannot spawn, i.e. a \verb!C!lear tile.
+	\item When a level is loaded in \verb!LoadLevel! the player first player start position (\verb!S!) found in the file (read from top to bottom, left to right) is taken to be the starting point for the player. The player is started in the centre of that tile. The x and y value for each level is then stored in an array for use when setting up levels.
+	\item All levels are loaded from file once in the \verb!GameMain::InitialiseObjects! method at the start of the game.
+	\item Levels are stored in a folder named \verb!levels/!.
 \end{itemize}
 
 \subsection{Save and load information}
 
 \begin{itemize}
-	\item
+	\item The 10 highest scores achieved in the game are saved in a file called \verb!highscrores.txt!.
+	\item If this file does not exist, the game will create it when needed and fill it with 10 zeros.
+	\item \verb!highscores.txt! is read in the \verb!GameMain::SetupHighScores! method, which is called whenever the high scores list is rendered, this includes the \verb!COMPLETED!, \verb!GAME_OVER! and \verb!HIGH_SCORES! states.
+	\item When \verb!SetupHighScores! is called in the \verb!COMPLETED! or \verb!GAME_OVER! states, it is because the player has just completed all the levels or has died. In both cases the total amount of points needs to be entered into the high scores list if necessary.
+	\item When entering a new score an array of the current scores in memory is iterated over from highest to lowest score. If the current score is found to be higher than a value in this array it replaces that value. The value which was at that position and all others after it are then shifted down to the next position. This maintains the ordering of scores from highest to lowest. The array of 10 highest scores whether altered or not, is now written back to the \verb!highscores.txt! file overriding its old value.
+	\item If in the \verb!HIGH_SCORES! state the values are only read from file, and not altered in memory and no writing to the file takes place.
 \end{itemize}
 
 \subsection{Display status information on the screen}
