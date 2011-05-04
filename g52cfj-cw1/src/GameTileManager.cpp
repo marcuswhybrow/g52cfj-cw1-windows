@@ -150,7 +150,7 @@ void GameTileManager::DrawTileAt(
 			_pImageData->GetWidth(), _pImageData->GetHeight()
 		);
 		break;
-	case 6: // 'Z' A Speed powerup (S was taken alread, so Z stands for Zoom)
+	case 6: // 'Z' A Speed powerup (S was taken already, so Z stands for Zoom)
 		pEngine->DrawRectangle( 
 			iStartPositionScreenX,
 			iStartPositionScreenY, 
