@@ -71,13 +71,32 @@
 \end{itemize}
 
 \subsection{Display status information on the screen}
+\label{sec:status-info}
 
 \begin{itemize}
-	\item
+	\item Whilst in the \verb!PLAYING! state, the \emph{level} which is in play and the amount of \emph{points} accumulated so far are displayed in the top left of the window.
+	\item It may not be regarded as status information, but during the training levels textual explanations are drawn over the background but behind the \verb!Actor!s.
+	\item All drawing of strings is handled in the \verb!GameMain::DrawStrings! method, which performs differently depending on different states and the current level if in the \verb!PLAYING! state.
+	\item The status of the all actors, as in ``state" is displayed via the colour of each actor. The player then can intuit that with a green player, a green enemy ball would be in the attracting state, chasing the player down.
+	\item The state of each ball with regard to attracting/repelling could be visually depicted via say a dot present in the centre of the actor if it is attracted to the player. However this information is intentionaly not displayed leaving this task to the human players brain, which makes the whole process fun.
+	\item The state of the \verb!Player!'s enabled powerups is visually shown by transforming into a new colour. While the speed powerup is active (which makes all enemy balls repel, gives the player increased speed, and allows all colours to gain the player points on consumption) the player ball is made to be a white colour.
+	\item When the speed powerup is less than one second away from being removed, the player ball is changed to a light grey colour, symbolising the fading of the powerup.
+	\item When the speed power is actually removed, the player ball's colour is returned to the colour it was before picking up this powerup, showing a return to the previous state.
+	\item When the power powerup is active (which attracts all enemy balls, and allows the player to gain points from consuming any colour) a black border is drawn around the player symbolising a toughened shell.
+	\item When the power powerup is less than one second away from being removed, the border colour is changed to become a---slightly ligher than black---dark grey, symbolising the wearing off of the power powerup.
+	\item When actually removed the power powerup's border border is removed.
 \end{itemize}
 
 \subsection{Support different states}
 
 \begin{itemize}
-	\item
+	\item The game has 5 states: \verb!INTRO! displays a welcome screen, \verb!PLAYING! displays the current level and moves all actors etc., \verb!COMPLETED! shows the high scores list and your total final score as well as highlighting its position in the list if it made it in, \verb!GAME_OVER! does the same as \verb!COMPLETED! with a different message explaining that you died, and \verb!HIGH_SCORES! simply shows a list of the highest scores. All these states are defined in \verb!pulic const enum State! in \verb!GameMain.h!.
+	\item The currently active state is stored in a private variable \verb!_state! in \verb!GameMain!.
+	\item The default starting state is \verb!INTRO!.
+	\item The current state is only ever changed via a call to the \verb!GameMain::ChangeState! method, which performs cleanup when exiting certain states, calls \verb!SetupBackgroundBuffer! to load in the correct background for the new current state, and then calls \verb!Redraw(true)! to redraw the entire screen.
+	\item This approach makes it incredibly easy to move through states, for example hitting \verb!H! whilst in on the title screen just calls \verb!ChangeState(HIGH_SCORES)!, and pressing escape whilst viewing the high scores just calls \verb!ChangeState(INTRO)!.
+	\item Aside from game wide state, there are other smaller states which exist on a per \verb!Actor! (ball) basis.
+	\item Each \verb!Actor! has an \verb!isFallingInHole! state, which is true if it is should be animating itself down a hole.
+	\item The player has a \verb!speedPowerupEnabled! and \verb!powerPowerupEnabled! state, which effect how the player is drawn, which has been explained in section \ref{sec:status-info}.
+	\item The player also keeps track of a \verb!spaceIsDown! state for detecting when it moves from \verb!true! to \verb!false!, signifying the release of the space bar.
 \end{itemize}
