@@ -6,6 +6,8 @@
 	\item The drawing of tiles is taken care of by the \verb!GameTileManager! class which is a subclass of \verb!TileManager!.
 	\item The \verb!DrawTileAt! method has been overridden to draw 5 different types of tile. These are \emph{empty space}, \emph{vertical wall}, \emph{horizontal wall}, \emph{intersection wall} and \emph{hole}. The three wall tiles and the hole are drawn using the \verb!JPGImage! class from images created in Photoshop, whereas all empty space tiles are drawn as a grey rectangle.
 	\item This class also contains new methods for testing whether an \verb!Actor! (base class for ball) will collide with a particular tile. Collision detection is done separately for each axis so you will see methods such as \verb!CheckCollisionVertical! and the private methods for checking collision for each of the different possible tiles (e.g. \verb!CollisionVerticalWallVertical!).
+	\item The background changes due to player interaction when the player ball picks up a powerup. This is handled in the \verb!Player::CheckPowerups! method which is called at the very end of the \verb!Player::DoUpdate! method. The \verb!Player! gets the tile from the manager which it is currently on, and then evaluates whether there is a powerup in that tile, and whether or not the player ball is intersecting it. If it is the tile is replaces with an \emph{empty} tile and a method is called on the \verb!Player! to enable that power up.
+	\item \verb!GameMain::SetupBackgroundBuffer! is overridden to draw a tiled background using the aforementioned \verb!GameTileManager! in the \verb!PLAYING! state and a grey background for the \verb!INTRO!, \verb!COMPLETED!, \verb!GAME_OVER! and \verb!HIGH_SCORES! states.
 \end{itemize}
 
 \subsection{Have moving objects}
