@@ -37,7 +37,14 @@
 \subsection{Provide AI-controlled objects}
 
 \begin{itemize}
-	\item
+	\item \verb!Infected! objects are controlled completely by the game, the position of the \verb!Player! instance and the \verb!Player! instance's state.
+	\item The \verb!Infected::DoUpdate! method calculates the angle at which it must point in order to face the player, and then its angle is updated to this angle every frame.
+	\item The speed with which the \verb!Infected! object travels towards the \verb!Player! is determined in the \verb!DoUpdate! method by its proximity to the player. It increases in speed the closer it gets, creating a lunging animation whenever the player ball draws near. When a certain distance from the player an \verb!Infected! will not move, giving the impression of a certain area of perception.
+	\item Each \verb!Infected! asks the \verb!Player! instance whether or not it should be chasing the player ball or running from it in the \verb!DoUpdate! method, this logic is contained with the a method called \verb!Player::ShouldAttract! and the returned boolean is determined by the current colour of the player ball, the colour of the \verb!Infected! calling the method and any powerups which the player ball might have active.
+	\item The final thing the \verb!DoUpdate! method does is call the \verb!Infected::CheckIntersections! method, which iterates over all other actors and for each checks if this actor is colliding with that actor. If it is, and that actor is infectable as determined by a method called \verb!bool Actor::IsInfectable!, the slower \verb!Actor! assumes the colour of the faster one. This method also checks if this \verb!Infected! intersects with player, and asks the game to remove this \verb!Infected! if it does.
+	\item If removed from play the \verb!Infected::HasBeenRemoved! method is called. The game is given points or penalised points for killing the \verb!Infected!.
+	\item \verb!TutorialInfected! objects subclass \verb!Infected! and work in the exact same way, however in \verb!TutorialInfected::HasBeenRemoved! they progress the game to the next level, allowing for completion of training levels before every single \verb!Infected! has been killed.
+	
 \end{itemize}
 
 \subsection{Load data from files}
