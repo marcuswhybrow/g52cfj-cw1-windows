@@ -86,10 +86,10 @@ void Infected::DoUpdate(int iCurrentTime)
 
 void Infected::HasBeenRemoved()
 {
-	if (_pPlayer->GetColour() == _colour)
-		_pGameMain->Penalise();
-	else
+	if (_pPlayer->ShouldScorePoints(this))
 		_pGameMain->AddPoints();
+	else
+		_pGameMain->Penalise();
 }
 
 bool Infected::IsInfectable()

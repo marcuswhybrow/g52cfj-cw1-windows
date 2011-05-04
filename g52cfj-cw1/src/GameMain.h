@@ -10,7 +10,8 @@ using namespace std;
 class Actor;
 class Player;
 
-#define NUM_LEVELS			7
+#define NUM_LEVELS			8
+#define NUM_TRAINING_LEVELS	5
 #define NUM_TILE_COLUMNS	16
 #define NUM_TILE_ROWS		12
 
@@ -60,7 +61,7 @@ public:
 	void EndLevel();
 	void EndGame();
 
-	const enum State {INTRO, PLAYING, COMPLETED, GAME_OVER};
+	const enum State {INTRO, PLAYING, COMPLETED, GAME_OVER, HIGH_SCORES};
 
 protected:
 	GameTileManager* _pGameTileManager;

@@ -135,9 +135,10 @@ int GameMain::InitialiseObjects()
 	LoadLevel("levels/intro2.txt", 1);
 	LoadLevel("levels/intro3.txt", 2);
 	LoadLevel("levels/intro4.txt", 3);
-	LoadLevel("levels/level1.txt", 4);
-	LoadLevel("levels/level2.txt", 5);
-	LoadLevel("levels/level3.txt", 6);
+	LoadLevel("levels/intro5.txt", 4);
+	LoadLevel("levels/level1.txt", 5);
+	LoadLevel("levels/level2.txt", 6);
+	LoadLevel("levels/level3.txt", 7);
 	_levelsLoaded = true;
 
 	return 0;
@@ -182,12 +183,9 @@ void GameMain::DrawStrings()
 	case INTRO:
 		DrawScreenString(170, 200, "SWARM", 0x001100, _titleFont);
 		DrawScreenString(265, 320, "by marcus whybrow", 0x000000, _statsFont);
-		DrawScreenString(20, 400, "You control the largest coloured ball. Other balls of", 0x000000, _statsFont);
-		DrawScreenString(20, 420, "similar colour are attracted to you, everything else ", 0x000000, _statsFont);
-		DrawScreenString(20, 440, "is repeled. Your ball changes colour with presses of", 0x000000, _statsFont);
-		DrawScreenString(20, 460, "the space bar, and moves to the location of the mouse.", 0x000000, _statsFont);
-
-		DrawScreenString(20, 500, "Click to Start", 0x000000, _statsFont);
+		DrawScreenString(100, 400, "(Click) Start tutorial and then game.", 0x000000, _statsFont);
+		DrawScreenString(100, 430, "(S) Skip Tutorial and play game", 0x000000, _statsFont);
+		DrawScreenString(100, 460, "(H) View the highscores list.", 0x000000, _statsFont);
 		break;
 	case PLAYING:
 		CopyBackgroundPixels(0, 0, GetScreenWidth(), 40);
@@ -203,22 +201,28 @@ void GameMain::DrawStrings()
 		switch (_currentLevel)
 		{
 		case 1:
-			DrawScreenString(75, 460, "Going near similar colours attractes them.", 0x000000, _statsFont);
-			DrawScreenString(75, 480, "Make contact to progress to the next level.", 0x000000, _statsFont);
+			DrawScreenString(75, 460, "Different colours run away from you. Catch", 0x000000, _statsFont);
+			DrawScreenString(75, 480, "them to receive +10 points.", 0x000000, _statsFont);
+			DrawScreenString(75, 500, "Make contact to progress to the next level.", 0x000000, _statsFont);
 			break;
 		case 2:
-			DrawScreenString(75, 460, "Cycle colours using the space bar.", 0x000000, _statsFont);
-			DrawScreenString(75, 480, "Make contact to progress to the next level.", 0x000000, _statsFont);
+			DrawScreenString(75, 460, "Similar colours chase you, giving a penalty", 0x000000, _statsFont);
+			DrawScreenString(75, 480, "of -10 points. Press space to change colour", 0x000000, _statsFont);
+			DrawScreenString(75, 500, "and make contact to earn 10 points.", 0x000000, _statsFont);
 			break;
 		case 3:
-			DrawScreenString(75, 460, "Kill colours different to you, using collision", 0x000000, _statsFont);
-			DrawScreenString(75, 480, "or lure them into a hole.", 0x000000, _statsFont);
-			DrawScreenString(75, 500, "Kill one to start the game.", 0x000000, _statsFont);
+			DrawScreenString(75, 460, "Kill colours different to you, by collision", 0x000000, _statsFont);
+			DrawScreenString(75, 480, "or by luring them into a hole.", 0x000000, _statsFont);
 			break;
 		case 4:
-			DrawScreenString(75, 460, "Gain +10 for colliding with difference colours.", 0x000000, _statsFont);
-			DrawScreenString(75, 480, "Lose -5 for colliding with a same colour ball.", 0x000000, _statsFont);
-			DrawScreenString(75, 500, "Kill all balls to finish the level!", 0x000000, _statsFont);
+			DrawScreenString(75, 470, "The black powerup with a white border is like a", 0x000000, _statsFont);
+			DrawScreenString(75, 490, "black hole. When active all colours give points.", 0x000000, _statsFont);
+			DrawScreenString(75, 510, "This powerup lasts 10 seconds.", 0x000000, _statsFont);
+			break;
+		case 5:
+			DrawScreenString(75, 520, "The white powerup with a black border gives", 0x000000, _statsFont);
+			DrawScreenString(75, 540, "super speed. All enemies give points and run", 0x000000, _statsFont);
+			DrawScreenString(75, 560, "away. This powerup lasts 5 seconds.", 0x000000, _statsFont);
 			break;
 		}
 		break;
@@ -228,9 +232,10 @@ void GameMain::DrawStrings()
 		DrawScreenString(50, 470, "You completed every level!", 0x000000, _statsFont);
 		DrawScreenString(50, 500, "Total score: ", 0x000000, _statsFont);
 		DrawScreenString(240, 500, buf, 0xffffff, _statsFont);
-		DrawScreenString(50, 530, "Click to try again.", 0x000000, _statsFont);
 		delete [] buf;
 		SetupHighScores();
+		DrawScreenString(500, 50, "(Esc) back to Menu", 0x000000, _statsFont);
+		DrawScreenString(500, 80, "(Click) Start again", 0x000000, _statsFont);
 		break;
 	case GAME_OVER:
 		buf = new char[20];
@@ -238,8 +243,13 @@ void GameMain::DrawStrings()
 		DrawScreenString(50, 470, "You died, better luck next time.", 0x000000, _statsFont);
 		DrawScreenString(50, 500, "Total score: ", 0x000000, _statsFont);
 		DrawScreenString(240, 500, buf, 0xffffff, _statsFont);
-		DrawScreenString(50, 530, "Click to try again.", 0x000000, _statsFont);
 		delete [] buf;
+		SetupHighScores();
+		DrawScreenString(500, 50, "(Esc) back to Menu", 0x000000, _statsFont);
+		DrawScreenString(500, 80, "(Click) Start again", 0x000000, _statsFont);
+		break;
+	case HIGH_SCORES:
+		DrawScreenString(500, 50, "(Esc) back to Menu", 0x000000, _statsFont);
 		SetupHighScores();
 		break;
 	}
@@ -260,21 +270,22 @@ void GameMain::SetupHighScores()
 
 	file.close();
 
-	// Insert points into highscores if necessary
 	int index = -1;
-	for (int j = 0; j < 10; j++)
+	if (_state == COMPLETED || _state == GAME_OVER)
 	{
-		if (_points >= highScores[j])
+		// Insert points into highscores if necessary
+		for (int j = 0; j < 10; j++)
 		{
-			for (int k = 9; k > j; k--)
-				highScores[k] = highScores[k-1];
-			highScores[j] = _points;
-			index = j;
-			break;
+			if (_points >= highScores[j])
+			{
+				for (int k = 9; k > j; k--)
+					highScores[k] = highScores[k-1];
+				highScores[j] = _points;
+				index = j;
+				break;
+			}
 		}
 	}
-
-	std::ofstream fileout("highscores.txt");
 
 	char *scoreBuf;
 	for (int m = 0; m < 10; m++)
@@ -284,21 +295,25 @@ void GameMain::SetupHighScores()
 		DrawScreenString(70, 100 + 30 * m, scoreBuf, (m == index) ? 0xffffff : 0x000000, _highScoresFont);
 		delete [] scoreBuf;
 	}
-	
-	fileout.clear();
 
-	// Write to file again
-	char *buf;
-	for (int l = 0; l < 10; l++)
+	if (_state == COMPLETED || _state == GAME_OVER)
 	{
-		buf = new char[256];
-		sprintf(buf, "%d\n", highScores[l]);
-		fileout << buf;
-		delete [] buf;
-	}
-	delete [] buf;
+		std::ofstream fileout("highscores.txt");
+		fileout.clear();
 
-	fileout.close();
+		// Write to file again
+		char *buf;
+		for (int l = 0; l < 10; l++)
+		{
+			buf = new char[256];
+			sprintf(buf, "%d\n", highScores[l]);
+			fileout << buf;
+			delete [] buf;
+		}
+		delete [] buf;
+
+		fileout.close();
+	}
 }
 
 
@@ -332,7 +347,7 @@ void GameMain::MouseUp(int iButton, int iX, int iY)
 	case GAME_OVER:
 	case COMPLETED:
 		_points = 0;
-		StartLevel(4);
+		StartLevel(NUM_TRAINING_LEVELS + 1);
 		break;
 	}
 }
@@ -346,7 +361,10 @@ void GameMain::KeyDown(int iKeyCode)
 	switch ( iKeyCode )
 	{
 	case SDLK_ESCAPE: // End program when escape is pressed
-		SetExitWithCode(0);
+		if (_state == INTRO)
+			SetExitWithCode(0);
+		else
+			ChangeState(INTRO);
 		break;
 	case SDLK_SPACE:
 		break;
@@ -359,8 +377,13 @@ void GameMain::KeyUp(int iKeyCode)
 	{
 	case SDLK_s:
 		if (_state == INTRO)
-			StartLevel(5);
+			StartLevel(NUM_TRAINING_LEVELS + 1);
+		else if (_state == PLAYING)
+			EndLevel();
 		break;
+	case SDLK_h:
+		if (_state == INTRO)
+			ChangeState(HIGH_SCORES);
 	}
 }
 
@@ -405,6 +428,9 @@ void GameMain::StartLevel(int levelNumber)
 	_currentLevel = levelNumber;
 	_killsThisLevel = 0;
 
+	if (levelNumber == NUM_TRAINING_LEVELS + 1)
+		_points = 0;
+
 	ChangeState(PLAYING);
 
 	// Record the fact that we are about to change the array - so it doesn't get used elsewhere without reloading it
@@ -427,18 +453,18 @@ void GameMain::StartLevel(int levelNumber)
 	{
 	case 1:
 		_actors.push_front(new TutorialInfected(this, 1, _pPlayer));
-		_actors.front()->SetColour(0xff0000);
+		_actors.front()->SetColour(0x00ff00);
 		_actors.front()->SetPosition(150, 150);
 		_actors.front()->SetPreviousTime(GetTime());
 		break;
 	case 2:
 		_actors.push_front(new TutorialInfected(this, 1, _pPlayer));
-		_actors.front()->SetColour(0x00ff00);
+		_actors.front()->SetColour(0xff0000);
 		_actors.front()->SetPosition(150, 150);
 		_actors.front()->SetPreviousTime(GetTime());
 
 		_actors.push_front(new TutorialInfected(this, 1, _pPlayer));
-		_actors.front()->SetColour(0x0000ff);
+		_actors.front()->SetColour(0xff0000);
 		_actors.front()->SetPosition(160, 140);
 		_actors.front()->SetPreviousTime(GetTime());
 		break;
@@ -454,6 +480,7 @@ void GameMain::StartLevel(int levelNumber)
 		_actors.front()->SetPreviousTime(GetTime());
 		break;
 	case 4:
+	case 5:
 		_numInfected = 20;
 		for (int i = 0; i < _numInfected; i++)
 		{
@@ -461,9 +488,9 @@ void GameMain::StartLevel(int levelNumber)
 			_actors.front()->SetPreviousTime(GetTime());
 		}
 		break;
-	case 5:
 	case 6:
 	case 7:
+	case 8:
 		_numInfected = 100;
 		for (int i = 0; i < _numInfected; i++)
 		{

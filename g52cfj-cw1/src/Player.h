@@ -13,13 +13,18 @@ public:
 	void DoUpdate(int iCurrentTime);
 	virtual void HasBeenRemoved();
 
-	bool ShouldAttract(Actor* pActor);
+	bool ShouldAttract(Actor *pActor);
+	bool ShouldScorePoints(Actor *pActor);
 
 protected:
 	int _timeToStopSpeedPowerup;
 	int _timeToStopPowerPowerup;
+
+	int _powerPowerupColour;
+	int _speedPowerupColour;
 	int _savedColour;
 	double _savedMaxVelocity;
+
 	bool _speedPowerupEnabled;
 	//bool _speedPowerupVisible;
 	bool _powerPowerupEnabled;

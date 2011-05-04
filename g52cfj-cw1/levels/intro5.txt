@@ -1,0 +1,12 @@
++--------------+
+|CCCCCCCCCCCCCC|
+++---------+CCC|
+C|         +---+
+C|         |SCC|
+++         |CCC|
+|        CC+--C|
+|       CCCZCCC|
+|        CC+---+
++----------+CCC|
+|CCCCCCCCCCCCCC|
+|CCCCCCCCCCCCCC|

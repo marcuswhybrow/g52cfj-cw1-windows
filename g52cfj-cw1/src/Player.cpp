@@ -9,7 +9,9 @@ Player::Player(GameMain *pGameMain, int id)
 : Actor(pGameMain, id),
 _powerPowerupEnabled(false),
 _speedPowerupEnabled(false),
-_spaceIsDown(false)
+_spaceIsDown(false),
+_powerPowerupColour(0x000000),
+_speedPowerupColour(0xffffff)
 {
 	// The default colour
 	_colour = 0xff0000;
@@ -29,7 +31,7 @@ void Player::Draw()
 			m_iCurrentScreenY - _radius - 3,
 			m_iCurrentScreenX + _radius + 3,
 			m_iCurrentScreenY + _radius + 3,
-			0x000000
+			_powerPowerupColour
 		);
 
 	Actor::Draw();
@@ -117,11 +119,21 @@ void Player::CheckPowerups(int iCurrentTime)
 	}
 
 	// Check for removal of powerups
-	if (_speedPowerupEnabled && iCurrentTime > _timeToStopSpeedPowerup)
-		RemoveSpeedPowerup();
+	if (_speedPowerupEnabled)
+	{
+		if (iCurrentTime + 1000 > _timeToStopSpeedPowerup)
+			_colour = 0xcccccc;
+		if (iCurrentTime > _timeToStopSpeedPowerup)
+			RemoveSpeedPowerup();
+	}
 
-	if (_powerPowerupEnabled && iCurrentTime > _timeToStopPowerPowerup)
-		RemovePowerPowerup();
+	if (_powerPowerupEnabled)
+	{
+		if (iCurrentTime + 1000 > _timeToStopPowerPowerup)
+			_powerPowerupColour = 0x666666;
+		if (iCurrentTime > _timeToStopPowerPowerup)
+			RemovePowerPowerup();
+	}
 }
 
 void Player::HasBeenRemoved()
@@ -135,7 +147,7 @@ void Player::AddSpeedPowerup()
 {
 	_speedPowerupEnabled = true;
 	_savedColour = _colour;
-	_colour = 0xffffff;
+	_colour = _speedPowerupColour;
 
 	_savedMaxVelocity = _maxVelocity;
 	_maxVelocity = 0.3;
@@ -164,7 +176,7 @@ void Player::RemovePowerPowerup()
 	_radius = _radius + 2;
 }
 
-bool Player::ShouldAttract(Actor* pActor)
+bool Player::ShouldAttract(Actor *pActor)
 {
 	if (_powerPowerupEnabled)
 		return true;
@@ -173,5 +185,15 @@ bool Player::ShouldAttract(Actor* pActor)
 	else if (pActor->GetColour() == _colour)
 		return true;
 	
+	return false;
+}
+
+bool Player::ShouldScorePoints(Actor *pActor)
+{
+	if (_powerPowerupEnabled || _speedPowerupEnabled)
+		return true;
+	else if (pActor->GetColour() != _colour)
+		return true;
+
 	return false;
 }
