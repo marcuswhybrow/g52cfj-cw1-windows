@@ -104,7 +104,7 @@ void GameTileManager::DrawTileAt(
 	switch(GetValue(iMapX, iMapY))
 	{
 	case 0: // '|' A vertial wall
-		_pImageData->LoadImage("wall-vertical.png");
+		_pImageData->LoadImage("images/wall-vertical.png");
 		_pImageData->RenderImage(
 			pEngine->GetBackground(),
 			0, 0,
@@ -113,7 +113,7 @@ void GameTileManager::DrawTileAt(
 		);
 		break;
 	case 1: // '-' A horizontal wall
-		_pImageData->LoadImage("wall-horizontal.png");
+		_pImageData->LoadImage("images/wall-horizontal.png");
 		_pImageData->RenderImage(
 			pEngine->GetBackground(),
 			0, 0,
@@ -122,7 +122,7 @@ void GameTileManager::DrawTileAt(
 		);
 		break;
 	case 2: // '+' An intersective wall
-		_pImageData->LoadImage("wall-corner.png");
+		_pImageData->LoadImage("images/wall-corner.png");
 		_pImageData->RenderImage(
 			pEngine->GetBackground(),
 			0, 0,
@@ -142,7 +142,7 @@ void GameTileManager::DrawTileAt(
 		);
 		break;
 	case 4: // 'x' A hole
-		_pImageData->LoadImage("hole-dark.png");
+		_pImageData->LoadImage("images/hole-dark.png");
 		_pImageData->RenderImage(
 			pEngine->GetBackground(),
 			0, 0,

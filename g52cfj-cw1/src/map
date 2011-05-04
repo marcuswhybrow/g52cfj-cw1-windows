@@ -1,6 +1,6 @@
  CourseworkBase
 
- Timestamp is 4dc0bd16 (Wed May 04 03:42:30 2011)
+ Timestamp is 4dc0bee4 (Wed May 04 03:50:12 2011)
 
  Preferred load address is 00400000
 
@@ -16,15 +16,15 @@
  0003:00000514 00000104H .CRT$XIC                DATA
  0003:00000618 00000104H .CRT$XIY                DATA
  0003:0000071c 00000104H .CRT$XIZ                DATA
- 0003:00000820 00000d60H .rdata                  DATA
- 0003:00001580 00000172H .rdata$debug            DATA
- 0003:000016f4 0000060dH .rdata$r                DATA
- 0003:00001d04 00000104H .rtc$IAA                DATA
- 0003:00001e08 00000104H .rtc$IZZ                DATA
- 0003:00001f0c 00000104H .rtc$TAA                DATA
- 0003:00002010 00000104H .rtc$TZZ                DATA
- 0003:00002118 00000947H .xdata$x                DATA
- 0003:00002a5f 00000000H .edata                  DATA
+ 0003:00000820 00000d88H .rdata                  DATA
+ 0003:000015a8 00000172H .rdata$debug            DATA
+ 0003:0000171c 0000060dH .rdata$r                DATA
+ 0003:00001d2c 00000104H .rtc$IAA                DATA
+ 0003:00001e30 00000104H .rtc$IZZ                DATA
+ 0003:00001f34 00000104H .rtc$TAA                DATA
+ 0003:00002038 00000104H .rtc$TZZ                DATA
+ 0003:00002140 00000947H .xdata$x                DATA
+ 0003:00002a87 00000000H .edata                  DATA
  0004:00000000 00000324H .data                   DATA
  0004:00000328 00000458H .bss                    DATA
  0005:00000000 0000008cH .idata$2                DATA
@@ -35,11 +35,11 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
  0000:00000000       __except_list              00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
  0000:00000000       ___safe_se_handler_count   00000000     <absolute>
- 0000:00009876       __ldused                   00009876     <absolute>
  0000:00009876       __fltused                  00009876     <absolute>
+ 0000:00009876       __ldused                   00009876     <absolute>
  0000:00000000       ___ImageBase               00400000     <linker-defined>
  0001:00000000       __enc$textbss$begin        00401000     <linker-defined>
  0001:00010000       __enc$textbss$end          00411000     <linker-defined>
@@ -160,8 +160,8 @@
  0002:00005b30       ??0length_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 00416b30 f i GameMain.obj
  0002:00005b70       ??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z 00416b70 f i GameMain.obj
  0002:00005c00       ?what@logic_error@std@@UBEPBDXZ 00416c00 f i GameMain.obj
- 0002:00005c30       ??_Elogic_error@std@@UAEPAXI@Z 00416c30 f i GameMain.obj
  0002:00005c30       ??_Glogic_error@std@@UAEPAXI@Z 00416c30 f i GameMain.obj
+ 0002:00005c30       ??_Elogic_error@std@@UAEPAXI@Z 00416c30 f i GameMain.obj
  0002:00005c80       ??1logic_error@std@@UAE@XZ 00416c80 f i GameMain.obj
  0002:00005cc0       ??1length_error@std@@UAE@XZ 00416cc0 f i GameMain.obj
  0002:00005cf0       ??_Glength_error@std@@UAEPAXI@Z 00416cf0 f i GameMain.obj
@@ -202,8 +202,8 @@
  0002:00006a50       ??$_Allocate@U_Node@?$_List_nod@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@@std@@YAPAU_Node@?$_List_nod@PAVActor@@V?$allocator@PAVActor@@@std@@@0@IPAU120@@Z 00417a50 f i GameMain.obj
  0002:00006ac0       ??0bad_alloc@std@@QAE@PBD@Z 00417ac0 f i GameMain.obj
  0002:00006b00       ??1bad_alloc@std@@UAE@XZ   00417b00 f i GameMain.obj
- 0002:00006b30       ??_Ebad_alloc@std@@UAEPAXI@Z 00417b30 f i GameMain.obj
  0002:00006b30       ??_Gbad_alloc@std@@UAEPAXI@Z 00417b30 f i GameMain.obj
+ 0002:00006b30       ??_Ebad_alloc@std@@UAEPAXI@Z 00417b30 f i GameMain.obj
  0002:00006b80       ??$_Construct@PAU_Node@?$_List_nod@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@PAU123@@std@@YAXPAPAU_Node@?$_List_nod@PAVActor@@V?$allocator@PAVActor@@@std@@@0@ABQAU120@@Z 00417b80 f i GameMain.obj
  0002:00006be0       ??$_Destroy@PAU_Node@?$_List_nod@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@@std@@YAXPAPAU_Node@?$_List_nod@PAVActor@@V?$allocator@PAVActor@@@std@@@0@@Z 00417be0 f i GameMain.obj
  0002:00006c00       ??$?0PAVActor@@@?$allocator@U_Node@?$_List_nod@PAVActor@@V?$allocator@PAVActor@@@std@@@std@@@std@@QAE@ABV?$allocator@PAVActor@@@1@@Z 00417c00 f i GameMain.obj
@@ -240,8 +240,8 @@
  0002:000081d0       ?CollisionHorizontalWallCorner@GameTileManager@@AAE_NHHPAVActor@@@Z 004191d0 f   GameTileManager.obj
  0002:00008250       ?CollisionHorizontalHole@GameTileManager@@AAE_NHHPAVActor@@@Z 00419250 f   GameTileManager.obj
  0002:00008350       ??0Infected@@QAE@PAVGameMain@@PAVPlayer@@@Z 00419350 f   Infected.obj
- 0002:000085a0       ??_GInfected@@UAEPAXI@Z    004195a0 f i Infected.obj
  0002:000085a0       ??_EInfected@@UAEPAXI@Z    004195a0 f i Infected.obj
+ 0002:000085a0       ??_GInfected@@UAEPAXI@Z    004195a0 f i Infected.obj
  0002:000085f0       ??1Infected@@UAE@XZ        004195f0 f i Infected.obj
  0002:00008620       ?HasBeenRemoved@Infected@@UAEXXZ 00419620 f   Infected.obj
  0002:00008680       ?IsInfectable@Infected@@UAE_NXZ 00419680 f   Infected.obj
@@ -318,8 +318,8 @@
  0002:0000c510       ??$Swap@H@@YAXAAH0@Z       0041d510 f i BaseEngine.obj
  0002:0000c550       ??$GetAngle@N@@YANNNNN@Z   0041d550 f i BaseEngine.obj
  0002:0000c5f0       ??0DisplayableObject@@QAE@PAVBaseEngine@@@Z 0041d5f0 f   DisplayableObject.obj
- 0002:0000c690       ??_GDisplayableObject@@UAEPAXI@Z 0041d690 f i DisplayableObject.obj
  0002:0000c690       ??_EDisplayableObject@@UAEPAXI@Z 0041d690 f i DisplayableObject.obj
+ 0002:0000c690       ??_GDisplayableObject@@UAEPAXI@Z 0041d690 f i DisplayableObject.obj
  0002:0000c6e0       ??1DisplayableObject@@UAE@XZ 0041d6e0 f   DisplayableObject.obj
  0002:0000c710       ?Draw@DisplayableObject@@UAEXXZ 0041d710 f   DisplayableObject.obj
  0002:0000c7d0       ?SafeSetScreenPixel@BaseEngine@@QAEXHHI@Z 0041d7d0 f i DisplayableObject.obj
@@ -635,115 +635,115 @@
  0003:00000fd8       ??_7bad_alloc@std@@6B@     00423fd8     GameMain.obj
  0003:00000fe8       ??_7GameTileManager@@6B@   00423fe8     GameTileManager.obj
  0003:00001004       ??_7TileManager@@6B@       00424004     GameTileManager.obj
- 0003:0000101c       ??_C@_0O@HHAKOPHK@hole?9dark?4png?$AA@ 0042401c     GameTileManager.obj
- 0003:0000102c       ??_C@_0BA@GOFANFFP@wall?9corner?4png?$AA@ 0042402c     GameTileManager.obj
- 0003:00001040       ??_C@_0BE@PGMDCLGE@wall?9horizontal?4png?$AA@ 00424040     GameTileManager.obj
- 0003:00001058       ??_C@_0BC@NFLDMMON@wall?9vertical?4png?$AA@ 00424058     GameTileManager.obj
- 0003:00001070       __real@3fa999999999999a    00424070     Infected.obj
- 0003:00001080       __real@3f847ae147ae147b    00424080     Infected.obj
- 0003:00001090       ??_7Infected@@6B@          00424090     Infected.obj
- 0003:000010b8       __real@4069000000000000    004240b8     Infected.obj
- 0003:000010c4       ??_C@_0BI@IDGPHHDP@Swarm?5by?5Marcus?5Whybrow?$AA@ 004240c4     mainfunction.obj
- 0003:000010e0       ??_C@_0BI@NHFDFHOB@Cornerstone?5Regular?4ttf?$AA@ 004240e0     mainfunction.obj
- 0003:00001100       __real@3fb999999999999a    00424100     Player.obj
- 0003:00001110       ??_7Player@@6B@            00424110     Player.obj
- 0003:00001138       __real@4049000000000000    00424138     Player.obj
- 0003:00001148       __real@4008000000000000    00424148     Player.obj
- 0003:00001158       __real@3fd3333333333333    00424158     Player.obj
- 0003:00001168       ??_7TutorialInfected@@6B@  00424168     TutorialInfected.obj
- 0003:00001194       ??_7BaseEngine@@6B@        00424194     BaseEngine.obj
- 0003:000011fc       ??_C@_0BM@KCLNHPJ@Unable?5to?5set?5up?5video?3?5?$CFs?6?$AA@ 004241fc     BaseEngine.obj
- 0003:00001220       ??_C@_0BI@FBLGJKMC@Unable?5to?5init?5SDL?3?5?$CFs?6?$AA@ 00424220     BaseEngine.obj
- 0003:00001240       __real@4010000000000000    00424240     BaseEngine.obj
- 0003:00001250       __real@400921fb54442d18    00424250     BaseEngine.obj
- 0003:00001260       __real@400f6a7a2955385e    00424260     BaseEngine.obj
- 0003:0000126c       ??_C@_0BG@KPFFDCIH@?7Copy?5point?5?$CFd?5to?5?$CFd?6?$AA@ 0042426c     BaseEngine.obj
- 0003:00001288       ??_C@_0CM@IHOJMAHM@Draw?5for?5points?5?$CFd?0?5?$CFd?0?5?$CFd?5of?5?$CFd@ 00424288     BaseEngine.obj
- 0003:000012c0       __real@401921fb54442d18    004242c0     BaseEngine.obj
- 0003:000012d0       __real@3ff921fb54442d18    004242d0     BaseEngine.obj
- 0003:000012e0       ??_7DisplayableObject@@6B@ 004242e0     DisplayableObject.obj
- 0003:000012f8       ??_C@_0BI@GMOFELCF@Free?5font?3?5?$CFd?5point?5?$CFs?6?$AA@ 004242f8     FontManager.obj
- 0003:00001314       ??_C@_0BG@EJGFOME@Font?5loading?5failed?4?6?$AA@ 00424314     FontManager.obj
- 0003:00001330       ??_C@_0BL@IIGPEFFA@Loading?5font?3?5?$CFd?5point?5?$CFs?6?$AA@ 00424330     FontManager.obj
- 0003:00001350       __real@3f50624dd2f1a9fc    00424350     JPGImage.obj
- 0003:00001360       ??_7type_info@@6B@         00424360     MSVCRT:ti_inst.obj
- 0003:00001368       ?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB 00424368     MSVCRT:unhandld.obj
- 0003:0000136c       ?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB 0042436c     MSVCRT:unhandld.obj
- 0003:00001370       ?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB 00424370     MSVCRT:unhandld.obj
- 0003:00001374       ?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB 00424374     MSVCRT:unhandld.obj
- 0003:00001378       ?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB 00424378     MSVCRT:unhandld.obj
- 0003:00001388       ??_C@_07KJFPOMFC@?$CFs?3?5?$CFs?6?$AA@ 00424388     sdlmain:SDL_win32_main.obj
- 0003:00001394       ??_C@_0M@HFFOIJBL@Fatal?5Error?$AA@ 00424394     sdlmain:SDL_win32_main.obj
- 0003:000013a4       ??_C@_0BJ@HFNMHALN@Out?5of?5memory?5?9?5aborting?$AA@ 004243a4     sdlmain:SDL_win32_main.obj
- 0003:000013c4       ??_C@_0BA@KMDNPDDA@WinMain?$CI?$CJ?5error?$AA@ 004243c4     sdlmain:SDL_win32_main.obj
- 0003:000013d8       ??_C@_09KDGFPKMD@DDRAW?4DLL?$AA@ 004243d8     sdlmain:SDL_win32_main.obj
- 0003:000016f4       ??_R4Actor@@6B@            004246f4     Actor.obj
- 0003:0000170c       ??_R3Actor@@8              0042470c     Actor.obj
- 0003:00001720       ??_R2Actor@@8              00424720     Actor.obj
- 0003:0000172c       ??_R1A@?0A@EA@Actor@@8     0042472c     Actor.obj
- 0003:00001750       ??_R1A@?0A@EA@DisplayableObject@@8 00424750     Actor.obj
- 0003:00001774       ??_R3DisplayableObject@@8  00424774     Actor.obj
- 0003:00001788       ??_R2DisplayableObject@@8  00424788     Actor.obj
- 0003:00001790       ??_R4GameMain@@6B@         00424790     GameMain.obj
- 0003:000017a8       ??_R3GameMain@@8           004247a8     GameMain.obj
- 0003:000017bc       ??_R2GameMain@@8           004247bc     GameMain.obj
- 0003:000017c8       ??_R1A@?0A@EA@GameMain@@8  004247c8     GameMain.obj
- 0003:000017ec       ??_R1A@?0A@EA@BaseEngine@@8 004247ec     GameMain.obj
- 0003:00001810       ??_R3BaseEngine@@8         00424810     GameMain.obj
- 0003:00001824       ??_R2BaseEngine@@8         00424824     GameMain.obj
- 0003:0000182c       ??_R4length_error@std@@6B@ 0042482c     GameMain.obj
- 0003:00001844       ??_R3length_error@std@@8   00424844     GameMain.obj
- 0003:00001858       ??_R2length_error@std@@8   00424858     GameMain.obj
- 0003:00001868       ??_R1A@?0A@EA@length_error@std@@8 00424868     GameMain.obj
- 0003:0000188c       ??_R1A@?0A@EA@logic_error@std@@8 0042488c     GameMain.obj
- 0003:000018b0       ??_R3logic_error@std@@8    004248b0     GameMain.obj
- 0003:000018c4       ??_R2logic_error@std@@8    004248c4     GameMain.obj
- 0003:000018d0       ??_R1A@?0A@EA@exception@std@@8 004248d0     GameMain.obj
- 0003:000018f4       ??_R3exception@std@@8      004248f4     GameMain.obj
- 0003:00001908       ??_R2exception@std@@8      00424908     GameMain.obj
- 0003:00001910       ??_R4logic_error@std@@6B@  00424910     GameMain.obj
- 0003:00001928       ??_R4bad_alloc@std@@6B@    00424928     GameMain.obj
- 0003:00001940       ??_R3bad_alloc@std@@8      00424940     GameMain.obj
- 0003:00001954       ??_R2bad_alloc@std@@8      00424954     GameMain.obj
- 0003:00001960       ??_R1A@?0A@EA@bad_alloc@std@@8 00424960     GameMain.obj
- 0003:00001984       ??_R4GameTileManager@@6B@  00424984     GameTileManager.obj
- 0003:0000199c       ??_R3GameTileManager@@8    0042499c     GameTileManager.obj
- 0003:000019b0       ??_R2GameTileManager@@8    004249b0     GameTileManager.obj
- 0003:000019bc       ??_R1A@?0A@EA@GameTileManager@@8 004249bc     GameTileManager.obj
- 0003:000019e0       ??_R1A@?0A@EA@TileManager@@8 004249e0     GameTileManager.obj
- 0003:00001a04       ??_R3TileManager@@8        00424a04     GameTileManager.obj
- 0003:00001a18       ??_R2TileManager@@8        00424a18     GameTileManager.obj
- 0003:00001a20       ??_R4TileManager@@6B@      00424a20     GameTileManager.obj
- 0003:00001a38       ??_R4Infected@@6B@         00424a38     Infected.obj
- 0003:00001a50       ??_R3Infected@@8           00424a50     Infected.obj
- 0003:00001a64       ??_R2Infected@@8           00424a64     Infected.obj
- 0003:00001a74       ??_R1A@?0A@EA@Infected@@8  00424a74     Infected.obj
- 0003:00001a98       ??_R4Player@@6B@           00424a98     Player.obj
- 0003:00001ab0       ??_R3Player@@8             00424ab0     Player.obj
- 0003:00001ac4       ??_R2Player@@8             00424ac4     Player.obj
- 0003:00001ad4       ??_R1A@?0A@EA@Player@@8    00424ad4     Player.obj
- 0003:00001af8       ??_R4TutorialInfected@@6B@ 00424af8     TutorialInfected.obj
- 0003:00001b10       ??_R3TutorialInfected@@8   00424b10     TutorialInfected.obj
- 0003:00001b24       ??_R2TutorialInfected@@8   00424b24     TutorialInfected.obj
- 0003:00001b38       ??_R1A@?0A@EA@TutorialInfected@@8 00424b38     TutorialInfected.obj
- 0003:00001b5c       ??_R4BaseEngine@@6B@       00424b5c     BaseEngine.obj
- 0003:00001b74       ??_R4DisplayableObject@@6B@ 00424b74     DisplayableObject.obj
- 0003:00001b8c       ??_R4type_info@@6B@        00424b8c     MSVCRT:ti_inst.obj
- 0003:00001ba4       ??_R3type_info@@8          00424ba4     MSVCRT:ti_inst.obj
- 0003:00001bb8       ??_R2type_info@@8          00424bb8     MSVCRT:ti_inst.obj
- 0003:00001bc0       ??_R1A@?0A@EA@type_info@@8 00424bc0     MSVCRT:ti_inst.obj
- 0003:00001d04       ___rtc_iaa                 00424d04     MSVCRT:_initsect_.obj
- 0003:00001e08       ___rtc_izz                 00424e08     MSVCRT:_initsect_.obj
- 0003:00001f0c       ___rtc_taa                 00424f0c     MSVCRT:_initsect_.obj
- 0003:00002010       ___rtc_tzz                 00425010     MSVCRT:_initsect_.obj
- 0003:00002408       __TI3?AVlength_error@std@@ 00425408     GameMain.obj
- 0003:0000244c       __CTA3?AVlength_error@std@@ 0042544c     GameMain.obj
- 0003:00002460       __CT??_R0?AVlength_error@std@@@8??0length_error@std@@QAE@ABV01@@Z40 00425460     GameMain.obj
- 0003:00002480       __CT??_R0?AVlogic_error@std@@@8??0logic_error@std@@QAE@ABV01@@Z40 00425480     GameMain.obj
- 0003:000024a0       __CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12 004254a0     GameMain.obj
- 0003:00002628       __TI2?AVbad_alloc@std@@    00425628     GameMain.obj
- 0003:0000263c       __CTA2?AVbad_alloc@std@@   0042563c     GameMain.obj
- 0003:0000264c       __CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12 0042564c     GameMain.obj
+ 0003:0000101c       ??_C@_0BF@LAMCNOHN@images?1hole?9dark?4png?$AA@ 0042401c     GameTileManager.obj
+ 0003:00001038       ??_C@_0BH@HAMPIEGK@images?1wall?9corner?4png?$AA@ 00424038     GameTileManager.obj
+ 0003:00001054       ??_C@_0BL@FAJOMMMG@images?1wall?9horizontal?4png?$AA@ 00424054     GameTileManager.obj
+ 0003:00001074       ??_C@_0BJ@GLOOHBKG@images?1wall?9vertical?4png?$AA@ 00424074     GameTileManager.obj
+ 0003:00001098       __real@3fa999999999999a    00424098     Infected.obj
+ 0003:000010a8       __real@3f847ae147ae147b    004240a8     Infected.obj
+ 0003:000010b8       ??_7Infected@@6B@          004240b8     Infected.obj
+ 0003:000010e0       __real@4069000000000000    004240e0     Infected.obj
+ 0003:000010ec       ??_C@_0BI@IDGPHHDP@Swarm?5by?5Marcus?5Whybrow?$AA@ 004240ec     mainfunction.obj
+ 0003:00001108       ??_C@_0BI@NHFDFHOB@Cornerstone?5Regular?4ttf?$AA@ 00424108     mainfunction.obj
+ 0003:00001128       __real@3fb999999999999a    00424128     Player.obj
+ 0003:00001138       ??_7Player@@6B@            00424138     Player.obj
+ 0003:00001160       __real@4049000000000000    00424160     Player.obj
+ 0003:00001170       __real@4008000000000000    00424170     Player.obj
+ 0003:00001180       __real@3fd3333333333333    00424180     Player.obj
+ 0003:00001190       ??_7TutorialInfected@@6B@  00424190     TutorialInfected.obj
+ 0003:000011bc       ??_7BaseEngine@@6B@        004241bc     BaseEngine.obj
+ 0003:00001224       ??_C@_0BM@KCLNHPJ@Unable?5to?5set?5up?5video?3?5?$CFs?6?$AA@ 00424224     BaseEngine.obj
+ 0003:00001248       ??_C@_0BI@FBLGJKMC@Unable?5to?5init?5SDL?3?5?$CFs?6?$AA@ 00424248     BaseEngine.obj
+ 0003:00001268       __real@4010000000000000    00424268     BaseEngine.obj
+ 0003:00001278       __real@400921fb54442d18    00424278     BaseEngine.obj
+ 0003:00001288       __real@400f6a7a2955385e    00424288     BaseEngine.obj
+ 0003:00001294       ??_C@_0BG@KPFFDCIH@?7Copy?5point?5?$CFd?5to?5?$CFd?6?$AA@ 00424294     BaseEngine.obj
+ 0003:000012b0       ??_C@_0CM@IHOJMAHM@Draw?5for?5points?5?$CFd?0?5?$CFd?0?5?$CFd?5of?5?$CFd@ 004242b0     BaseEngine.obj
+ 0003:000012e8       __real@401921fb54442d18    004242e8     BaseEngine.obj
+ 0003:000012f8       __real@3ff921fb54442d18    004242f8     BaseEngine.obj
+ 0003:00001308       ??_7DisplayableObject@@6B@ 00424308     DisplayableObject.obj
+ 0003:00001320       ??_C@_0BI@GMOFELCF@Free?5font?3?5?$CFd?5point?5?$CFs?6?$AA@ 00424320     FontManager.obj
+ 0003:0000133c       ??_C@_0BG@EJGFOME@Font?5loading?5failed?4?6?$AA@ 0042433c     FontManager.obj
+ 0003:00001358       ??_C@_0BL@IIGPEFFA@Loading?5font?3?5?$CFd?5point?5?$CFs?6?$AA@ 00424358     FontManager.obj
+ 0003:00001378       __real@3f50624dd2f1a9fc    00424378     JPGImage.obj
+ 0003:00001388       ??_7type_info@@6B@         00424388     MSVCRT:ti_inst.obj
+ 0003:00001390       ?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB 00424390     MSVCRT:unhandld.obj
+ 0003:00001394       ?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB 00424394     MSVCRT:unhandld.obj
+ 0003:00001398       ?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB 00424398     MSVCRT:unhandld.obj
+ 0003:0000139c       ?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB 0042439c     MSVCRT:unhandld.obj
+ 0003:000013a0       ?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB 004243a0     MSVCRT:unhandld.obj
+ 0003:000013b0       ??_C@_07KJFPOMFC@?$CFs?3?5?$CFs?6?$AA@ 004243b0     sdlmain:SDL_win32_main.obj
+ 0003:000013bc       ??_C@_0M@HFFOIJBL@Fatal?5Error?$AA@ 004243bc     sdlmain:SDL_win32_main.obj
+ 0003:000013cc       ??_C@_0BJ@HFNMHALN@Out?5of?5memory?5?9?5aborting?$AA@ 004243cc     sdlmain:SDL_win32_main.obj
+ 0003:000013ec       ??_C@_0BA@KMDNPDDA@WinMain?$CI?$CJ?5error?$AA@ 004243ec     sdlmain:SDL_win32_main.obj
+ 0003:00001400       ??_C@_09KDGFPKMD@DDRAW?4DLL?$AA@ 00424400     sdlmain:SDL_win32_main.obj
+ 0003:0000171c       ??_R4Actor@@6B@            0042471c     Actor.obj
+ 0003:00001734       ??_R3Actor@@8              00424734     Actor.obj
+ 0003:00001748       ??_R2Actor@@8              00424748     Actor.obj
+ 0003:00001754       ??_R1A@?0A@EA@Actor@@8     00424754     Actor.obj
+ 0003:00001778       ??_R1A@?0A@EA@DisplayableObject@@8 00424778     Actor.obj
+ 0003:0000179c       ??_R3DisplayableObject@@8  0042479c     Actor.obj
+ 0003:000017b0       ??_R2DisplayableObject@@8  004247b0     Actor.obj
+ 0003:000017b8       ??_R4GameMain@@6B@         004247b8     GameMain.obj
+ 0003:000017d0       ??_R3GameMain@@8           004247d0     GameMain.obj
+ 0003:000017e4       ??_R2GameMain@@8           004247e4     GameMain.obj
+ 0003:000017f0       ??_R1A@?0A@EA@GameMain@@8  004247f0     GameMain.obj
+ 0003:00001814       ??_R1A@?0A@EA@BaseEngine@@8 00424814     GameMain.obj
+ 0003:00001838       ??_R3BaseEngine@@8         00424838     GameMain.obj
+ 0003:0000184c       ??_R2BaseEngine@@8         0042484c     GameMain.obj
+ 0003:00001854       ??_R4length_error@std@@6B@ 00424854     GameMain.obj
+ 0003:0000186c       ??_R3length_error@std@@8   0042486c     GameMain.obj
+ 0003:00001880       ??_R2length_error@std@@8   00424880     GameMain.obj
+ 0003:00001890       ??_R1A@?0A@EA@length_error@std@@8 00424890     GameMain.obj
+ 0003:000018b4       ??_R1A@?0A@EA@logic_error@std@@8 004248b4     GameMain.obj
+ 0003:000018d8       ??_R3logic_error@std@@8    004248d8     GameMain.obj
+ 0003:000018ec       ??_R2logic_error@std@@8    004248ec     GameMain.obj
+ 0003:000018f8       ??_R1A@?0A@EA@exception@std@@8 004248f8     GameMain.obj
+ 0003:0000191c       ??_R3exception@std@@8      0042491c     GameMain.obj
+ 0003:00001930       ??_R2exception@std@@8      00424930     GameMain.obj
+ 0003:00001938       ??_R4logic_error@std@@6B@  00424938     GameMain.obj
+ 0003:00001950       ??_R4bad_alloc@std@@6B@    00424950     GameMain.obj
+ 0003:00001968       ??_R3bad_alloc@std@@8      00424968     GameMain.obj
+ 0003:0000197c       ??_R2bad_alloc@std@@8      0042497c     GameMain.obj
+ 0003:00001988       ??_R1A@?0A@EA@bad_alloc@std@@8 00424988     GameMain.obj
+ 0003:000019ac       ??_R4GameTileManager@@6B@  004249ac     GameTileManager.obj
+ 0003:000019c4       ??_R3GameTileManager@@8    004249c4     GameTileManager.obj
+ 0003:000019d8       ??_R2GameTileManager@@8    004249d8     GameTileManager.obj
+ 0003:000019e4       ??_R1A@?0A@EA@GameTileManager@@8 004249e4     GameTileManager.obj
+ 0003:00001a08       ??_R1A@?0A@EA@TileManager@@8 00424a08     GameTileManager.obj
+ 0003:00001a2c       ??_R3TileManager@@8        00424a2c     GameTileManager.obj
+ 0003:00001a40       ??_R2TileManager@@8        00424a40     GameTileManager.obj
+ 0003:00001a48       ??_R4TileManager@@6B@      00424a48     GameTileManager.obj
+ 0003:00001a60       ??_R4Infected@@6B@         00424a60     Infected.obj
+ 0003:00001a78       ??_R3Infected@@8           00424a78     Infected.obj
+ 0003:00001a8c       ??_R2Infected@@8           00424a8c     Infected.obj
+ 0003:00001a9c       ??_R1A@?0A@EA@Infected@@8  00424a9c     Infected.obj
+ 0003:00001ac0       ??_R4Player@@6B@           00424ac0     Player.obj
+ 0003:00001ad8       ??_R3Player@@8             00424ad8     Player.obj
+ 0003:00001aec       ??_R2Player@@8             00424aec     Player.obj
+ 0003:00001afc       ??_R1A@?0A@EA@Player@@8    00424afc     Player.obj
+ 0003:00001b20       ??_R4TutorialInfected@@6B@ 00424b20     TutorialInfected.obj
+ 0003:00001b38       ??_R3TutorialInfected@@8   00424b38     TutorialInfected.obj
+ 0003:00001b4c       ??_R2TutorialInfected@@8   00424b4c     TutorialInfected.obj
+ 0003:00001b60       ??_R1A@?0A@EA@TutorialInfected@@8 00424b60     TutorialInfected.obj
+ 0003:00001b84       ??_R4BaseEngine@@6B@       00424b84     BaseEngine.obj
+ 0003:00001b9c       ??_R4DisplayableObject@@6B@ 00424b9c     DisplayableObject.obj
+ 0003:00001bb4       ??_R4type_info@@6B@        00424bb4     MSVCRT:ti_inst.obj
+ 0003:00001bcc       ??_R3type_info@@8          00424bcc     MSVCRT:ti_inst.obj
+ 0003:00001be0       ??_R2type_info@@8          00424be0     MSVCRT:ti_inst.obj
+ 0003:00001be8       ??_R1A@?0A@EA@type_info@@8 00424be8     MSVCRT:ti_inst.obj
+ 0003:00001d2c       ___rtc_iaa                 00424d2c     MSVCRT:_initsect_.obj
+ 0003:00001e30       ___rtc_izz                 00424e30     MSVCRT:_initsect_.obj
+ 0003:00001f34       ___rtc_taa                 00424f34     MSVCRT:_initsect_.obj
+ 0003:00002038       ___rtc_tzz                 00425038     MSVCRT:_initsect_.obj
+ 0003:00002430       __TI3?AVlength_error@std@@ 00425430     GameMain.obj
+ 0003:00002474       __CTA3?AVlength_error@std@@ 00425474     GameMain.obj
+ 0003:00002488       __CT??_R0?AVlength_error@std@@@8??0length_error@std@@QAE@ABV01@@Z40 00425488     GameMain.obj
+ 0003:000024a8       __CT??_R0?AVlogic_error@std@@@8??0logic_error@std@@QAE@ABV01@@Z40 004254a8     GameMain.obj
+ 0003:000024c8       __CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12 004254c8     GameMain.obj
+ 0003:00002650       __TI2?AVbad_alloc@std@@    00425650     GameMain.obj
+ 0003:00002664       __CTA2?AVbad_alloc@std@@   00425664     GameMain.obj
+ 0003:00002674       __CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12 00425674     GameMain.obj
  0004:00000004       ??_R0?AVActor@@@8          00426004     Actor.obj
  0004:0000001c       ??_R0?AVDisplayableObject@@@8 0042601c     Actor.obj
  0004:00000048       ??_R0?AVGameMain@@@8       00426048     GameMain.obj
